@@ -36,7 +36,8 @@ df_starting_and_target_weights <- data.frame(name=c(P1_NAME, P2_NAME),
 
 df_starting_and_target_weights <- df_starting_and_target_weights %>% 
   gather(metric, value, -name) %>%
-  mutate(metric = paste0(metric, " Weight"))
+  mutate(metric = paste0(metric, " Weight"),
+         value = as.numeric(value))
 ```
 
 # Preface
