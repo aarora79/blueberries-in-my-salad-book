@@ -88,11 +88,12 @@ The following charts show our progress in terms of weight loss, with the clean e
 
 We saw very good results in both the iterations. The first iteration produced much better results because obviously there was just too much weight to lose, but surprisingly the second iteration was also very effective. The way we see this now is that if we ever hit a really long plateau in the journey to achieve the desired weight we could just toughen our minds and do this again. It cannot hurt.
 
-```{r}
+```{r echo=FALSE, fig.height=8, fig.width=12}
 df_tidy %>%
+  filter(metric=="Weight") %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
-  facet_wrap(~metric, scales = "free_y") + 
+  facet_wrap(~name, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
   labs(title=glue(MAIN_PAGE_CHART_TITLE),

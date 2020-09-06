@@ -275,18 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.5</span> The results</h2>
 <p>The following charts show our progress in terms of weight loss, with the clean eating periods highlighted. We did a clean eating in February-March and then another in July-August.</p>
 <p>We saw very good results in both the iterations. The first iteration produced much better results because obviously there was just too much weight to lose, but surprisingly the second iteration was also very effective. The way we see this now is that if we ever hit a really long plateau in the journey to achieve the desired weight we could just toughen our minds and do this again. It cannot hurt.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="clean-eating.html#cb54-1"></a>df_tidy <span class="op">%&gt;%</span></span>
-<span id="cb54-2"><a href="clean-eating.html#cb54-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Date, <span class="dt">y=</span>value, <span class="dt">col=</span>name)) <span class="op">+</span></span>
-<span id="cb54-3"><a href="clean-eating.html#cb54-3"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
-<span id="cb54-4"><a href="clean-eating.html#cb54-4"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>metric, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb54-5"><a href="clean-eating.html#cb54-5"></a><span class="st">  </span><span class="kw">theme_fivethirtyeight</span>() <span class="op">+</span></span>
-<span id="cb54-6"><a href="clean-eating.html#cb54-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
-<span id="cb54-7"><a href="clean-eating.html#cb54-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="kw">glue</span>(MAIN_PAGE_CHART_TITLE),</span>
-<span id="cb54-8"><a href="clean-eating.html#cb54-8"></a>       <span class="dt">subtitle=</span><span class="kw">glue</span>(<span class="st">&quot;Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}&quot;</span>),</span>
-<span id="cb54-9"><a href="clean-eating.html#cb54-9"></a>       <span class="dt">caption=</span>CAPTION) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb54-10"><a href="clean-eating.html#cb54-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size=</span>CHART_ELEMENT_TEXT_SIZE), <span class="dt">legend.title =</span> <span class="kw">element_blank</span>()) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb54-11"><a href="clean-eating.html#cb54-11"></a><span class="st">  </span><span class="kw">scale_color_tableau</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-5-1.png" width="1152" /></p>
 </div>
 <div id="is-the-30-day-challenge-hard" class="section level2">
 <h2><span class="header-section-number">3.6</span> Is the 30 day challenge hard?</h2>
