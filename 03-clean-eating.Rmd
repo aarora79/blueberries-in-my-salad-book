@@ -126,6 +126,8 @@ df_tidy %>%
 
 Here is another chart that compares the weight loss during clean eating and non-clean eating days. Note that even when we were not doing clean eating we were still careful about what we were eating (in other words we were not gorging on Pizzas and butter chicken, soft and hard drinks were still completely off limits).
 
+The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb or more per day during clean eating whereas I only lost 0.005 lb or more on non-clean eating period.
+
 ```{r  echo=FALSE, fig.height=8, fig.width=12}
 df_wt_loss2 <- df_wt_loss %>%
   mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
@@ -134,23 +136,20 @@ df_wt_loss2 <- df_wt_loss %>%
                                "careful-but-not-clean")) 
 df_wt_loss_medians <- df_wt_loss2 %>%
   group_by(name, clean_eating) %>%
-  summarize(med=round(median(loss_per_day, na.rm=TRUE), 4))
+  summarize(med=round(median(loss_per_day, na.rm=TRUE), 4), .groups="keep")
 
-df_wt_loss %>%
-  mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
-                               between(Date, df_iter2$Start, df_iter2$End),
-                               "clean-eating",
-                               "careful-but-not-clean")) %>%
+df_wt_loss2 %>%
+  drop_na() %>%
   ggplot(aes(x=name, y=loss_per_day, col=clean_eating)) + 
   geom_boxplot(show.legend = TRUE) +
   geom_text(data = df_wt_loss_medians,
             position=position_dodge(width=.75),
             aes(y = med, label = glue("{med} lb"), col=clean_eating), 
-            size = 3, vjust = -.5, show.legend = FALSE) +
+            size = 5, vjust = -.5, show.legend = FALSE) +
   scale_y_continuous(breaks = seq(-5, 5, by = 1)) + 
   theme_fivethirtyeight() +
   xlab("") +
-  theme(axis.title = element_text()) + ylab('Weight Loss (lb) /Day') +
+  theme(axis.title = element_text()) + ylab('Weight Loss (lb)/Day') +
   labs(title="Clean eating days Vs Others",
        subtitle=glue("Clean eating days clearly have a higher median per day weight loss, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}."),
        caption=CAPTION) + 
