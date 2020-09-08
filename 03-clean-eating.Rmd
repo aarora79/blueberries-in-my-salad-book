@@ -112,7 +112,7 @@ df_tidy %>%
   geom_line() +
   geom_rect(data=df_clean_eating_dates, aes(x = NULL,y = NULL,xmin=Start, xmax=End, 
                                   ymin=-Inf, ymax=Inf, 
-                                  alpha=0.05,fill=name, col=name)) +
+                                  alpha=0.05, fill=name, col=name)) +
   facet_wrap(~name, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
@@ -120,7 +120,8 @@ df_tidy %>%
        subtitle=glue("Shaded area represent clean eating iterations, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
        caption=CAPTION) + 
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
-  scale_color_tableau()
+  scale_color_tableau() + 
+  scale_fill_tableau()
 ```
 
 ## Is the 30 day challenge hard? 
