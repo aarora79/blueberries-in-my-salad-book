@@ -114,7 +114,9 @@ df_tidy %>%
                                   ymin=-Inf, ymax=Inf, 
                                   alpha=0.05, fill=name, col=name), show.legend = FALSE) +
   facet_wrap(~name, scales = "free_y") + 
+  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
   theme_fivethirtyeight() +
+  theme(axis.title = element_text()) + ylab('Weight (lb)') +
   xlab("") +
   labs(title="How we lost the weight...",
        subtitle=glue("Shaded area represent clean eating iterations, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
