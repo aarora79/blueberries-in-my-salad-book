@@ -126,7 +126,7 @@ df_tidy %>%
 
 Here is another chart that compares the weight loss during clean eating and non-clean eating days. Note that even when we were not doing clean eating we were still careful about what we were eating (in other words we were not gorging on Pizzas and butter chicken, soft and hard drinks were still completely off limits).
 
-The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb or more per day during clean eating whereas I only lost 0.005 lb or more on non-clean eating period.
+The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb or more per day during clean eating whereas I only lost 0.005 lb or more on non-clean eating period. The data for this chart includes both clean eating periods over a timespan from `r {min(df_tidy$Date)}` to `r {max(df_tidy$Date)}`.
 
 ```{r  echo=FALSE, fig.height=8, fig.width=12}
 df_wt_loss2 <- df_wt_loss %>%
@@ -151,7 +151,7 @@ df_wt_loss2 %>%
   xlab("") +
   theme(axis.title = element_text()) + ylab('Weight Loss (lb)/Day') +
   labs(title="Clean eating days Vs Others",
-       subtitle=glue("Clean eating days clearly have a higher median per day weight loss, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}."),
+       subtitle=glue("Clean eating days clearly have a higher median per day weight loss."),
        caption=CAPTION) + 
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
   scale_color_tableau() + 
