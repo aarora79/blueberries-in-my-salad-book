@@ -116,8 +116,8 @@ df_tidy %>%
   facet_wrap(~name, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
-  labs(title=glue(MAIN_PAGE_CHART_TITLE),
-       subtitle=glue("Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
+  labs(title="How we lost the weight...",
+       subtitle=glue("Shaded area represent clean eating iterations, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
        caption=CAPTION) + 
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
   scale_color_tableau()
