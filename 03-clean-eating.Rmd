@@ -89,10 +89,30 @@ The following charts show our progress in terms of weight loss, with the clean e
 We saw very good results in both the iterations. The first iteration produced much better results because obviously there was just too much weight to lose, but surprisingly the second iteration was also very effective. The way we see this now is that if we ever hit a really long plateau in the journey to achieve the desired weight we could just toughen our minds and do this again. It cannot hurt.
 
 ```{r echo=FALSE, fig.height=8, fig.width=12}
+df_clean_eating_dates <- important_dates %>%
+  select(-include)
+
+df_iter1 <- df_clean_eating_dates %>%
+  filter(str_detect(label, "Clean Eating")) %>%
+  filter(str_detect(label, "Iteration 1")) %>%
+  mutate(label = str_replace(label, "Clean Eating Iteration 1 ", "")) %>%
+  spread(label, Date) 
+
+df_iter2 <- df_clean_eating_dates %>%
+  filter(str_detect(label, "Clean Eating")) %>%
+  filter(str_detect(label, "Iteration 2")) %>%
+  mutate(label = str_replace(label, "Clean Eating Iteration 2 ", "")) %>%
+  spread(label, Date) 
+  
+df_clean_eating_dates <- bind_rows(df_iter1, df_iter2) 
+
 df_tidy %>%
   filter(metric=="Weight") %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
+  geom_rect(data=df_clean_eating_dates, aes(x = NULL,y = NULL,xmin=Start, xmax=End, 
+                                  ymin=-Inf, ymax=Inf, 
+                                  alpha=0.05,fill=name, col=name)) +
   facet_wrap(~name, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
