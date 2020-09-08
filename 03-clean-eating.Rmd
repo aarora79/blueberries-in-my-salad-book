@@ -112,7 +112,7 @@ df_tidy %>%
   geom_line() +
   geom_rect(data=df_clean_eating_dates, aes(x = NULL,y = NULL,xmin=Start, xmax=End, 
                                   ymin=-Inf, ymax=Inf, 
-                                  alpha=0.05, fill=name, col=name)) +
+                                  alpha=0.05, fill=name, col=name), show.legend = FALSE) +
   facet_wrap(~name, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
@@ -122,6 +122,42 @@ df_tidy %>%
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
   scale_color_tableau() + 
   scale_fill_tableau()
+```
+
+Here is another chart that compares the weight loss during clean eating and non-clean eating days. Note that even when we were not doing clean eating we were still careful about what we were eating (in other words we were not gorging on Pizzas and butter chicken, soft and hard drinks were still completely off limits).
+
+```{r  echo=FALSE, fig.height=8, fig.width=12}
+df_wt_loss2 <- df_wt_loss %>%
+  mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
+                                 between(Date, df_iter2$Start, df_iter2$End),
+                               "clean-eating",
+                               "careful-but-not-clean")) 
+df_wt_loss_medians <- df_wt_loss2 %>%
+  group_by(name, clean_eating) %>%
+  summarize(med=round(median(loss_per_day, na.rm=TRUE), 4))
+
+df_wt_loss %>%
+  mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
+                               between(Date, df_iter2$Start, df_iter2$End),
+                               "clean-eating",
+                               "careful-but-not-clean")) %>%
+  ggplot(aes(x=name, y=loss_per_day, col=clean_eating)) + 
+  geom_boxplot(show.legend = TRUE) +
+  geom_text(data = df_wt_loss_medians,
+            position=position_dodge(width=.75),
+            aes(y = med, label = glue("{med} lb"), col=clean_eating), 
+            size = 3, vjust = -.5, show.legend = FALSE) +
+  scale_y_continuous(breaks = seq(-5, 5, by = 1)) + 
+  theme_fivethirtyeight() +
+  xlab("") +
+  theme(axis.title = element_text()) + ylab('Weight Loss (lb) /Day') +
+  labs(title="Clean eating days Vs Others",
+       subtitle=glue("Clean eating days clearly have a higher median per day weight loss, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}."),
+       caption=CAPTION) + 
+  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
+  scale_color_tableau() + 
+  scale_fill_tableau()
+  
 ```
 
 ## Is the 30 day challenge hard? 
