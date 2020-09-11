@@ -92,7 +92,7 @@ I have said this earlier in this book, my initial goal for meeting with a traine
   df_best_wt_loss_month <- df_wt_loss %>%
     mutate(m = MONTH_ABB[month(Date)]) %>%
     group_by(name, m) %>%
-    summarize(total_wt_loss = sum(loss_per_day), .groups="keep") %>%
+    summarize(total_wt_loss = sum(loss_per_day), .groups="drop") %>%
     filter(total_wt_loss == max(total_wt_loss, na.rm=TRUE)) %>%
     mutate(best_wt_loss_month = paste0(m, ", ", round(total_wt_loss, 2), " lb")) %>%
     select(name, best_wt_loss_month) %>%
