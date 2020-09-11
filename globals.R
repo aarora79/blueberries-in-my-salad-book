@@ -12,7 +12,8 @@ P1_TARGET_ACHIEVED_FPATH <- glue("https://raw.githubusercontent.com/aarora79/bio
 P2_TARGET_ACHIEVED_FPATH <- glue("https://raw.githubusercontent.com/aarora79/biomettracker/master/data/target_achievement_{P2_NAME}.csv")
 
 MEASUREMENTS_FPATH <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/measurements.csv"
-  
+EXERCISE_DATES_URL <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/exercise_dates.csv"
+
 # desired and ideal weights, ideal weight as per NIH website
 # https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf
 P1_TARGET_WEIGHT <- 128

@@ -175,132 +175,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="what-did-we-accomplish" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> What did we accomplish?</h1>
 <p>I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the bad in a better shape are important goals, so how did we fare on these?</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="what-did-we-accomplish.html#cb54-1"></a><span class="co"># we want to create a dataframe which contain multiple different metrics which can all</span></span>
-<span id="cb54-2"><a href="what-did-we-accomplish.html#cb54-2"></a>  <span class="co"># be displayed in one single table. We do this by creating a single row dataframe for each</span></span>
-<span id="cb54-3"><a href="what-did-we-accomplish.html#cb54-3"></a>  <span class="co"># metric of interest and then row binding (concatenating) each of these individual dataframes.</span></span>
-<span id="cb54-4"><a href="what-did-we-accomplish.html#cb54-4"></a>    </span>
-<span id="cb54-5"><a href="what-did-we-accomplish.html#cb54-5"></a>  <span class="co"># starting weight. Since the weight loss dataframe is sorted</span></span>
-<span id="cb54-6"><a href="what-did-we-accomplish.html#cb54-6"></a>  <span class="co"># in asc order of the date so the first date for each group (name in this case)</span></span>
-<span id="cb54-7"><a href="what-did-we-accomplish.html#cb54-7"></a>  <span class="co"># is automatically the row that contains the starting weight. This way</span></span>
-<span id="cb54-8"><a href="what-did-we-accomplish.html#cb54-8"></a>  <span class="co"># we have a two row dataframe which we can spread to convert to a single row dataframe</span></span>
-<span id="cb54-9"><a href="what-did-we-accomplish.html#cb54-9"></a>  <span class="co"># such that the group i.e. name of person becomes a column name and then we add a new column</span></span>
-<span id="cb54-10"><a href="what-did-we-accomplish.html#cb54-10"></a>  <span class="co"># saying this is the metric that this single row dataframe is tracking. This same strategy</span></span>
-<span id="cb54-11"><a href="what-did-we-accomplish.html#cb54-11"></a>  <span class="co"># of using spread and adding a metric column is followed for all individual dataframes.</span></span>
-<span id="cb54-12"><a href="what-did-we-accomplish.html#cb54-12"></a>  df_starting_wt &lt;-<span class="st"> </span>df_wt_loss <span class="op">%&gt;%</span></span>
-<span id="cb54-13"><a href="what-did-we-accomplish.html#cb54-13"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-14"><a href="what-did-we-accomplish.html#cb54-14"></a><span class="st">    </span><span class="kw">filter</span>(rn<span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-15"><a href="what-did-we-accomplish.html#cb54-15"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">value=</span><span class="kw">as.character</span>(value)) <span class="op">%&gt;%</span></span>
-<span id="cb54-16"><a href="what-did-we-accomplish.html#cb54-16"></a><span class="st">    </span><span class="kw">select</span>(name, value) <span class="op">%&gt;%</span></span>
-<span id="cb54-17"><a href="what-did-we-accomplish.html#cb54-17"></a><span class="st">    </span><span class="kw">spread</span>(name, value) <span class="op">%&gt;%</span></span>
-<span id="cb54-18"><a href="what-did-we-accomplish.html#cb54-18"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="st">&quot;Starting Weight (lb)&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-19"><a href="what-did-we-accomplish.html#cb54-19"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span>
-<span id="cb54-20"><a href="what-did-we-accomplish.html#cb54-20"></a>  </span>
-<span id="cb54-21"><a href="what-did-we-accomplish.html#cb54-21"></a>  <span class="co"># current weight dataframe  </span></span>
-<span id="cb54-22"><a href="what-did-we-accomplish.html#cb54-22"></a>  df_curr_wt &lt;-<span class="st"> </span>df_wt_loss <span class="op">%&gt;%</span></span>
-<span id="cb54-23"><a href="what-did-we-accomplish.html#cb54-23"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-24"><a href="what-did-we-accomplish.html#cb54-24"></a><span class="st">    </span><span class="kw">filter</span>(rn<span class="op">==</span><span class="kw">max</span>(rn)) <span class="op">%&gt;%</span></span>
-<span id="cb54-25"><a href="what-did-we-accomplish.html#cb54-25"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">value=</span><span class="kw">as.character</span>(value)) <span class="op">%&gt;%</span></span>
-<span id="cb54-26"><a href="what-did-we-accomplish.html#cb54-26"></a><span class="st">    </span><span class="kw">select</span>(name, value) <span class="op">%&gt;%</span></span>
-<span id="cb54-27"><a href="what-did-we-accomplish.html#cb54-27"></a><span class="st">    </span><span class="kw">spread</span>(name, value) <span class="op">%&gt;%</span></span>
-<span id="cb54-28"><a href="what-did-we-accomplish.html#cb54-28"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="st">&quot;Current Weight (lb)&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-29"><a href="what-did-we-accomplish.html#cb54-29"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span>
-<span id="cb54-30"><a href="what-did-we-accomplish.html#cb54-30"></a>  </span>
-<span id="cb54-31"><a href="what-did-we-accomplish.html#cb54-31"></a>  <span class="co"># weight loss summary i.e. how much have we lost  </span></span>
-<span id="cb54-32"><a href="what-did-we-accomplish.html#cb54-32"></a>  df_wt_loss_summary &lt;-<span class="st"> </span>df_wt_loss <span class="op">%&gt;%</span></span>
-<span id="cb54-33"><a href="what-did-we-accomplish.html#cb54-33"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-34"><a href="what-did-we-accomplish.html#cb54-34"></a><span class="st">    </span><span class="kw">filter</span>(rn<span class="op">==</span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>rn<span class="op">==</span><span class="kw">max</span>(rn)) <span class="op">%&gt;%</span></span>
-<span id="cb54-35"><a href="what-did-we-accomplish.html#cb54-35"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">total_wt_loss =</span> <span class="kw">as.character</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(value<span class="op">-</span><span class="kw">lag</span>(value)))) <span class="op">%&gt;%</span></span>
-<span id="cb54-36"><a href="what-did-we-accomplish.html#cb54-36"></a><span class="st">    </span><span class="kw">drop_na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-37"><a href="what-did-we-accomplish.html#cb54-37"></a><span class="st">    </span><span class="kw">select</span>(name, total_wt_loss) <span class="op">%&gt;%</span></span>
-<span id="cb54-38"><a href="what-did-we-accomplish.html#cb54-38"></a><span class="st">    </span><span class="kw">spread</span>(name, total_wt_loss) <span class="op">%&gt;%</span></span>
-<span id="cb54-39"><a href="what-did-we-accomplish.html#cb54-39"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="st">&quot;Total weight loss (lb)&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-40"><a href="what-did-we-accomplish.html#cb54-40"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span>
-<span id="cb54-41"><a href="what-did-we-accomplish.html#cb54-41"></a>  </span>
-<span id="cb54-42"><a href="what-did-we-accomplish.html#cb54-42"></a>  <span class="co"># total duration  </span></span>
-<span id="cb54-43"><a href="what-did-we-accomplish.html#cb54-43"></a>  df_duration_summary &lt;-<span class="st"> </span>df_wt_loss <span class="op">%&gt;%</span></span>
-<span id="cb54-44"><a href="what-did-we-accomplish.html#cb54-44"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-45"><a href="what-did-we-accomplish.html#cb54-45"></a><span class="st">    </span><span class="kw">filter</span>(rn<span class="op">==</span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>rn<span class="op">==</span><span class="kw">max</span>(rn)) <span class="op">%&gt;%</span></span>
-<span id="cb54-46"><a href="what-did-we-accomplish.html#cb54-46"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">days_since_start =</span> <span class="kw">as.character</span>((Date<span class="op">-</span><span class="kw">lag</span>(Date)))) <span class="op">%&gt;%</span></span>
-<span id="cb54-47"><a href="what-did-we-accomplish.html#cb54-47"></a><span class="st">    </span><span class="kw">drop_na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-48"><a href="what-did-we-accomplish.html#cb54-48"></a><span class="st">    </span><span class="kw">select</span>(name, days_since_start) <span class="op">%&gt;%</span></span>
-<span id="cb54-49"><a href="what-did-we-accomplish.html#cb54-49"></a><span class="st">    </span><span class="kw">spread</span>(name, days_since_start) <span class="op">%&gt;%</span></span>
-<span id="cb54-50"><a href="what-did-we-accomplish.html#cb54-50"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="st">&quot;Days since start&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-51"><a href="what-did-we-accomplish.html#cb54-51"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span>
-<span id="cb54-52"><a href="what-did-we-accomplish.html#cb54-52"></a>  </span>
-<span id="cb54-53"><a href="what-did-we-accomplish.html#cb54-53"></a>  <span class="co"># duration for losing the last 10 pounds</span></span>
-<span id="cb54-54"><a href="what-did-we-accomplish.html#cb54-54"></a>  <span class="co"># this is a tricky one, trying to do everythingin a single dplyr pipeline</span></span>
-<span id="cb54-55"><a href="what-did-we-accomplish.html#cb54-55"></a>  <span class="co"># what we do is as follows: calc the cumulative loss from the latest date</span></span>
-<span id="cb54-56"><a href="what-did-we-accomplish.html#cb54-56"></a>  <span class="co"># and then assign a row number, the rn==1 corresponds to latest date so we</span></span>
-<span id="cb54-57"><a href="what-did-we-accomplish.html#cb54-57"></a>  <span class="co"># want that entry, then we want to find the first entry for which cumul loss &gt;= (say) 10 pounds</span></span>
-<span id="cb54-58"><a href="what-did-we-accomplish.html#cb54-58"></a>  <span class="co"># so we use filter to keep either rn==1 or cumul_loss &gt;= 10, but we only want to keep</span></span>
-<span id="cb54-59"><a href="what-did-we-accomplish.html#cb54-59"></a>  <span class="co"># the first entry where cumul loss beame &gt;=10 so we assign another</span></span>
-<span id="cb54-60"><a href="what-did-we-accomplish.html#cb54-60"></a>  <span class="co"># row number and now we want to the first two rows and then take a diff of the two</span></span>
-<span id="cb54-61"><a href="what-did-we-accomplish.html#cb54-61"></a>  <span class="co"># rows to get number of days. Best to run this outside of shiny to understand.</span></span>
-<span id="cb54-62"><a href="what-did-we-accomplish.html#cb54-62"></a>  df_days_for_last_n_pounds &lt;-<span class="st"> </span>df_tidy <span class="op">%&gt;%</span></span>
-<span id="cb54-63"><a href="what-did-we-accomplish.html#cb54-63"></a><span class="st">    </span><span class="kw">filter</span>(metric<span class="op">==</span><span class="st">&quot;Weight&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-64"><a href="what-did-we-accomplish.html#cb54-64"></a><span class="st">    </span><span class="kw">select</span>(name, Date, value) <span class="op">%&gt;%</span></span>
-<span id="cb54-65"><a href="what-did-we-accomplish.html#cb54-65"></a><span class="st">    </span><span class="kw">group_by</span>(name) <span class="op">%&gt;%</span></span>
-<span id="cb54-66"><a href="what-did-we-accomplish.html#cb54-66"></a><span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Date), <span class="dt">.by_group=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-67"><a href="what-did-we-accomplish.html#cb54-67"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">loss_per_day =</span> value<span class="op">-</span><span class="kw">lag</span>(value, <span class="dv">1</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb54-68"><a href="what-did-we-accomplish.html#cb54-68"></a><span class="st">    </span><span class="kw">drop_na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-69"><a href="what-did-we-accomplish.html#cb54-69"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">cumul_loss =</span> <span class="kw">cumsum</span>(loss_per_day)) <span class="op">%&gt;%</span></span>
-<span id="cb54-70"><a href="what-did-we-accomplish.html#cb54-70"></a><span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Date)) <span class="op">%&gt;%</span></span>
-<span id="cb54-71"><a href="what-did-we-accomplish.html#cb54-71"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-72"><a href="what-did-we-accomplish.html#cb54-72"></a><span class="st">    </span><span class="kw">filter</span>(cumul_loss <span class="op">&gt;=</span><span class="st"> </span>N_FOR_LAST_N_POUNDS_OF_INTREST <span class="op">|</span><span class="st"> </span>rn<span class="op">==</span><span class="dv">1</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-73"><a href="what-did-we-accomplish.html#cb54-73"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">rn2=</span><span class="kw">row_number</span>()) <span class="op">%&gt;%</span></span>
-<span id="cb54-74"><a href="what-did-we-accomplish.html#cb54-74"></a><span class="st">    </span><span class="kw">filter</span>(rn<span class="op">==</span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>rn2<span class="op">==</span><span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-75"><a href="what-did-we-accomplish.html#cb54-75"></a><span class="st">    </span><span class="kw">select</span>(name, Date) <span class="op">%&gt;%</span></span>
-<span id="cb54-76"><a href="what-did-we-accomplish.html#cb54-76"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">days_taken_to_lost_last_n_pounds =</span> <span class="kw">as.character</span>(<span class="op">-</span><span class="dv">1</span><span class="op">*</span>(Date<span class="op">-</span><span class="kw">lag</span>(Date)))) <span class="op">%&gt;%</span></span>
-<span id="cb54-77"><a href="what-did-we-accomplish.html#cb54-77"></a><span class="st">    </span><span class="kw">drop_na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-78"><a href="what-did-we-accomplish.html#cb54-78"></a><span class="st">    </span><span class="kw">select</span>(name, days_taken_to_lost_last_n_pounds) <span class="op">%&gt;%</span></span>
-<span id="cb54-79"><a href="what-did-we-accomplish.html#cb54-79"></a><span class="st">    </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-80"><a href="what-did-we-accomplish.html#cb54-80"></a><span class="st">    </span><span class="kw">spread</span>(name, days_taken_to_lost_last_n_pounds) <span class="op">%&gt;%</span></span>
-<span id="cb54-81"><a href="what-did-we-accomplish.html#cb54-81"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="kw">glue</span>(<span class="st">&quot;Days taken to lose last {N_FOR_LAST_N_POUNDS_OF_INTREST} pounds&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb54-82"><a href="what-did-we-accomplish.html#cb54-82"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span>
-<span id="cb54-83"><a href="what-did-we-accomplish.html#cb54-83"></a>  </span>
-<span id="cb54-84"><a href="what-did-we-accomplish.html#cb54-84"></a>  <span class="co"># which month did we have the max weight loss (remember weight loss has already been converted to a positive value</span></span>
-<span id="cb54-85"><a href="what-did-we-accomplish.html#cb54-85"></a>  <span class="co"># so loss is +ve and gain is -ve at this point)</span></span>
-<span id="cb54-86"><a href="what-did-we-accomplish.html#cb54-86"></a>  df_best_wt_loss_month &lt;-<span class="st"> </span>df_wt_loss <span class="op">%&gt;%</span></span>
-<span id="cb54-87"><a href="what-did-we-accomplish.html#cb54-87"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">m =</span> MONTH_ABB[<span class="kw">month</span>(Date)]) <span class="op">%&gt;%</span></span>
-<span id="cb54-88"><a href="what-did-we-accomplish.html#cb54-88"></a><span class="st">    </span><span class="kw">group_by</span>(name, m) <span class="op">%&gt;%</span></span>
-<span id="cb54-89"><a href="what-did-we-accomplish.html#cb54-89"></a><span class="st">    </span><span class="kw">summarize</span>(<span class="dt">total_wt_loss =</span> <span class="kw">sum</span>(loss_per_day)) <span class="op">%&gt;%</span></span>
-<span id="cb54-90"><a href="what-did-we-accomplish.html#cb54-90"></a><span class="st">    </span><span class="kw">filter</span>(total_wt_loss <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(total_wt_loss, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb54-91"><a href="what-did-we-accomplish.html#cb54-91"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">best_wt_loss_month =</span> <span class="kw">paste0</span>(m, <span class="st">&quot;, &quot;</span>, <span class="kw">round</span>(total_wt_loss, <span class="dv">2</span>), <span class="st">&quot; lb&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb54-92"><a href="what-did-we-accomplish.html#cb54-92"></a><span class="st">    </span><span class="kw">select</span>(name, best_wt_loss_month) <span class="op">%&gt;%</span></span>
-<span id="cb54-93"><a href="what-did-we-accomplish.html#cb54-93"></a><span class="st">    </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></span>
-<span id="cb54-94"><a href="what-did-we-accomplish.html#cb54-94"></a><span class="st">    </span><span class="kw">spread</span>(name,best_wt_loss_month) <span class="op">%&gt;%</span></span>
-<span id="cb54-95"><a href="what-did-we-accomplish.html#cb54-95"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Metric=</span><span class="st">&quot;Best Weight loss month&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb54-96"><a href="what-did-we-accomplish.html#cb54-96"></a><span class="st">    </span><span class="kw">select</span>(Metric, <span class="kw">everything</span>())</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;name&#39; (override with `.groups` argument)</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="what-did-we-accomplish.html#cb56-1"></a>  <span class="co"># join all the dataframes and display them in the table</span></span>
-<span id="cb56-2"><a href="what-did-we-accomplish.html#cb56-2"></a>  df_imp_metrics &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(df_duration_summary,</span>
-<span id="cb56-3"><a href="what-did-we-accomplish.html#cb56-3"></a>            df_days_for_last_n_pounds,</span>
-<span id="cb56-4"><a href="what-did-we-accomplish.html#cb56-4"></a>            df_starting_wt,</span>
-<span id="cb56-5"><a href="what-did-we-accomplish.html#cb56-5"></a>            df_curr_wt,</span>
-<span id="cb56-6"><a href="what-did-we-accomplish.html#cb56-6"></a>            df_wt_loss_summary,</span>
-<span id="cb56-7"><a href="what-did-we-accomplish.html#cb56-7"></a>            df_best_wt_loss_month)</span>
-<span id="cb56-8"><a href="what-did-we-accomplish.html#cb56-8"></a></span>
-<span id="cb56-9"><a href="what-did-we-accomplish.html#cb56-9"></a>  <span class="kw">gt</span>(df_imp_metrics) <span class="op">%&gt;%</span></span>
-<span id="cb56-10"><a href="what-did-we-accomplish.html#cb56-10"></a><span class="st">    </span><span class="kw">tab_header</span>(</span>
-<span id="cb56-11"><a href="what-did-we-accomplish.html#cb56-11"></a>      <span class="dt">title =</span> <span class="kw">md</span>(<span class="st">&quot;**Important Metrics**&quot;</span>),</span>
-<span id="cb56-12"><a href="what-did-we-accomplish.html#cb56-12"></a>      <span class="dt">subtitle =</span> <span class="kw">md</span>(<span class="st">&quot;Key data points that describe the journey&quot;</span>)</span>
-<span id="cb56-13"><a href="what-did-we-accomplish.html#cb56-13"></a>    )  <span class="op">%&gt;%</span></span>
-<span id="cb56-14"><a href="what-did-we-accomplish.html#cb56-14"></a><span class="st">    </span><span class="kw">tab_source_note</span>(</span>
-<span id="cb56-15"><a href="what-did-we-accomplish.html#cb56-15"></a>      <span class="dt">source_note =</span> <span class="kw">md</span>(CAPTION)</span>
-<span id="cb56-16"><a href="what-did-we-accomplish.html#cb56-16"></a>    ) <span class="op">%&gt;%</span></span>
-<span id="cb56-17"><a href="what-did-we-accomplish.html#cb56-17"></a><span class="st">    </span><span class="kw">tab_footnote</span>(</span>
-<span id="cb56-18"><a href="what-did-we-accomplish.html#cb56-18"></a>      <span class="dt">footnote =</span> <span class="kw">md</span>(<span class="kw">glue</span>(<span class="st">&quot;{round(p2_wt_lost_as_pct, 2)}% of the starting body weight.&quot;</span>)),</span>
-<span id="cb56-19"><a href="what-did-we-accomplish.html#cb56-19"></a>      <span class="dt">locations =</span> <span class="kw">cells_body</span>(<span class="dt">columns =</span> (P2_NAME), <span class="dt">rows =</span> <span class="dv">5</span></span>
-<span id="cb56-20"><a href="what-did-we-accomplish.html#cb56-20"></a>    )) <span class="op">%&gt;%</span></span>
-<span id="cb56-21"><a href="what-did-we-accomplish.html#cb56-21"></a><span class="st">    </span><span class="kw">tab_footnote</span>(</span>
-<span id="cb56-22"><a href="what-did-we-accomplish.html#cb56-22"></a>      <span class="dt">footnote =</span> <span class="kw">md</span>(<span class="kw">glue</span>(<span class="st">&quot;{round(p1_wt_lost_as_pct, 2)}% of the starting body weight.&quot;</span>)),</span>
-<span id="cb56-23"><a href="what-did-we-accomplish.html#cb56-23"></a>      <span class="dt">locations =</span> <span class="kw">cells_body</span>(<span class="dt">columns =</span> (P1_NAME), <span class="dt">rows =</span> <span class="dv">5</span></span>
-<span id="cb56-24"><a href="what-did-we-accomplish.html#cb56-24"></a>    ))</span></code></pre></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tjkyrywddg .gt_table {
+#xwaoutdsej .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -325,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_heading {
+#xwaoutdsej .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -337,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_title {
+#xwaoutdsej .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -347,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#tjkyrywddg .gt_subtitle {
+#xwaoutdsej .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -357,13 +237,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#tjkyrywddg .gt_bottom_border {
+#xwaoutdsej .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_col_headings {
+#xwaoutdsej .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -378,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_col_heading {
+#xwaoutdsej .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -398,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#tjkyrywddg .gt_column_spanner_outer {
+#xwaoutdsej .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -410,15 +290,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#tjkyrywddg .gt_column_spanner_outer:first-child {
+#xwaoutdsej .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tjkyrywddg .gt_column_spanner_outer:last-child {
+#xwaoutdsej .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tjkyrywddg .gt_column_spanner {
+#xwaoutdsej .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -430,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#tjkyrywddg .gt_group_heading {
+#xwaoutdsej .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -452,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#tjkyrywddg .gt_empty_group_heading {
+#xwaoutdsej .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -467,15 +347,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#tjkyrywddg .gt_from_md > :first-child {
+#xwaoutdsej .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tjkyrywddg .gt_from_md > :last-child {
+#xwaoutdsej .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tjkyrywddg .gt_row {
+#xwaoutdsej .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -494,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#tjkyrywddg .gt_stub {
+#xwaoutdsej .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -506,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-left: 12px;
 }
 
-#tjkyrywddg .gt_summary_row {
+#xwaoutdsej .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -516,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#tjkyrywddg .gt_first_summary_row {
+#xwaoutdsej .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -526,7 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_grand_summary_row {
+#xwaoutdsej .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -536,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#tjkyrywddg .gt_first_grand_summary_row {
+#xwaoutdsej .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -546,11 +426,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_striped {
+#xwaoutdsej .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tjkyrywddg .gt_table_body {
+#xwaoutdsej .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -559,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_footnotes {
+#xwaoutdsej .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -573,13 +453,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_footnote {
+#xwaoutdsej .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tjkyrywddg .gt_sourcenotes {
+#xwaoutdsej .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -593,46 +473,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#tjkyrywddg .gt_sourcenote {
+#xwaoutdsej .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tjkyrywddg .gt_left {
+#xwaoutdsej .gt_left {
   text-align: left;
 }
 
-#tjkyrywddg .gt_center {
+#xwaoutdsej .gt_center {
   text-align: center;
 }
 
-#tjkyrywddg .gt_right {
+#xwaoutdsej .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tjkyrywddg .gt_font_normal {
+#xwaoutdsej .gt_font_normal {
   font-weight: normal;
 }
 
-#tjkyrywddg .gt_font_bold {
+#xwaoutdsej .gt_font_bold {
   font-weight: bold;
 }
 
-#tjkyrywddg .gt_font_italic {
+#xwaoutdsej .gt_font_italic {
   font-style: italic;
 }
 
-#tjkyrywddg .gt_super {
+#xwaoutdsej .gt_super {
   font-size: 65%;
 }
 
-#tjkyrywddg .gt_footnote_marks {
+#xwaoutdsej .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="tjkyrywddg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="xwaoutdsej" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="3" class="gt_heading gt_title gt_font_normal" style><strong>Important Metrics</strong></th>
@@ -708,6 +588,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </tr>
   </tfoot>
 </table></div>
+<p>So net-net in about 7 months, I lost about 20% of my body weight and Nidhi lost about 15%. Not too bad. In terms of how far we have progressed compared to the goals we started with, I have some more miles to go while Nidhi is almost there.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="what-did-we-accomplish.html#cb55-1"></a>df2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(P1_NAME, P2_NAME),</span>
+<span id="cb55-2"><a href="what-did-we-accomplish.html#cb55-2"></a>                  <span class="dt">title =</span> <span class="kw">c</span>(P1_NAME, P2_NAME),</span>
+<span id="cb55-3"><a href="what-did-we-accomplish.html#cb55-3"></a>                  <span class="dt">group =</span> <span class="kw">c</span>(<span class="kw">ifelse</span>(p1_target_achieved_pct <span class="op">&gt;=</span><span class="st"> </span><span class="dv">75</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>),</span>
+<span id="cb55-4"><a href="what-did-we-accomplish.html#cb55-4"></a>                            <span class="kw">ifelse</span>(p2_target_achieved_pct <span class="op">&gt;=</span><span class="st"> </span><span class="dv">75</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;orange&quot;</span>)),</span>
+<span id="cb55-5"><a href="what-did-we-accomplish.html#cb55-5"></a>                  <span class="dt">percentage =</span> <span class="kw">c</span>(p1_target_achieved_pct<span class="op">/</span><span class="dv">100</span>, p2_target_achieved_pct<span class="op">/</span><span class="dv">100</span>),</span>
+<span id="cb55-6"><a href="what-did-we-accomplish.html#cb55-6"></a>                  <span class="dt">label =</span> <span class="kw">c</span>(<span class="kw">glue</span>(<span class="st">&quot;{round(p1_target_achieved_pct, 2)}%&quot;</span>),</span>
+<span id="cb55-7"><a href="what-did-we-accomplish.html#cb55-7"></a>                            <span class="kw">glue</span>(<span class="st">&quot;{round(p2_target_achieved_pct, 2)}%&quot;</span>)))</span>
+<span id="cb55-8"><a href="what-did-we-accomplish.html#cb55-8"></a>                  </span>
+<span id="cb55-9"><a href="what-did-we-accomplish.html#cb55-9"></a><span class="kw">ggplot</span>(df2, <span class="kw">aes</span>(<span class="dt">fill =</span> group, <span class="dt">ymax =</span> percentage, <span class="dt">ymin =</span> <span class="dv">0</span>, <span class="dt">xmax =</span> <span class="dv">2</span>, <span class="dt">xmin =</span> <span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb55-10"><a href="what-did-we-accomplish.html#cb55-10"></a><span class="st">  </span><span class="kw">geom_rect</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span><span class="dv">1</span>, <span class="dt">ymin=</span><span class="dv">0</span>, <span class="dt">xmax=</span><span class="dv">2</span>, <span class="dt">xmin=</span><span class="dv">1</span>), <span class="dt">fill =</span><span class="st">&quot;#ece8bd&quot;</span>) <span class="op">+</span></span>
+<span id="cb55-11"><a href="what-did-we-accomplish.html#cb55-11"></a><span class="st">  </span><span class="kw">geom_rect</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb55-12"><a href="what-did-we-accomplish.html#cb55-12"></a><span class="st">  </span><span class="kw">coord_polar</span>(<span class="dt">theta =</span> <span class="st">&quot;y&quot;</span>,<span class="dt">start=</span><span class="op">-</span>pi<span class="op">/</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>)) <span class="op">+</span></span>
+<span id="cb55-13"><a href="what-did-we-accomplish.html#cb55-13"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="dv">0</span>, <span class="dt">y =</span> <span class="dv">0</span>, <span class="dt">label =</span> label, <span class="dt">colour=</span>group), <span class="dt">size=</span><span class="fl">6.5</span>, <span class="dt">family=</span><span class="st">&quot;Poppins SemiBold&quot;</span>) <span class="op">+</span></span>
+<span id="cb55-14"><a href="what-did-we-accomplish.html#cb55-14"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="fl">1.5</span>, <span class="dt">y=</span><span class="fl">1.5</span>, <span class="dt">label=</span>title), <span class="dt">family=</span><span class="st">&quot;Poppins Light&quot;</span>, <span class="dt">size=</span><span class="fl">4.2</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb55-15"><a href="what-did-we-accomplish.html#cb55-15"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>title, <span class="dt">ncol =</span> <span class="dv">5</span>) <span class="op">+</span></span>
+<span id="cb55-16"><a href="what-did-we-accomplish.html#cb55-16"></a><span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span></span>
+<span id="cb55-17"><a href="what-did-we-accomplish.html#cb55-17"></a><span class="st">  </span><span class="kw">scale_fill_tableau</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb55-18"><a href="what-did-we-accomplish.html#cb55-18"></a><span class="st">  </span><span class="co">#scale_fill_manual(values = c(&quot;red&quot;=&quot;#C9146C&quot;, &quot;orange&quot;=&quot;#DA9112&quot;, &quot;green&quot;=&quot;#129188&quot;)) +</span></span>
+<span id="cb55-19"><a href="what-did-we-accomplish.html#cb55-19"></a><span class="st">  </span><span class="co">#scale_colour_manual(values = c(&quot;red&quot;=&quot;#C9146C&quot;, &quot;orange&quot;=&quot;#DA9112&quot;, &quot;green&quot;=&quot;#129188&quot;)) +</span></span>
+<span id="cb55-20"><a href="what-did-we-accomplish.html#cb55-20"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">strip.background =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb55-21"><a href="what-did-we-accomplish.html#cb55-21"></a>        <span class="dt">strip.text.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></span>
+<span id="cb55-22"><a href="what-did-we-accomplish.html#cb55-22"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill=</span><span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb55-23"><a href="what-did-we-accomplish.html#cb55-23"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">colour=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb55-24"><a href="what-did-we-accomplish.html#cb55-24"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="kw">glue</span>(<span class="st">&quot;How much of the weight loss goal has been accomplished as of {max(df_tidy$Date, na.rm=TRUE)}?&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
 </div>
             </section>
