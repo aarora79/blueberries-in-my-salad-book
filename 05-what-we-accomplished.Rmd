@@ -1,1 +1,129 @@
-# What we accomplished
+# What did we accomplish?
+
+I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the bad in a better shape are important goals, so how did we fare on these?
+
+
+```{r}
+# we want to create a dataframe which contain multiple different metrics which can all
+  # be displayed in one single table. We do this by creating a single row dataframe for each
+  # metric of interest and then row binding (concatenating) each of these individual dataframes.
+    
+  # starting weight. Since the weight loss dataframe is sorted
+  # in asc order of the date so the first date for each group (name in this case)
+  # is automatically the row that contains the starting weight. This way
+  # we have a two row dataframe which we can spread to convert to a single row dataframe
+  # such that the group i.e. name of person becomes a column name and then we add a new column
+  # saying this is the metric that this single row dataframe is tracking. This same strategy
+  # of using spread and adding a metric column is followed for all individual dataframes.
+  df_starting_wt <- df_wt_loss %>%
+    mutate(rn=row_number()) %>%
+    filter(rn==1) %>%
+    mutate(value=as.character(value)) %>%
+    select(name, value) %>%
+    spread(name, value) %>%
+    mutate(Metric="Starting Weight (lb)") %>%
+    select(Metric, everything())
+  
+  # current weight dataframe  
+  df_curr_wt <- df_wt_loss %>%
+    mutate(rn=row_number()) %>%
+    filter(rn==max(rn)) %>%
+    mutate(value=as.character(value)) %>%
+    select(name, value) %>%
+    spread(name, value) %>%
+    mutate(Metric="Current Weight (lb)") %>%
+    select(Metric, everything())
+  
+  # weight loss summary i.e. how much have we lost  
+  df_wt_loss_summary <- df_wt_loss %>%
+    mutate(rn=row_number()) %>%
+    filter(rn==1 | rn==max(rn)) %>%
+    mutate(total_wt_loss = as.character(-1*(value-lag(value)))) %>%
+    drop_na() %>%
+    select(name, total_wt_loss) %>%
+    spread(name, total_wt_loss) %>%
+    mutate(Metric="Total weight loss (lb)") %>%
+    select(Metric, everything())
+  
+  # total duration  
+  df_duration_summary <- df_wt_loss %>%
+    mutate(rn=row_number()) %>%
+    filter(rn==1 | rn==max(rn)) %>%
+    mutate(days_since_start = as.character((Date-lag(Date)))) %>%
+    drop_na() %>%
+    select(name, days_since_start) %>%
+    spread(name, days_since_start) %>%
+    mutate(Metric="Days since start") %>%
+    select(Metric, everything())
+  
+  # duration for losing the last 10 pounds
+  # this is a tricky one, trying to do everythingin a single dplyr pipeline
+  # what we do is as follows: calc the cumulative loss from the latest date
+  # and then assign a row number, the rn==1 corresponds to latest date so we
+  # want that entry, then we want to find the first entry for which cumul loss >= (say) 10 pounds
+  # so we use filter to keep either rn==1 or cumul_loss >= 10, but we only want to keep
+  # the first entry where cumul loss beame >=10 so we assign another
+  # row number and now we want to the first two rows and then take a diff of the two
+  # rows to get number of days. Best to run this outside of shiny to understand.
+  df_days_for_last_n_pounds <- df_tidy %>%
+    filter(metric=="Weight") %>%
+    select(name, Date, value) %>%
+    group_by(name) %>%
+    arrange(desc(Date), .by_group=TRUE) %>%
+    mutate(loss_per_day = value-lag(value, 1)) %>%
+    drop_na() %>%
+    mutate(cumul_loss = cumsum(loss_per_day)) %>%
+    arrange(desc(Date)) %>%
+    mutate(rn=row_number()) %>%
+    filter(cumul_loss >= N_FOR_LAST_N_POUNDS_OF_INTREST | rn==1) %>%
+    mutate(rn2=row_number()) %>%
+    filter(rn==1 | rn2==2) %>%
+    select(name, Date) %>%
+    mutate(days_taken_to_lost_last_n_pounds = as.character(-1*(Date-lag(Date)))) %>%
+    drop_na() %>%
+    select(name, days_taken_to_lost_last_n_pounds) %>%
+    ungroup() %>%
+    spread(name, days_taken_to_lost_last_n_pounds) %>%
+    mutate(Metric=glue("Days taken to lose last {N_FOR_LAST_N_POUNDS_OF_INTREST} pounds")) %>%
+    select(Metric, everything())
+  
+  # which month did we have the max weight loss (remember weight loss has already been converted to a positive value
+  # so loss is +ve and gain is -ve at this point)
+  df_best_wt_loss_month <- df_wt_loss %>%
+    mutate(m = MONTH_ABB[month(Date)]) %>%
+    group_by(name, m) %>%
+    summarize(total_wt_loss = sum(loss_per_day)) %>%
+    filter(total_wt_loss == max(total_wt_loss, na.rm=TRUE)) %>%
+    mutate(best_wt_loss_month = paste0(m, ", ", round(total_wt_loss, 2), " lb")) %>%
+    select(name, best_wt_loss_month) %>%
+    ungroup() %>%
+    spread(name,best_wt_loss_month) %>%
+    mutate(Metric="Best Weight loss month") %>%
+    select(Metric, everything())
+  
+  
+  # join all the dataframes and display them in the table
+  df_imp_metrics <- bind_rows(df_duration_summary,
+            df_days_for_last_n_pounds,
+            df_starting_wt,
+            df_curr_wt,
+            df_wt_loss_summary,
+            df_best_wt_loss_month)
+
+  gt(df_imp_metrics) %>%
+    tab_header(
+      title = md("**Important Metrics**"),
+      subtitle = md("Key data points that describe the journey")
+    )  %>%
+    tab_source_note(
+      source_note = md(CAPTION)
+    ) %>%
+    tab_footnote(
+      footnote = md(glue("{round(p2_wt_lost_as_pct, 2)}% of the starting body weight.")),
+      locations = cells_body(columns = (P2_NAME), rows = 5
+    )) %>%
+    tab_footnote(
+      footnote = md(glue("{round(p1_wt_lost_as_pct, 2)}% of the starting body weight.")),
+      locations = cells_body(columns = (P1_NAME), rows = 5
+    ))
+```

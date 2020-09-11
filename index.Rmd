@@ -9,6 +9,7 @@ description: "This book describes a journey that I undertook with my wife to nur
 ---
 
 ```{r setup=TRUE}
+library(gt)
 library(xts)
 library(zoo)
 library(dplyr)
