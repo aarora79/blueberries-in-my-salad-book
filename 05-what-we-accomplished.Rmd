@@ -1,6 +1,6 @@
 # What did we accomplish?
 
-I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the bad in a better shape are important goals, so how did we fare on these?
+I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
 
 
 ```{r echo=FALSE}
@@ -128,6 +128,8 @@ I have said this earlier in this book, my initial goal for meeting with a traine
     ))
 ```
 
+## Percentages are revealing
+
 So net-net in about 7 months, I lost about 20% of my body weight and Nidhi lost about 15%. Not too bad. In terms of how far we have progressed compared to the goals we started with, I have some more miles to go while Nidhi is almost there.
 
 ```{r echo=FALSE}
@@ -157,3 +159,45 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
   labs(title=glue("How much of the weight loss goal has been accomplished as of {max(df_tidy$Date, na.rm=TRUE)}?"))
 
 ```
+
+## Changes in other biometrics
+
+Along with the body weight, other metrics also saw significant change. This is seen in the following charts. BMI is widely used (I suppose accepted as well) measurement to determine if someone is healthy, obese or overweight. We saw reduction in BMI as well which as expected is correlated to the reduction in weight. NIH guidelines for BMI are available ![here](https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf) for reference.
+
+All measurements in the charts below were done automatically as part of the daily metrics measured by the scale and synched with our phone. This made it really easy to collect and analyze this data.
+
+```{r echo=FALSE}
+  df_tidy %>%
+  ggplot(aes(x=Date, y=value, col=name)) +
+  geom_line() +
+  facet_wrap(~metric, scales = "free_y") + 
+  theme_fivethirtyeight() +
+  xlab("") +
+  labs(title=glue(MAIN_PAGE_CHART_TITLE),
+       subtitle=glue("Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
+       caption=CAPTION) + 
+  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
+  scale_color_tableau()
+```
+
+## Body measurements
+
+Weight and BMI is not the only metric we tracked, these metrics are often times all we think in terms of measuring but there is more. Just as the proof of the pudding is in the eating, the proof of the weight loss is in the wearing (of clothes). As we kept on making progress in our journey, the clothes started fitting well at first, then getting loose and the finally it reached a point where most of our old clothes were just to big and this necessitated a wardrobe refresh. A happy problem to have.
+
+We tracked this by doing body measurements once every few months. The charts below have a story to tell.
+
+```{r echo=FALSE}
+df_measurements %>%
+    ggplot(aes(x=date, y=value, col=name)) +
+    geom_line() + 
+    geom_point(show.legend = FALSE) + 
+    geom_text(aes(label = paste0("(", value, ")")), nudge_y = -0.015*df_measurements$value, show.legend = FALSE) + 
+    labs(title="Changes in body measurements with diet and excercise",
+         subtitle=glue("All measurements in inches. Timespan: {min(df_measurements$date)} to {max(df_measurements$date)}"),
+         caption="Data Source: measurements done @home") +
+    facet_wrap(~measurement, scales="free") +
+    theme_fivethirtyeight() + 
+    scale_color_tableau() + 
+    theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank())
+```
+
