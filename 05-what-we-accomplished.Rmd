@@ -92,7 +92,7 @@ I have said this earlier in this book, my initial goal for meeting with a traine
   df_best_wt_loss_month <- df_wt_loss %>%
     mutate(m = MONTH_ABB[month(Date)]) %>%
     group_by(name, m) %>%
-    summarize(total_wt_loss = sum(loss_per_day)) %>%
+    summarize(total_wt_loss = sum(loss_per_day), .groups="keep") %>%
     filter(total_wt_loss == max(total_wt_loss, na.rm=TRUE)) %>%
     mutate(best_wt_loss_month = paste0(m, ", ", round(total_wt_loss, 2), " lb")) %>%
     select(name, best_wt_loss_month) %>%
@@ -130,7 +130,7 @@ I have said this earlier in this book, my initial goal for meeting with a traine
 
 So net-net in about 7 months, I lost about 20% of my body weight and Nidhi lost about 15%. Not too bad. In terms of how far we have progressed compared to the goals we started with, I have some more miles to go while Nidhi is almost there.
 
-```{r}
+```{r echo=FALSE}
 df2 <- data.frame(name = c(P1_NAME, P2_NAME),
                   title = c(P1_NAME, P2_NAME),
                   group = c(ifelse(p1_target_achieved_pct >= 75, "green", "orange"),
