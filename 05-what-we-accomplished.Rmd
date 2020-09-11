@@ -162,11 +162,11 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
 
 ## Changes in other biometrics
 
-Along with the body weight, other metrics also saw significant change. This is seen in the following charts. BMI is widely used (I suppose accepted as well) measurement to determine if someone is healthy, obese or overweight. We saw reduction in BMI as well which as expected is correlated to the reduction in weight. NIH guidelines for BMI are available ![here](https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf) for reference.
+Along with the body weight, other metrics also saw significant change. This is seen in the following charts. BMI is widely used (I suppose accepted as well) measurement to determine if someone is healthy, obese or overweight. We saw reduction in BMI as well which as expected is correlated to the reduction in weight. NIH guidelines for BMI are available [here](https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf) for reference.
 
 All measurements in the charts below were done automatically as part of the daily metrics measured by the scale and synched with our phone. This made it really easy to collect and analyze this data.
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.height=8, fig.width=12}
   df_tidy %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
@@ -186,7 +186,7 @@ Weight and BMI is not the only metric we tracked, these metrics are often times 
 
 We tracked this by doing body measurements once every few months. The charts below have a story to tell.
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.height=8, fig.width=12}
 df_measurements %>%
     ggplot(aes(x=date, y=value, col=name)) +
     geom_line() + 
