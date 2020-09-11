@@ -178,14 +178,27 @@ df_days_to_next_drop <- df_daily_wt_loss %>%
 # read the precalculated forecasts and target achievement data 
 # this is needed because shinyapps.io does not support Prophet (in the sense there are errors in installing it)
 df_forecast_p1 <- read_csv(P1_FORECAST_FPATH) %>%
-            select(y, yhat, yhat_lower, yhat_upper, ds)
+            select(y, yhat, yhat_lower, yhat_upper, ds) %>%
+            mutate(ds=as.Date(ds)) %>%
+            left_join(df_tidy %>% select(Date, metric, value, name) %>% filter(name==P1_NAME & metric == "Weight"),
+                      by = c("ds"="Date")) %>%
+            mutate(y = value, ds=ymd(ds)) %>%
+            select(-metric, -value, -name)
+
 # convert to xts as that is why dygraph likes
 df_forecast_p1 <- xts(df_forecast_p1 %>%
                         select(-ds),
                       order.by = df_forecast_p1$ds)
 df_target_achieved_p1 <- read_csv(P1_TARGET_ACHIEVED_FPATH)
 df_forecast_p2 <- read_csv(P2_FORECAST_FPATH) %>%
-            select(y, yhat, yhat_lower, yhat_upper, ds)
+            select(y, yhat, yhat_lower, yhat_upper, ds) %>%
+            mutate(ds=as.Date(ds)) %>%
+            left_join(df_tidy %>% select(Date, metric, value, name) %>% filter(name==P2_NAME & metric == "Weight"),
+                      by = c("ds"="Date")) %>%
+            mutate(y = value, ds=ymd(ds)) %>%
+            select(-metric, -value, -name)
+
+            
 df_forecast_p2 <- xts(df_forecast_p2 %>%
                         select(-ds),
                       order.by = df_forecast_p2$ds)
