@@ -170,19 +170,20 @@ All measurements in the charts below were done automatically as part of the dail
   df_tidy %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
+  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
   facet_wrap(~metric, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
   labs(title=glue(MAIN_PAGE_CHART_TITLE),
        subtitle=glue("Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
        caption=CAPTION) + 
-  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
+  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) + 
   scale_color_tableau()
 ```
 
 ## Body measurements
 
-Weight and BMI is not the only metric we tracked, these metrics are often times all we think in terms of measuring but there is more. Just as the proof of the pudding is in the eating, the proof of the weight loss is in the wearing (of clothes). As we kept on making progress in our journey, the clothes started fitting well at first, then getting loose and the finally it reached a point where most of our old clothes were just to big and this necessitated a wardrobe refresh. A happy problem to have.
+Weight and BMI is not the only metric we tracked, these metrics are often times all we think in terms of measuring but there is more. Just as the proof of the pudding is in the eating, the proof of the weight loss is in the wearing (of clothes). As we kept on making progress in our journey, the clothes started fitting well at first, then getting loose and the finally it reached a point where most of our old clothes were just too big and this necessitated a wardrobe refresh. A happy problem to have.
 
 We tracked this by doing body measurements once every few months. The charts below have a story to tell.
 
@@ -199,5 +200,37 @@ df_measurements %>%
     theme_fivethirtyeight() + 
     scale_color_tableau() + 
     theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank())
+```
+
+## A forecast and a promise
+
+As we were going through this journey, I was very eager to apply some forecasting and determine if we could project a reasonable date when we would be able to meet our weight loss target. As much as this book is not just about weight loss, there is no denying the fact that it was one of the most (if not the most) tangible outcome we were tracking towards.
+
+Once we had collected a reasonable amount of data, I used standard timeseries forecasting techniques to determine how our weights would look say 30, 90 or 180 days from the current date. I used the [Prophet](https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.) package from Facebook AI Research ([FAIR](https://github.com/facebookresearch)) to do the timeseries forecast. The results are presented below. This forecast was done on August 16, 2020 and as per this forecast we should be able to achieve our target weight in early October for Nidhi and mid-December for me.
+
+Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. Like I said, if nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here, this simple forecast is considering the weight loss as a univariate i.e. single variable timeseries, we know it is much more complicated than that. The premise is that all ecogenous factors remaining the same, this forecast should hold up.
+
+```{r echo=FALSE, fig.height=8, fig.width=12}
+dygraph(df_forecast_p1,
+          glue("Weight loss forecast for {P1_NAME}")) %>%
+    dySeries("y", label = "Actual") %>%
+    dySeries(c("yhat_lower", "yhat", "yhat_upper"), label = "Predicted") %>%
+    dyLimit(df_target_achieved_p1$target[1],
+            glue("Target: {df_target_achieved_p1$target[1]} lb, Expected date: {df_target_achieved_p1$date[1]}")) %>%
+    dyAnnotation(df_target_achieved_p1$date[1],
+             text = substr(P1_NAME, 1, 1),
+             tooltip = glue("Target: {df_target_achieved_p1$target[1]} lb, Expected date: {df_target_achieved_p1$date[1]}"))
+```
+
+```{r echo=FALSE, fig.height=8, fig.width=12}
+dygraph(df_forecast_p2,
+          glue("Weight loss forecast for {P2_NAME}")) %>%
+    dySeries("y", label = "Actual") %>%
+    dySeries(c("yhat_lower", "yhat", "yhat_upper"), label = "Predicted") %>%
+    dyLimit(df_target_achieved_p2$target[1],
+            glue("Target: {df_target_achieved_p2$target[1]} lb, Expected date: {df_target_achieved_p2$date[1]}")) %>%
+    dyAnnotation(df_target_achieved_p2$date[1],
+                 text = substr(P2_NAME, 1, 1),
+                 tooltip = glue("Target: {df_target_achieved_p2$target[1]} lb, Expected date: {df_target_achieved_p2$date[1]}"))
 ```
 
