@@ -207,10 +207,7 @@ df_forecast_p1 <- read_csv(P1_FORECAST_FPATH) %>%
             mutate(y = value, ds=ymd(ds)) %>%
             select(-metric, -value, -name)
 
-# convert to xts as that is why dygraph likes
-df_forecast_p1 <- xts(df_forecast_p1 %>%
-                        select(-ds),
-                      order.by = df_forecast_p1$ds)
+
 df_target_achieved_p1 <- read_csv(P1_TARGET_ACHIEVED_FPATH)
 df_forecast_p2 <- read_csv(P2_FORECAST_FPATH) %>%
             select(y, yhat, yhat_lower, yhat_upper, ds) %>%
@@ -225,10 +222,7 @@ df_forecast_p2 <- read_csv(P2_FORECAST_FPATH) %>%
             mutate(y = value, ds=ymd(ds)) %>%
             select(-metric, -value, -name)
 
-            
-df_forecast_p2 <- xts(df_forecast_p2 %>%
-                        select(-ds),
-                      order.by = df_forecast_p2$ds)
+
 df_target_achieved_p2 <- read_csv(P2_TARGET_ACHIEVED_FPATH)
 # read body measurements file
 df_measurements <- read_csv(MEASUREMENTS_FPATH)

@@ -222,28 +222,57 @@ Once we had collected a reasonable amount of data, I used standard timeseries fo
 Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here, this simple forecast is considering the weight loss as a univariate timeseries i.e. single variable timeseries, we know it is much more complicated than that. The premise is that all exogenous factors remaining the same, this forecast should hold up.
 
 ```{r echo=FALSE}
-dygraph(df_forecast_p1,
-          glue("Weight loss forecast for {P1_NAME}")) %>%
-    dySeries("y", label = "Actual") %>%
-    dySeries(c("yhat_lower", "yhat", "yhat_upper"), label = "Predicted") %>%
-    dyLimit(df_target_achieved_p1$target[1],
-            glue("Target: {df_target_achieved_p1$target[1]} lb, Expected date: {df_target_achieved_p1$date[1]}")) %>%
-    dyAnnotation(df_target_achieved_p1$date[1],
-             text = substr(P1_NAME, 1, 1),
-             tooltip = glue("Target: {df_target_achieved_p1$target[1]} lb, Expected date: {df_target_achieved_p1$date[1]}"))
+df_forecast_p2 %>%
+  rename(Actual=y, Forecast='yhat') %>%
+  gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%
+  ggplot(aes(x=ds, y=value, col=category)) +
+  geom_ribbon(aes(ymin=yhat_lower, ymax=yhat_upper), alpha=.0625, show.legend = FALSE, col=I("lightblue"), fill=I("lightblue")) +
+  geom_line() + 
+  annotate("point", x = df_target_achieved_p2$date, y = df_target_achieved_p2$target, colour = "darkgreen", size = 1.5, alpha=1) +
+  annotate(
+    geom = "curve", xend = df_target_achieved_p2$date, yend = df_target_achieved_p2$target, x = df_target_achieved_p2$date+2, y = df_target_achieved_p2$target+2, 
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate(geom = "text", x = df_target_achieved_p2$date+2, y = df_target_achieved_p2$target+2, label = glue("Target: {df_target_achieved_p2$target} lb, Date: {df_target_achieved_p2$date}"), hjust = "left") +
+  scale_color_tableau() + 
+  scale_fill_tableau() + 
+  theme_fivethirtyeight() +
+  scale_x_date(date_breaks = "3 month", date_labels = "%b %Y") +
+  scale_y_continuous(breaks = seq(180, 260, by = 10)) + 
+  xlab("") +
+  labs(title=glue("When will Amit achieve his target weight?"),
+       subtitle=glue("Light blue lines show lower and upper ranges for forecast. Forecast done on {FORECAST_DATE}")) +
+  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
+  theme(axis.title = element_text()) + ylab('Weight (lb)')  
+
+
 ```
   
   
   
 ```{r echo=FALSE}
-dygraph(df_forecast_p2,
-          glue("Weight loss forecast for {P2_NAME}")) %>%
-    dySeries("y", label = "Actual") %>%
-    dySeries(c("yhat_lower", "yhat", "yhat_upper"), label = "Predicted") %>%
-    dyLimit(df_target_achieved_p2$target[1],
-            glue("Target: {df_target_achieved_p2$target[1]} lb, Expected date: {df_target_achieved_p2$date[1]}")) %>%
-    dyAnnotation(df_target_achieved_p2$date[1],
-                 text = substr(P2_NAME, 1, 1),
-                 tooltip = glue("Target: {df_target_achieved_p2$target[1]} lb, Expected date: {df_target_achieved_p2$date[1]}"))
+df_forecast_p1 %>%
+  rename(Actual=y, Forecast='yhat') %>%
+  gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%
+  ggplot(aes(x=ds, y=value, col=category)) +
+  geom_ribbon(aes(ymin=yhat_lower, ymax=yhat_upper), alpha=.0625, show.legend = FALSE, col=I("lightblue"), fill=I("lightblue")) +
+  geom_line() + 
+  annotate("point", x = df_target_achieved_p1$date, y = df_target_achieved_p1$target, colour = "darkgreen", size = 1.5, alpha=1) +
+  annotate(
+    geom = "curve", xend = df_target_achieved_p1$date, yend = df_target_achieved_p1$target, x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, 
+    curvature = .3, arrow = arrow(length = unit(2, "mm"))
+  ) +
+  annotate(geom = "text", x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, label = glue("Target: {df_target_achieved_p1$target} lb, Date: {df_target_achieved_p1$date}"), hjust = "left") +
+  scale_color_tableau() + 
+  scale_fill_tableau() + 
+  theme_fivethirtyeight() +
+  scale_x_date(date_breaks = "3 month", date_labels = "%b %Y") +
+  scale_y_continuous(breaks = seq(100, 160, by = 5)) + 
+  xlab("") +
+  labs(title=glue("When will Nidhi achieve her target weight?"),
+       subtitle=glue("Light blue lines show lower and upper ranges for forecast. Forecast done on {FORECAST_DATE}")) +
+  theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
+  theme(axis.title = element_text()) + ylab('Weight (lb)')  
+
 ```
 
