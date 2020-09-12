@@ -233,7 +233,7 @@ df_forecast_p2 %>%
     geom = "curve", xend = df_target_achieved_p2$date, yend = df_target_achieved_p2$target, x = df_target_achieved_p2$date+2, y = df_target_achieved_p2$target+4, 
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
   ) +
-  annotate(geom = "text", x = df_target_achieved_p2$date+3, y = df_target_achieved_p2$target+4, label = glue("(Dt: {df_target_achieved_p2$date}, Wt: {df_target_achieved_p2$target} lb)"), hjust = "left") +
+  annotate(geom = "text", x = df_target_achieved_p2$date+3, y = df_target_achieved_p2$target+4, label = glue("(Dt: {df_target_achieved_p2$date}, Wt: {df_target_achieved_p2$target} lb)"), size=7, hjust = "left") +
   scale_color_tableau() + 
   scale_fill_tableau() + 
   theme_fivethirtyeight() +
@@ -263,7 +263,7 @@ df_forecast_p1 %>%
     geom = "curve", xend = df_target_achieved_p1$date, yend = df_target_achieved_p1$target, x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, 
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
   ) +
-  annotate(geom = "text", x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, label = glue("(Dt: {df_target_achieved_p1$date}, Wt: {df_target_achieved_p1$target} lb)"), hjust = "left") +
+  annotate(geom = "text", x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, label = glue("(Dt: {df_target_achieved_p1$date}, Wt: {df_target_achieved_p1$target} lb)"), size=7, hjust = "left") +
   scale_color_tableau() + 
   scale_fill_tableau() + 
   theme_fivethirtyeight() +
