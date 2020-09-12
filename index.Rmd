@@ -74,10 +74,9 @@ flog.info(glue("params used:
                 DATA_DIR={DATA_DIR},
                 P1_NAME={P1_NAME},
                 P2_NAME={P2_NAME},
-                P1_DATA_FPATH={P1_DATA_FPATH},
-                P2_DATA_FPATH={P2_DATA_FPATH},
+                P1_DATA_URL={P1_DATA_URL},
+                P2_DATA_URL={P2_DATA_URL},
                 CAPTION={CAPTION},
-                IMPORTANT_DATES_FNAME={IMPORTANT_DATES_FNAME},
                 IMPORTANT_DATES_FPATH={IMPORTANT_DATES_FPATH},
                 NUDGE_X={NUDGE_X},
                 NUDGE_Y={NUDGE_Y},
@@ -94,7 +93,7 @@ df_P1 <- read_csv(P1_DATA_URL) %>%
   arrange(Date) %>%
   mutate(Date=ymd(Date)) %>%
   filter(Date >= START_DATE)
-flog.info(glue("read data for {P1_NAME} from {P1_DATA_FPATH}, shape of dataframe={nrow(df_P1)}x{ncol(df_P1)}"), name=LOGGER)
+flog.info(glue("read data for {P1_NAME} from {P1_DATA_URL}, shape of dataframe={nrow(df_P1)}x{ncol(df_P1)}"), name=LOGGER)
 flog.info(head(df_P1), name=LOGGER)
 flog.info(summary(df_P1), name=LOGGER)
 # read the raw data for person 2, ultimately we want to have this dashboard work the same way
@@ -105,15 +104,15 @@ if(!is.na(P2_NAME)) {
     arrange(Date) %>%
     mutate(Date=ymd(Date)) %>%
     filter(Date >= START_DATE)
-  flog.info(glue("read data for {P2_NAME} from {P2_DATA_FPATH}, shape of dataframe={nrow(df_P2)}x{ncol(df_P2)}"), name=LOGGER)
+  flog.info(glue("read data for {P2_NAME} from {P2_DATA_URL}, shape of dataframe={nrow(df_P2)}x{ncol(df_P2)}"), name=LOGGER)
   flog.info(head(df_P2), name=LOGGER)  
   flog.info(summary(df_P2), name=LOGGER)  
 }
 # read the important dates csv file. This is needed because we would like to annotate this journey
 # so that we can say oh right there was an increase in weight for these days and it followed a birthday party, for example...
-if(!is.na(IMPORTANT_DATES_FNAME)) {
+if(!is.na(IMPORTANT_DATES_FPATH)) {
   important_dates <- read_csv(IMPORTANT_DATES_FPATH)
-  flog.info(glue("read data for important dates from {IMPORTANT_DATES_FNAME},
+  flog.info(glue("read data for important dates from {IMPORTANT_DATES_FPATH},
                   shape of dataframe={nrow(important_dates)}x{ncol(important_dates)}"), name=LOGGER)
   flog.info(head(important_dates), name=LOGGER)  
   flog.info(summary(important_dates), name=LOGGER)  

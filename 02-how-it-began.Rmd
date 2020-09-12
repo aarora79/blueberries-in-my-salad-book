@@ -46,7 +46,7 @@ df_starting_and_target_weights %>%
             #nudge_y = 0.015*df_starting_and_target_weights$value,
             show.legend = FALSE) + 
   labs(title="How things stood the day we started",
-       subtitle=glue("All weights in pounds. Starting date: {min(df_p2$Date, na.rm=TRUE)}."),
+       subtitle=glue("All weights in pounds. Starting date: {min(df_P2$Date, na.rm=TRUE)}."),
        caption="Note: Ideal weight as per NIH guidelines.") +
   theme_fivethirtyeight() + 
   scale_fill_tableau() + 
