@@ -92,8 +92,6 @@ if(!is.na(IMPORTANT_DATES_FPATH)) {
 # combine the dataframes, we want to do a side by side analysis for both people
 if(!is.na(df_P2)) {
   df <- bind_rows(df_P1, df_P2)
-  (df) %>%
-    sample_n(5)
 } else {
   df <- df_P1
 }
@@ -105,8 +103,7 @@ flog.info("converting the data to tidy format", name=LOGGER)
 df_tidy <- df %>%
   gather(metric, value, -Date, -name) %>%
   mutate(value=as.numeric(value))
-df_tidy %>%
-  sample_n(5)
+
 # determine the per day weight loss dataframe by
 # calculating loss as weight - the one previous value of weight
 # this is done by first grouping the dataframe by name since it has

@@ -156,17 +156,14 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
   geom_rect(aes(ymax=1, ymin=0, xmax=2, xmin=1), fill ="#ece8bd") +
   geom_rect() + 
   coord_polar(theta = "y",start=-pi/2) + xlim(c(0, 2)) + ylim(c(0,2)) +
-  #geom_text(aes(x = 0, y = 0, label = label, colour=group), size=6.5, family="Poppins SemiBold") +
-  #geom_text(aes(x=1.5, y=1.5, label=title), family="Poppins Light", size=4.2) + 
   geom_text(aes(x = 0, y = 0, label = label, colour=group), size=6.5) +
-  geom_text(aes(x=1.5, y=1.5, label=title), size=4.2) + 
+  geom_text(aes(x=1.5, y=1.5, label=title), size=6.5) + 
   facet_wrap(~title, ncol = 5) +
   theme_void() +
   scale_fill_tableau() + 
-  #scale_fill_manual(values = c("red"="#C9146C", "orange"="#DA9112", "green"="#129188")) +
-  #scale_colour_manual(values = c("red"="#C9146C", "orange"="#DA9112", "green"="#129188")) +
   theme(strip.background = element_blank(),
         strip.text.x = element_blank()) +
+  theme(plot.title = element_text(size=20)) +
   guides(fill=FALSE) +
   guides(colour=FALSE) + 
   labs(title=glue("How much of the weight loss goal has been accomplished as of {max(df_tidy$Date, na.rm=TRUE)}?"))
@@ -188,7 +185,7 @@ All measurements in the charts below were done automatically as part of the dail
   theme_fivethirtyeight() +
   xlab("") +
   labs(title=glue(MAIN_PAGE_CHART_TITLE),
-       subtitle=glue("Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
+       subtitle=glue("Tracking weight and other biometrics, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}."),
        caption=CAPTION) + 
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) + 
   scale_color_tableau()
@@ -206,8 +203,8 @@ df_measurements %>%
     geom_line() + 
     geom_point(show.legend = FALSE) + 
     geom_text(aes(label = paste0("(", value, ")")), nudge_y = -0.015*df_measurements$value, show.legend = FALSE) + 
-    labs(title="Changes in body measurements with diet and excercise",
-         subtitle=glue("All measurements in inches. Timespan: {min(df_measurements$date)} to {max(df_measurements$date)}"),
+    labs(title="Changes in body measurements with diet & exercise",
+         subtitle=glue("All measurements in inches. Timespan: {min(df_measurements$date)} to {max(df_measurements$date)}."),
          caption="Data Source: measurements done @home") +
     facet_wrap(~measurement, scales="free") +
     theme_fivethirtyeight() + 
@@ -244,7 +241,8 @@ df_forecast_p2 %>%
   scale_y_continuous(breaks = seq(180, 260, by = 10)) + 
   xlab("") +
   labs(title=glue("When will Amit achieve his target weight?"),
-       subtitle=glue("Light blue lines show the error range for the forecast. Forecast done on {FORECAST_DATE}.")) +
+       subtitle=glue("Forecast done on {FORECAST_DATE}."),
+       caption="Light blue lines show the error range for the forecast.") +
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
   theme(axis.title = element_text()) + ylab('Weight (lb)')  
 
@@ -273,7 +271,8 @@ df_forecast_p1 %>%
   scale_y_continuous(breaks = seq(100, 160, by = 5)) + 
   xlab("") +
   labs(title=glue("When will Nidhi achieve her target weight?"),
-       subtitle=glue("Light blue lines show the error range for the forecast. Forecast done on {FORECAST_DATE}.")) +
+       subtitle=glue("Forecast done on {FORECAST_DATE}."),
+       caption="Light blue lines show the error range for the forecast.") +
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
   theme(axis.title = element_text()) + ylab('Weight (lb)')
 ```
