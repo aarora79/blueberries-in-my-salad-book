@@ -3,7 +3,7 @@
 I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
 
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 # we want to create a dataframe which contain multiple different metrics which can all
   # be displayed in one single table. We do this by creating a single row dataframe for each
   # metric of interest and then row binding (concatenating) each of these individual dataframes.
@@ -92,7 +92,7 @@ I have said this earlier in this book, my initial goal for meeting with a traine
   df_best_wt_loss_month <- df_wt_loss %>%
     mutate(m = MONTH_ABB[month(Date)]) %>%
     group_by(name, m) %>%
-    summarize(total_wt_loss = sum(loss_per_day), .groups="drop") %>%
+    summarize(total_wt_loss = sum(loss_per_day)) %>%
     filter(total_wt_loss == max(total_wt_loss, na.rm=TRUE)) %>%
     mutate(best_wt_loss_month = paste0(m, ", ", round(total_wt_loss, 2), " lb")) %>%
     select(name, best_wt_loss_month) %>%
