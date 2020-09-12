@@ -25,18 +25,7 @@ Breakfast was mostly eggs, in every form. Egg fry (use Ghee or kerrygold butter)
 
 Here are some pictures. I would note that everyday the omlette may not have looked as good but was pretty close. It is real hard work to make breakfast this good everyday and the credit for this is one person's and one person's alone i.e. Nidhi :).
 
-
-![Humble ingredients for the everyday omlette](pictures/humble-ingredients-for-the-everyday-omlette.jpg)
-
-![The world famous boiled eggs](pictures/the-world-famous-boiled-eggs.jpg)
-
-![A workman's breakfast](pictures/a-workmans-breakfast.jpg)
-```{r}
-# ![Acai Bowl]()
-
-# ![Almond Flour Pancakes]()
-
-```
+![A clean breakfast](pictures/breakfast.JPG)
 
 ## A lunch we really love
 
@@ -68,29 +57,9 @@ Now we really make an effort to wrap up dinner by 7.30pm, maybe 8pm at the lates
 
 So, what did we have for dinner, lots of different types of food and i would happily say lots of tasty food. There is a lot of grilled food as you would notice. I did not realize this until i wrote this, a lot of our dinner is grilled either outside or in the oven. There are vegetarian options also in this and let me say it for the record the vegetarian options were as tasty as the meats.
 
+![A clean dinner](pictures/dinner1.JPG)
 
-```{r echo=FALSE, results='asis', fig.height=4, fig.width=4}
-suppressMessages(library(purrr))
-suppressMessages(library(stringr))
-suppressMessages(library(tufte))
-suppressMessages(library(formatR))
-
-PICTURES_DIR <- "pictures"
-DINNER_PICTURES_DIR <- file.path(PICTURES_DIR, "dinner")
-
-dinner_pictures <- list.files(DINNER_PICTURES_DIR)
-titles <- unlist(map(dinner_pictures, function(x) {
-  paste0(str_to_title(str_split(tools::file_path_sans_ext(x), "-", simplify=TRUE)), collapse=" ")
-}))
-
-files <- list.files(path = DINNER_PICTURES_DIR, 
-                    pattern = "*.jpg|*.JPG|*.jpg",
-                    full.names = TRUE)
-
-cat(sprintf('![%s](%s)', titles, files), sep = '\n\n')
-
-```  
-
+![More clean dinner](pictures/dinner2.JPG)
 
 ## The results
 
