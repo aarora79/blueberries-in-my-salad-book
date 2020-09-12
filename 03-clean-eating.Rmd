@@ -59,7 +59,10 @@ Now we really make an effort to wrap up dinner by 7.30pm, maybe 8pm at the lates
 
 So, what did we have for dinner, lots of different types of food and i would happily say lots of tasty food. There is a lot of grilled food as you would notice. I did not realize this until i wrote this, a lot of our dinner is grilled either outside or in the oven. There are vegetarian options also in this and let me say it for the record the vegetarian options were as tasty as the meats.
 
-new way
+new way2
+
+<img src="pictures/dinner/grilled-veggies.png" width="50" height="50" />
+<img src="pictures/dinner/grilled-brussel-sprouts.png" width="50" height="50" />
 
 ![](pictures/dinner/grilled-veggies.png) ![](pictures/dinner/grilled-brussel-sprouts.png)
 
