@@ -223,6 +223,7 @@ dygraph(df_forecast_p1,
 ```
   
   
+  
 ```{r echo=FALSE}
 dygraph(df_forecast_p2,
           glue("Weight loss forecast for {P2_NAME}")) %>%

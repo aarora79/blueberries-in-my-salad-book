@@ -120,7 +120,7 @@ df_tidy %>%
   theme(axis.title = element_text()) + ylab('Weight (lb)') +
   xlab("") +
   labs(title="How we lost the weight...",
-       subtitle=glue("Shaded area represent clean eating iterations, Timespan: {min(df_tidy$Date)} to {max(df_tidy$Date)}"),
+       subtitle=glue("Shaded area represent clean eating iterations"),
        caption=CAPTION) + 
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE), legend.title = element_blank()) + 
   scale_color_tableau() + 
