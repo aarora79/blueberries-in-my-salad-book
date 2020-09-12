@@ -1,3 +1,12 @@
+```{r include = FALSE}
+if(!knitr:::is_html_output())
+{
+  options("width"=56)
+  knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
+  knitr::opts_chunk$set(fig.pos = 'H')
+}
+```
+
 # How it began...
 
 About 3 years ago i.e. in the spring of 2017, I decided to go to the doctor and ask why do I wake up with severe dry mouth every morning? I knew I was grossly over-weight and the dry mouth had started happening a few years ago and the two could be related. I kept ignoring it for years, but it has become bad enough that I sometimes used to wake up very early in the morning because of it and had to rinse my mouth to go back to sleep. The doctor's visit was an eye opener, he said it is most certainly because you are grossly over-weight (i weighed 273 pounds) but asked a few more questions which led him to believe I had all the symptoms of sleep apnea.
@@ -44,5 +53,3 @@ df_starting_and_target_weights %>%
   scale_color_tableau() +
   theme(legend.title = element_blank(), text=element_text(size=CHART_ELEMENT_TEXT_SIZE))
 ```
-
-

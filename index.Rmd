@@ -1,14 +1,32 @@
 --- 
 title: "Blueberries in My Salad"
 author: "Amit Arora"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%B %Y')`"
 site: bookdown::bookdown_site
+output: bookdown::gitbook
 documentclass: book
 link-citations: yes
+always_allow_html: true
 description: "This book describes a journey that I undertook with my wife to nurture and nourish what is important and give up the rest. Like a salad, life may not be the most appealing lunch option but if you can keep finding the blueberries every now and again, it is both rewarding and fullfilling."
+classoption: oneside
+github-repo: aarora79/from-fat-to-fit
+linestretch: 1.15
+linkcolor: NavyBlue
+links-as-notes: true
+url: 'https\://aarora79.github.io/from-fat-to-fit/'
+twitter-handle: aarora79
 ---
 
-```{r setup=TRUE}
+```{r include = FALSE}
+if(!knitr:::is_html_output())
+{
+  options("width"=56)
+  knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
+  knitr::opts_chunk$set(fig.pos = 'H')
+}
+```
+
+```{r setup=TRUE, echo=FALSE}
 library(gt)
 library(xts)
 library(zoo)
@@ -234,5 +252,3 @@ We took daily measurements for our weight and other biometrics and they were aut
 Over time I understood that while the desire for weight loss was what got me here, but what i was really gaining was good health and strength. To reduce the benefits of what we were doing to just burning calories and losing tens of pounds now seems like a terrible underselling of the idea of fitness. The human body is a fascinating machine capable of wonderful things, good health is a state of both mind and body. Exercise and healthy eating habits help both mind and body. If you do not have any serious health issues there isn't really any excuse for not exercising regularly and eating healthy. As it is said "शरीरमाद्यं खलु धर्मसाधनम्" i.e. the body is the instrument of all good deeds.
 
 Finally, nothing in this book should be interpreted as me recommending anything, a written version of my musings is what this is. An experiment with a sample size of N=2 i.e. statistically irrelevant!
-
-

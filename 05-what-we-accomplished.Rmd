@@ -1,3 +1,12 @@
+```{r include = FALSE}
+if(!knitr:::is_html_output())
+{
+  options("width"=56)
+  knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
+  knitr::opts_chunk$set(fig.pos = 'H')
+}
+```
+
 # What did we accomplish?
 
 I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
@@ -145,8 +154,10 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
   geom_rect(aes(ymax=1, ymin=0, xmax=2, xmin=1), fill ="#ece8bd") +
   geom_rect() + 
   coord_polar(theta = "y",start=-pi/2) + xlim(c(0, 2)) + ylim(c(0,2)) +
-  geom_text(aes(x = 0, y = 0, label = label, colour=group), size=6.5, family="Poppins SemiBold") +
-  geom_text(aes(x=1.5, y=1.5, label=title), family="Poppins Light", size=4.2) + 
+  #geom_text(aes(x = 0, y = 0, label = label, colour=group), size=6.5, family="Poppins SemiBold") +
+  #geom_text(aes(x=1.5, y=1.5, label=title), family="Poppins Light", size=4.2) + 
+  geom_text(aes(x = 0, y = 0, label = label, colour=group), size=6.5) +
+  geom_text(aes(x=1.5, y=1.5, label=title), size=4.2) + 
   facet_wrap(~title, ncol = 5) +
   theme_void() +
   scale_fill_tableau() + 
