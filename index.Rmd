@@ -17,7 +17,7 @@ url: 'https\://aarora79.github.io/from-fat-to-fit/'
 twitter-handle: aarora79
 ---
 
-```{r setup=TRUE, echo=FALSE}
+```{r setup=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
 library(gt)
 library(xts)
 library(zoo)
