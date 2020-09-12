@@ -99,7 +99,6 @@ if(!is.na(df_P2)) {
 # Each observation must have its own row.
 # Each value must have its own cell.
 # see https://r4ds.had.co.nz/tidy-data.html
-flog.info("converting the data to tidy format", name=LOGGER)
 df_tidy <- df %>%
   gather(metric, value, -Date, -name) %>%
   mutate(value=as.numeric(value))
