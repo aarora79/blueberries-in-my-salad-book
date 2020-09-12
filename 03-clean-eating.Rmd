@@ -64,10 +64,10 @@ new way3
 <img src="pictures/dinner/grilled-veggies.png" width="200" height="200">Grilled Vegetables</img
 <img src="pictures/dinner/grilled-brussel-sprouts.png" width="200" height="200">Grilled Brussel Sprouts</img>
 
-<img src="pictures/dinner/salmon-fish-fry-w-salad.png" width="200" height="200">Salmon with Salad</img
+<img src="pictures/dinner/salmon-fish-fry-w-salad.png" width="200" height="200">Salmon with Salad</img>
 <img src="pictures/dinner/thai-stir-fry-w-chicken.png" width="200" height="200">Thai Stir Fry with Chicken</img>
 
-<img src="pictures/dinner/veggies-on-the-grill.png" width="200" height="200">More Grilled Vegetables</img
+<img src="pictures/dinner/veggies-on-the-grill.png" width="200" height="200">More Grilled Vegetables</img>
 <img src="pictures/dinner/chicken-wings-and-broccoli.png" width="200" height="200">Chicken Wings & Broccoli</img>
 
 ## The results
