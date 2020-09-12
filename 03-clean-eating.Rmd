@@ -75,7 +75,7 @@ titles <- unlist(map(dinner_pictures, function(x) {
 }))
 
 files <- list.files(path = DINNER_PICTURES_DIR, 
-                    pattern = "*.png",
+                    pattern = "*.png|*.JPG|*.jpg",
                     full.names = TRUE)
 
 cat(sprintf('![%s](%s)', titles, files), sep = '\n\n')
