@@ -59,17 +59,16 @@ Now we really make an effort to wrap up dinner by 7.30pm, maybe 8pm at the lates
 
 So, what did we have for dinner, lots of different types of food and i would happily say lots of tasty food. There is a lot of grilled food as you would notice. I did not realize this until i wrote this, a lot of our dinner is grilled either outside or in the oven. There are vegetarian options also in this and let me say it for the record the vegetarian options were as tasty as the meats.
 
-new way2
+new way3
 
-<img src="pictures/dinner/grilled-veggies.png" width="50" height="50" />
-<img src="pictures/dinner/grilled-brussel-sprouts.png" width="50" height="50" />
+<img src="pictures/dinner/grilled-veggies.png" width="200" height="200">Grilled Vegetables</img
+<img src="pictures/dinner/grilled-brussel-sprouts.png" width="200" height="200">Grilled Brussel Sprouts</img>
 
-![](pictures/dinner/grilled-veggies.png) ![](pictures/dinner/grilled-brussel-sprouts.png)
+<img src="pictures/dinner/salmon-fish-fry-w-salad.png" width="200" height="200">Salmon with Salad</img
+<img src="pictures/dinner/thai-stir-fry-w-chicken.png" width="200" height="200">Thai Stir Fry with Chicken</img>
 
-![](pictures/dinner/salmon-fish-fry-w-salad.png) ![](pictures/dinner/thai-stir-fry-w-chicken.png)
-
-![](pictures/dinner/veggies-on-the-grill.png) ![](pictures/dinner/chicken-wings-and-broccoli.png)
-
+<img src="pictures/dinner/veggies-on-the-grill.png" width="200" height="200">More Grilled Vegetables</img
+<img src="pictures/dinner/chicken-wings-and-broccoli.png" width="200" height="200">Chicken Wings & Broccoli</img>
 
 ## The results
 
