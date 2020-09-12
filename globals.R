@@ -22,10 +22,7 @@ P1_IDEAL_WEIGHT <- 127
 P2_TARGET_WEIGHT <- 190
 P2_IDEAL_WEIGHT <- 158
 
-#if(!knitr:::is_html_output()) {
-  CHART_ELEMENT_TEXT_SIZE <- 20
-#}
-  
+CHART_ELEMENT_TEXT_SIZE <- 30
 
 # global constants
 # most of these should be configuration parameters
