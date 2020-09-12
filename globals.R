@@ -22,9 +22,9 @@ P1_IDEAL_WEIGHT <- 127
 P2_TARGET_WEIGHT <- 190
 P2_IDEAL_WEIGHT <- 158
 
-if(!knitr:::is_html_output()) {
-  CHART_ELEMENT_TEXT_SIZE <- 25
-}
+#if(!knitr:::is_html_output()) {
+  CHART_ELEMENT_TEXT_SIZE <- 20
+#}
   
 
 # global constants
@@ -59,7 +59,6 @@ MONTH_ABB <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "O
 # charting related, how far should be the annotation from a point on the graph
 NUDGE_X <- 1
 NUDGE_Y <- 5
-CHART_ELEMENT_TEXT_SIZE <- 20
 CHART_ELEMENT_TEXT_SIZE_MOBILE <- 10
 
 MAIN_PAGE_CHART_TITLE <- "Journey to health"
