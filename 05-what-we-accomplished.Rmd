@@ -143,7 +143,7 @@ I have said this earlier in this book, my initial goal for meeting with a traine
 
 So net-net in about 7 months, I lost about 20% of my body weight and Nidhi lost about 15%. Not too bad. In terms of how far we have progressed compared to the goals we started with, I have some more miles to go while Nidhi is almost there.
 
-```{r echo=FALSE}
+```{r echo=FALSE,fig.height=10, fig.width=14}
 df2 <- data.frame(name = c(P1_NAME, P2_NAME),
                   title = c(P1_NAME, P2_NAME),
                   group = c(ifelse(p1_target_achieved_pct >= 75, "green", "orange"),
@@ -179,7 +179,7 @@ Along with the body weight, other metrics also saw significant change. This is s
 
 All measurements in the charts below were done automatically as part of the daily metrics measured by the scale and synched with our phone. This made it really easy to collect and analyze this data.
 
-```{r echo=FALSE}
+```{r echo=FALSE,fig.height=10, fig.width=14}
   df_tidy %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
@@ -200,7 +200,7 @@ Weight and BMI is not the only metric we tracked, these metrics are often times 
 
 We tracked this by doing body measurements once every few months. The charts below have a story to tell.
 
-```{r echo=FALSE}
+```{r echo=FALSE,fig.height=10, fig.width=14}
 df_measurements %>%
     ggplot(aes(x=date, y=value, col=name)) +
     geom_line() + 
@@ -223,7 +223,7 @@ Once we had collected a reasonable amount of data, I used standard timeseries fo
 
 Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here, this simple forecast is considering the weight loss as a univariate timeseries i.e. single variable timeseries, we know it is much more complicated than that. The premise is that all exogenous factors remaining the same, this forecast should hold up.
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
 
 df_forecast_p2 %>%
   rename(Actual=y, Forecast='yhat') %>%
@@ -253,7 +253,7 @@ df_forecast_p2 %>%
   
   
   
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
 df_forecast_p1 %>%
   rename(Actual=y, Forecast='yhat') %>%
   gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%

@@ -35,7 +35,7 @@ What endeared me to the workout sessions was that after a few weeks I noticed bo
 
 So here we were, ready to start and reminding ourselves **that the only way to reach the finish line is to start...**. My target was simple i.e. "not to be obese" as per the NIH guidelines, provided https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf. I do not remember the time I was at 158 pounds, i just wanted to be 190 or less so that I would not be adding to the "obese" population of the planet. Nidhi on the other hand was reasonably fit and her goal was pretty close to the NIH guidelines.
 
-```{r echo=FALSE, fig.height=8, fig.width=12}
+```{r echo=FALSE, fig.height=10, fig.width=14}
 df_starting_and_target_weights %>%
   group_by(name) %>%
   mutate(position = rank(-value)) %>%

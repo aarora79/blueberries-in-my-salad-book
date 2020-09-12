@@ -68,26 +68,6 @@ df_starting_and_target_weights <- df_starting_and_target_weights %>%
 # everything except the timeseries forecasting bit so that the rest of the sections simply display the 
 # charts based on the data analysis done here. The forecasting is left to its own section later in the code
 # because it is based on user input and so it needs to be done redone whenever the input changes.
-# setup logging so that traces are shown on the console and in a log file as well
-flog.appender(appender.tee(LOG_FILE), name=LOGGER)
-# print the parameters used
-flog.info(glue("params used:
-                START_DATE={START_DATE},
-                DATA_DIR={DATA_DIR},
-                P1_NAME={P1_NAME},
-                P2_NAME={P2_NAME},
-                P1_DATA_URL={P1_DATA_URL},
-                P2_DATA_URL={P2_DATA_URL},
-                CAPTION={CAPTION},
-                IMPORTANT_DATES_FPATH={IMPORTANT_DATES_FPATH},
-                NUDGE_X={NUDGE_X},
-                NUDGE_Y={NUDGE_Y},
-                P1_TARGET_WEIGHT={P1_TARGET_WEIGHT},
-                P1_WEIGHT_CAP={P1_WEIGHT_CAP},
-                P1_WEIGHT_FLOOR={P1_WEIGHT_FLOOR},
-                P2_TARGET_WEIGHT={P2_TARGET_WEIGHT},
-                P2_WEIGHT_CAP={P2_WEIGHT_CAP},
-                P2_WEIGHT_FLOOR={P2_WEIGHT_FLOOR}"), name=LOGGER)
 
 # read the raw data for person 1, print basic summary and metadata
 df_P1 <- read_csv(P1_DATA_URL) %>%
@@ -95,9 +75,6 @@ df_P1 <- read_csv(P1_DATA_URL) %>%
   arrange(Date) %>%
   mutate(Date=ymd(Date)) %>%
   filter(Date >= START_DATE)
-flog.info(glue("read data for {P1_NAME} from {P1_DATA_URL}, shape of dataframe={nrow(df_P1)}x{ncol(df_P1)}"), name=LOGGER)
-flog.info(head(df_P1), name=LOGGER)
-flog.info(summary(df_P1), name=LOGGER)
 # read the raw data for person 2, ultimately we want to have this dashboard work the same way
 # even if there was only person 1 so put the following in an if checl
 if(!is.na(P2_NAME)) {
@@ -106,27 +83,18 @@ if(!is.na(P2_NAME)) {
     arrange(Date) %>%
     mutate(Date=ymd(Date)) %>%
     filter(Date >= START_DATE)
-  flog.info(glue("read data for {P2_NAME} from {P2_DATA_URL}, shape of dataframe={nrow(df_P2)}x{ncol(df_P2)}"), name=LOGGER)
-  flog.info(head(df_P2), name=LOGGER)  
-  flog.info(summary(df_P2), name=LOGGER)  
 }
 # read the important dates csv file. This is needed because we would like to annotate this journey
 # so that we can say oh right there was an increase in weight for these days and it followed a birthday party, for example...
 if(!is.na(IMPORTANT_DATES_FPATH)) {
   important_dates <- read_csv(IMPORTANT_DATES_FPATH)
-  flog.info(glue("read data for important dates from {IMPORTANT_DATES_FPATH},
-                  shape of dataframe={nrow(important_dates)}x{ncol(important_dates)}"), name=LOGGER)
-  flog.info(head(important_dates), name=LOGGER)  
-  flog.info(summary(important_dates), name=LOGGER)  
 }
 # combine the dataframes, we want to do a side by side analysis for both people
 if(!is.na(df_P2)) {
   df <- bind_rows(df_P1, df_P2)
   (df) %>%
     sample_n(5)
-  flog.info(glue("combined data for {P1_NAME} and {P2_NAME}, shape of data is {nrow(df)}x{ncol(df)}"), name=LOGGER)
 } else {
-  flog.info(glue("only {P1_NAME} specified, only analyzing data for one person"), name=LOGGER)
   df <- df_P1
 }
 # get the data in tidy format i.e. Each variable must have its own column.
@@ -139,7 +107,6 @@ df_tidy <- df %>%
   mutate(value=as.numeric(value))
 df_tidy %>%
   sample_n(5)
-flog.info(glue("shape of the tidy dataframe is {nrow(df_tidy)}x{ncol(df_tidy)}"), name=LOGGER)
 # determine the per day weight loss dataframe by
 # calculating loss as weight - the one previous value of weight
 # this is done by first grouping the dataframe by name since it has
@@ -168,9 +135,6 @@ p2_latest_weight <- df_tidy %>% filter(name==P2_NAME & metric=="Weight") %>% tai
 p2_wt_lost_as_pct <- -1*100*((p2_latest_weight-p2_starting_weight)/p2_starting_weight)
 p1_target_achieved_pct <- (p1_starting_weight-p1_latest_weight)/(p1_starting_weight-P1_TARGET_WEIGHT)*100
 p2_target_achieved_pct <- (p2_starting_weight-p2_latest_weight)/(p2_starting_weight-P2_TARGET_WEIGHT)*100
-flog.info(glue("p1_starting_weight={p1_starting_weight}, p1_latest_weight={p1_latest_weight},
-                p2_starting_weight={p2_starting_weight}, p2_latest_weight={p2_latest_weight},
-                p1_target_achieved_pct={p1_target_achieved_pct}, p2_target_achieved_pct={p2_target_achieved_pct}"), name=LOGGER)
 # daily weight loss, this is important for a lot of charts and tables
 # not the use of group by (name) and then lag. The dataframe is already sorted
 # in asc order of time, so if the weight is reducing the daily_wt_loss would be a 
@@ -230,8 +194,6 @@ df_target_achieved_p2 <- read_csv(P2_TARGET_ACHIEVED_FPATH)
 df_measurements <- read_csv(MEASUREMENTS_FPATH)
 df_measurements <- df_measurements %>%
   filter(measurement %in% MEASUREMENTS_TO_KEEP)
-flog.info("all done with the initial data read and wrangling", name=LOGGER)
-
 ```
 
 # Preface
