@@ -4,6 +4,8 @@ if(!knitr:::is_html_output())
   options("width"=56)
   knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
   knitr::opts_chunk$set(fig.pos = 'H')
+  knitr::opts_chunk$set(fig.width = 14)
+  knitr::opts_chunk$set(fig.height = 10)
 }
 ```
 
@@ -63,7 +65,7 @@ The following charts show our progress in terms of weight loss, with the clean e
 
 We saw very good results in both the iterations. The first iteration produced much better results because obviously there was just too much weight to lose, but surprisingly the second iteration was also very effective. The way we see this now is that if we ever hit a really long plateau in the journey to achieve the desired weight we could just toughen our minds and do this again. It cannot hurt.
 
-```{r echo=FALSE, fig.height=8, fig.width=12}
+```{r echo=FALSE}
 df_clean_eating_dates <- important_dates %>%
   select(-include)
 
@@ -105,7 +107,7 @@ Here is another chart that compares the weight loss during clean eating and non-
 
 The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb per day on 50% of the days during clean eating whereas I only lost at least 0.005 lb on 50% of the days during non-clean eating period. The data for this chart includes both clean eating periods over a timespan from `r {min(df_tidy$Date)}` to `r {max(df_tidy$Date)}`.
 
-```{r  echo=FALSE, fig.height=8, fig.width=12}
+```{r  echo=FALSE}
 df_wt_loss2 <- df_wt_loss %>%
   mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
                                  between(Date, df_iter2$Start, df_iter2$End),
