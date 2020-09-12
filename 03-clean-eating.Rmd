@@ -124,7 +124,7 @@ df_wt_loss2 %>%
   geom_text(data = df_wt_loss_medians,
             position=position_dodge(width=.75),
             aes(y = med, label = glue("{med} lb"), col=clean_eating), 
-            size = 5, vjust = -.5, show.legend = FALSE) +
+            size = 7, vjust = -.5, show.legend = FALSE) +
   scale_y_continuous(breaks = seq(-5, 5, by = 1)) + 
   theme_fivethirtyeight() +
   xlab("") +
