@@ -221,7 +221,7 @@ Once we had collected a reasonable amount of data, I used standard timeseries fo
 
 Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here, this simple forecast is considering the weight loss as a univariate timeseries i.e. single variable timeseries, we know it is much more complicated than that. The premise is that all exogenous factors remaining the same, this forecast should hold up.
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=8, fig.width=12}
 df_forecast_p2 %>%
   rename(Actual=y, Forecast='yhat') %>%
   gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%
@@ -250,7 +250,7 @@ df_forecast_p2 %>%
   
   
   
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=8, fig.width=12}
 df_forecast_p1 %>%
   rename(Actual=y, Forecast='yhat') %>%
   gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%
