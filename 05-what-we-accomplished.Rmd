@@ -212,6 +212,42 @@ df_measurements %>%
     theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank())
 ```
 
+
+## Of slides and plateaus
+
+Anyone who has embarked on a journey to lose more than say 10 pounds would identify with the fact that the weight loss trajectory is never a linear slide downwards, no matter how determined you are in your desire and dogged in your persuasion. It was the same for us, there were days and weeks which were very good, especially at the start and then their were periods where the weight loss yo-yoed. These periods were disappointing, disheartening even.
+
+It is important to understand, as we discovered, that as we are subjecting the body to a different sort of eating regimen and making more and more demands of it by way of workouts in the gym, the body is also trying to recaliberate its response. It is figuring out how much fat to store as energy reserves, how much to burn to provide the fuel for the exercise. This means that sometimes the weight loss may completely stall or even go in the reverse. The key is to be patient and keep eating clean (relatively speaking) and putting in the hours in the gym without completely burning out.
+
+The chart below shows the week by week distribution of the weight and as you can see there were at least a couple of streaks of plateaued weight loss. We persisted, and ultimately, we prevailed.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
+df_weekly_weight <- df_daily_wt_loss %>%
+  mutate(week=week(Date)-week(min(df_daily_wt_loss$Date))+1)
+df_plateau2 <- read_csv(WT_LOSS_PLATEAUS_URL)
+
+df_weekly_weight %>%
+  ggplot(aes(x=as.factor(week), value, col=name)) +
+  geom_boxplot() +
+  geom_rect(data=df_plateau2, aes(x = NULL,y = NULL,xmin=week_start, xmax=week_end, 
+                                  ymin=-Inf, ymax=Inf, 
+                                  alpha=0.05,fill=name, col=name)) +
+  labs(title="Boxplot for weekly weight trend",
+       subtitle="Shaded regions represent weeks where weight loss plateaued. The line in the center of each box represents the median weight in that week.",
+       caption="Data Source: data collected at home") +
+  facet_wrap(~name, scales="free") +
+  theme_fivethirtyeight() + 
+  scale_color_tableau() +
+  scale_fill_tableau() +
+  theme(legend.title = element_blank(), legend.position = "none",
+        text = element_text(size=CHART_ELEMENT_TEXT_SIZE-15)) +
+  theme(axis.title = element_text()) + 
+  xlab("Weeks since start of training") + 
+  ylab("Weight (lb)")
+
+```
+
+
 ## A forecast and a promise
 
 As we were going through this journey, I was very eager to apply some forecasting and determine if we could project a reasonable date when we would be able to meet our weight loss target. As much as this book is not just about weight loss, there is no denying the fact that it was one of the most (if not the most) tangible outcome we were tracking towards.
@@ -276,4 +312,3 @@ df_forecast_p1 %>%
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
   theme(axis.title = element_text()) + ylab('Weight (lb)')
 ```
-
