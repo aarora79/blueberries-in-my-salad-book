@@ -89,7 +89,7 @@ dfPlot %>%
   ggplot(aes(weekday,-week, fill = ValueCol)) +
   geom_tile(colour = "white")  + 
   # geom_point(data=dfPlot %>% filter(exercise==1), aes(weekday, -week), position="dodge2") + 
-  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 5, color = "black") + # day(DateCol)
+  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 3, color = "black") + # day(DateCol)
   #geom_text(aes(label = ifelse(exercise == 1, glue("{round(ValueCol, 2)} [I]"), round(ValueCol, 2))), size = 2.5, color = "black") + # day(DateCol)
   theme(aspect.ratio = 1/2,
         legend.position = "top",
