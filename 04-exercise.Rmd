@@ -51,7 +51,7 @@ The conditioning part of the routine usually consisted of either a 12 minute AMR
 
 The following chart shows the calendar for the year 2020 with the days we exercised marked with an [E] and the amount of weight lost/gained reflected by the color. Red indicates weight loss and green indicates weight gain. More "red" than "green" means overall we lost weight. I like this chart a lot because it brings out very clearly that weight loss is never a straight line, you gain some (days) and you lose some (days), except in this case, losing is better.
 
-```{r echo=FALSE,fig.height=10, fig.width=14}
+```{r echo=FALSE, fig.height=10, fig.width=14}
 df_exercise_dates <- df_exercise_dates %>%
   gather(name, exercise, -date) %>%
   rename(Date=date)
@@ -67,7 +67,6 @@ df <- df %>%
               filter(loss_per_day==max(loss_per_day)), by=c("Date", "name")) %>%
   rename(DateCol=Date, ValueCol=loss_per_day) %>%
   mutate(ValueCol = ifelse(is.na(ValueCol), 0, ValueCol))
-df
 
 
 #View(df_wt_loss %>% filter(name == P2_NAME))
@@ -90,7 +89,7 @@ dfPlot %>%
   ggplot(aes(weekday,-week, fill = ValueCol)) +
   geom_tile(colour = "white")  + 
   # geom_point(data=dfPlot %>% filter(exercise==1), aes(weekday, -week), position="dodge2") + 
-  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 2.5, color = "black") + # day(DateCol)
+  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 5, color = "black") + # day(DateCol)
   #geom_text(aes(label = ifelse(exercise == 1, glue("{round(ValueCol, 2)} [I]"), round(ValueCol, 2))), size = 2.5, color = "black") + # day(DateCol)
   theme(aspect.ratio = 1/2,
         legend.position = "top",
@@ -103,9 +102,9 @@ dfPlot %>%
         panel.background = element_blank(),
         legend.title.align = 0.5,
         strip.background = element_blank(),
-        strip.text = element_text(face = "bold", size = 15),
+        strip.text = element_text(face = "bold", size = 20),
         panel.border = element_rect(colour = "grey", fill=NA, size=1),
-        plot.title = element_text(hjust = 0.5, size = 21, face = "bold",
+        plot.title = element_text(hjust = 0.5, size = 30, face = "bold",
                                   margin = margin(0,0,0.5,0, unit = "cm"))) +
   scale_fill_gradientn(colours = c("#6b9235", "white", "red"),
                        values = scales::rescale(c(-1, -0.05, 0, 0.05, 1)), 
