@@ -193,6 +193,10 @@ df_measurements <- df_measurements %>%
 
 # table for different types of exercises
 df_exercises <- read_csv(EXERCISES_URL)
+
+# exercise dates for calendar plot
+df_exercise_dates <- read_csv(EXERCISE_DATES_URL)
+
 ```
 
 # Preface
