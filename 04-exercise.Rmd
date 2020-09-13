@@ -16,7 +16,7 @@ One day a couple of months into training, I stumbled upon a YouTube video of the
 
 I am clearly not qualified to talk about the technical details about what makes a good workout but I can certainly state what we did and loved. 
 
-Our workout sessions were an hour long and were mostly divided into three parts:
+Our workout sessions were an hour long and were mostly divided into four parts:
 
 - Warm up (about 5 minutes)
 - Strength (about 10 to 15 minutes)
@@ -28,6 +28,22 @@ With some rest time and setting up equipment for different exercises the above r
 ![Weights and such](pictures/gym2.jpg)
 
 ![Rowing machine and cycle](pictures/gym1.jpg)
+
+For a long time, and even today, I tell myself before the workout, that warmups are easy, the strength portion is just 10 minutes so it will be over quickly before I realize and then the conditioning is the only part that I have to push through and then by the time I am half way through the conditioning it would be almost over and then core is super easy (it is not). This kind of mental setup helps me get through the hour. Ofcourse once I am in the middle of it, unless the workout on the day absolutely pulverizes you, my mind goes almost totally blank, no thoughts at all. I have experienced this many times, going into the workout from a crisis at work is a huge mental shift. Once the workout is over, I realize that maybe the work problems are not that insurmountable as they appeared an hour back. It could be the endorphins kicking in, or just the fact that I have had the oppurtunity to (forcibly) extricate myself from the crisis situation and now after an hour I am able to think more clearly. I do not know what is the reason, but I do know that I experience mental clarity after the workout.
+
+The following tables show the different exercises we did, over time, as part of the warmups, strength, conditioning and core. These are over a period of time, with the more difficult ones such as the Turkish getup added much later and the for the ones which we did from the start we kept increasing the weights or the numbers of sets and reps.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+  gt(df_exercises) %>%
+    tab_header(
+      title = md("**Exercise Routine**"),
+      subtitle = md("So many different exercises for different muscles")
+    )  %>%
+    tab_source_note(
+      source_note = md("Not a complete list, just the ones I randomly remembered.")
+    )
+```
 
 
 

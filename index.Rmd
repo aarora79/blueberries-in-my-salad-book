@@ -190,6 +190,9 @@ df_target_achieved_p2 <- read_csv(P2_TARGET_ACHIEVED_FPATH)
 df_measurements <- read_csv(MEASUREMENTS_FPATH)
 df_measurements <- df_measurements %>%
   filter(measurement %in% MEASUREMENTS_TO_KEEP)
+
+# table for different types of exercises
+df_exercises <- read_csv(EXERCISES_URL)
 ```
 
 # Preface
