@@ -49,7 +49,7 @@ The conditioning part of the routine usually consisted of either a 12 minute AMR
 
 ## Our calendar so far
 
-The following chart shows the calendar for the year 2020 with the days we exercised marked with an [E] and the amount of weight lost/gained reflected by the color. Red indicates weight loss and green indicates weight gain. More "red" than "green" means overall we lost weight. I like this chart a lot because it brings out very clearly that weight loss is never a straight line, you gain some (days) and you lose some (days), except in this case, losing is better.
+The following chart shows the calendar for the year 2020 with the days we exercised marked with an [E] and the amount of weight lost/gained reflected by the color. Red indicates weight loss and green indicates weight gain. More "red" than "green" in a month means overall we lost weight in that month. I like this chart a lot because it brings out very clearly that weight loss is never a straight line, you gain some (days) and you lose some (days), except in this case, losing is better.
 
 ```{r echo=FALSE, fig.height=10, fig.width=14}
 df_exercise_dates <- df_exercise_dates %>%
@@ -116,6 +116,64 @@ dfPlot %>%
   theme(plot.subtitle = element_text(size=15, face = "bold"))
 
 ```
+
+You can notice in the charts the number of days marked as [E] (for exercise) has increased over the months. This is something that happened organically. As we exercised more and ate right, the body became stronger and it could take on more work and so we exercised even more, it became a self driving cycle. Exercise also gives you a "high", a feeling of euphoria, you cannot miss it. In other words, this increased number of workouts, doing more sets and reps, this was only partially driven by just the motivation to lose weight, the rest of it was because a) the body became strong enough that the current load became easier and so a step up was needed and b) the desire for that "high", it makes you want to get more of the stuff that got you here in the first place. If this book ever gets into the hands of someone who has exercised for any length of time, I would like to add that what I have written here may seem routine and totally on expected lines to you but to me this was unlike anything I had experienced before, it was a joyous discovery.
+
+## What does'nt kill you makes stronger
+
+Deadlifts are my favorite. They are a full body exercise, our trainer says deadlifts are a game changer. I have watched a lot of celebrity trainers on YouTube and heard them echo the same sentiments. While we did several different variants of the deadlift such as the single leg stiff leg deadlift, the sumo stance deadlift etc. but my personal favorite and something that i religiously tracked was the deadlift with a hexbar. Maybe it had to do something with the visual imagery I had in my head of this being a strong man's exercise. I remember that when I first saw the hexbar in the gym I asked our trainer when are we doing that and she said, you will get there in a couple of weeks (this was sometime in mid to late February). The hexbar weighed 55 pounds, it was the heaviest they had.
+
+The first day I tried it, I recall that the trainer was very cautious, I don't know if she thought I could even do it (I was fat and never been to the gym until last 2 months remember, this was February) or not. To this day, when I have graduated from lifting the hexbar with no weights to lifting the same hexbar with 100 pound weights on either side, she is still extremely cautious and correctly so. I have heard from her that it is possible to deadlift 3 times your body weight, while that is not my target, I do want to get to deadlifting 400 pounds eventually, maybe sometime in 2021.
+
+Here is a chart that puts this all in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
+
+```{r echo=FALSE, fig.height=10, fig.width=14}
+df <- read_csv(P2_DEADLIFT_URL)
+df_dl <- df %>%
+  filter(excercise == "deadlift") %>%
+  select(-set)
+df_dl <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
+  mutate(date=as.Date(date)) %>%
+  group_by(date) %>%
+  mutate(median_deadlift_wt = median(weight))
+df_dl_median <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
+  mutate(date=as.Date(date)) %>%
+  group_by(date) %>%
+  summarize(median_deadlift_wt = median(weight))
+time_duration_in_weeks <- ceiling(as.numeric(difftime(max(df_dl$date), min(df_dl$date), units="weeks")))
+df2 <- df_wt_loss %>% ungroup() %>% filter(name=="Amit") %>% select(Date, value) %>% rename(date=Date) %>% mutate(median_deadlift_wt=200)
+df2 <- df2 %>%
+  mutate(label=ifelse(date==min(date), glue("Body weight. (lb)"), NA)) %>%
+  rename(weight=value)
+# Body weight at start: 
+p <- df_dl %>%
+  ggplot(aes(x=date, group=date, weight, fill=median_deadlift_wt)) +
+  geom_boxplot() +
+  geom_point(data=df2, aes(x=date, y=weight, col=I("purple")), size=0.7, show.legend = TRUE) + 
+  # geom_point(data=df_dl_median, aes(x=date, y=median_deadlift_wt), size=0.7, show.legend = TRUE) + 
+  geom_text(data=df2, aes(label = label, size=2),
+                   nudge_y = 1.25*NUDGE_Y,
+                   nudge_x=2*NUDGE_X,
+                   na.rm = TRUE, col=I("black")) +
+  geom_hline(yintercept = P2_DEADLIFT_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
+  geom_text(aes(max(df_dl$date) - 15, P2_DEADLIFT_TARGET_WEIGHT, label = "300 lb, target for 2020", vjust = -1), family="NimbusRom", fontface="plain", size=4) +
+  scale_y_continuous(breaks = seq(0, P2_DEADLIFT_TARGET_WEIGHT+25, by = 50)) + 
+  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+  labs(title="What does'nt kill you makes you stronger...",
+       subtitle=glue("Journey from deadlifting {min(df_dl$weight)} lb to {max(df_dl$weight)} lb in {time_duration_in_weeks} weeks"),
+       caption="Explanation: BoxPlot representation of reps done. Line in the middle of the each box is the median weight deadlifted that day.") +
+  theme_fivethirtyeight() + 
+  scale_fill_gradient_tableau(palette="Blue") + 
+  theme(legend.title = element_blank(), legend.position = "none",
+        text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
+p
+```
+
+
+
+
+
+
 
 
 
