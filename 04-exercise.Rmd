@@ -127,7 +127,7 @@ The first day I tried it, I recall that the trainer was very cautious, I don't k
 
 Here is a chart that puts this all in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
 
-```{r echo=FALSE, fig.height=10, fig.width=14}
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
 df_dl <- df_deadlifts %>%
   filter(excercise == "deadlift") %>%
   select(-set)
@@ -169,6 +169,13 @@ p
 ```
 
 
+## Do I really need a trainer?
+
+Short answer: Yes. Longer answer: It depends.
+
+## Why my workouts suck sometimes
+
+All days are not the same, all workouts are not the same as well.
 
 
 
