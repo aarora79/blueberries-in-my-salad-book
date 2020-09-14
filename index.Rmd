@@ -196,6 +196,7 @@ df_exercises <- read_csv(EXERCISES_URL)
 
 # exercise dates for calendar plot
 df_exercise_dates <- read_csv(EXERCISE_DATES_URL)
+df_deadlifts <- read_csv(P2_DEADLIFT_URL)
 
 ```
 

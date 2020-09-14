@@ -121,15 +121,14 @@ You can notice in the charts the number of days marked as [E] (for exercise) has
 
 ## What does'nt kill you makes stronger
 
-Deadlifts are my favorite. They are a full body exercise, our trainer says deadlifts are a game changer. I have watched a lot of celebrity trainers on YouTube and heard them echo the same sentiments. While we did several different variants of the deadlift such as the single leg stiff leg deadlift, the sumo stance deadlift etc. but my personal favorite and something that i religiously tracked was the deadlift with a hexbar. Maybe it had to do something with the visual imagery I had in my head of this being a strong man's exercise. I remember that when I first saw the hexbar in the gym I asked our trainer when are we doing that and she said, you will get there in a couple of weeks (this was sometime in mid to late February). The hexbar weighed 55 pounds, it was the heaviest they had.
+Deadlifts are my favorite. They are a full body exercise, our trainer says deadlifts are a game changer. I have watched a lot of celebrity trainers on YouTube and heard them echo the same sentiments. While we did several different variants of the deadlift such as the single leg stiff leg deadlift, the sumo stance deadlift etc. but my personal favorite and something that I religiously tracked was the deadlift with a hexbar. Maybe it had to do something with the visual imagery I had in my head of this being a strong man's exercise. I remember that when I first saw the hexbar in the gym I asked our trainer when are we doing that and she said, you will get there in a couple of weeks (this was sometime in mid to late February). The hexbar weighed 55 pounds, it was the heaviest they had.
 
-The first day I tried it, I recall that the trainer was very cautious, I don't know if she thought I could even do it (I was fat and never been to the gym until last 2 months remember, this was February) or not. To this day, when I have graduated from lifting the hexbar with no weights to lifting the same hexbar with 100 pound weights on either side, she is still extremely cautious and correctly so. I have heard from her that it is possible to deadlift 3 times your body weight, while that is not my target, I do want to get to deadlifting 400 pounds eventually, maybe sometime in 2021.
+The first day I tried it, I recall that the trainer was very cautious, I don't know if she thought I could even do it (I was fat and never been to the gym until last 2 months remember, this was February). To this day, when I have graduated from lifting the hexbar with no weights to lifting the same hexbar with 100 pound weights on either side, she is still extremely cautious and correctly so. I have heard from her that it is possible to deadlift 3 times your body weight, while that is not my target, I do want to get to deadlifting 400 pounds eventually, maybe sometime in 2021.
 
 Here is a chart that puts this all in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
 
 ```{r echo=FALSE, fig.height=10, fig.width=14}
-df <- read_csv(P2_DEADLIFT_URL)
-df_dl <- df %>%
+df_dl <- df_deadlifts %>%
   filter(excercise == "deadlift") %>%
   select(-set)
 df_dl <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
@@ -141,7 +140,7 @@ df_dl_median <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
   group_by(date) %>%
   summarize(median_deadlift_wt = median(weight))
 time_duration_in_weeks <- ceiling(as.numeric(difftime(max(df_dl$date), min(df_dl$date), units="weeks")))
-df2 <- df_wt_loss %>% ungroup() %>% filter(name=="Amit") %>% select(Date, value) %>% rename(date=Date) %>% mutate(median_deadlift_wt=200)
+df2 <- df_wt_loss %>% ungroup() %>% filter(name==P2_NAME) %>% select(Date, value) %>% rename(date=Date) %>% mutate(median_deadlift_wt=200)
 df2 <- df2 %>%
   mutate(label=ifelse(date==min(date), glue("Body weight. (lb)"), NA)) %>%
   rename(weight=value)
@@ -161,7 +160,7 @@ p <- df_dl %>%
   scale_x_date(date_breaks = "1 month", date_labels = "%b") +
   labs(title="What does'nt kill you makes you stronger...",
        subtitle=glue("Journey from deadlifting {min(df_dl$weight)} lb to {max(df_dl$weight)} lb in {time_duration_in_weeks} weeks"),
-       caption="Explanation: BoxPlot representation of reps done. Line in the middle of the each box is the median weight deadlifted that day.") +
+       caption="Note: Line in the middle of the each box is the median weight deadlifted that day.") +
   theme_fivethirtyeight() + 
   scale_fill_gradient_tableau(palette="Blue") + 
   theme(legend.title = element_blank(), legend.position = "none",
