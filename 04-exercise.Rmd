@@ -89,7 +89,7 @@ dfPlot %>%
   ggplot(aes(weekday,-week, fill = ValueCol)) +
   geom_tile(colour = "white")  + 
   # geom_point(data=dfPlot %>% filter(exercise==1), aes(weekday, -week), position="dodge2") + 
-  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 3, color = "black") + # day(DateCol)
+  geom_text(aes(label = ifelse(exercise == 1, glue("{day(DateCol)} [E]"), day(DateCol))), size = 4, color = "black") + # day(DateCol)
   #geom_text(aes(label = ifelse(exercise == 1, glue("{round(ValueCol, 2)} [I]"), round(ValueCol, 2))), size = 2.5, color = "black") + # day(DateCol)
   theme(aspect.ratio = 1/2,
         legend.position = "top",
@@ -113,7 +113,7 @@ dfPlot %>%
                                               direction = "horizontal")) +
   facet_wrap(~month, nrow = 4, ncol = 3, scales = "free") +
   labs(title = "Daily Weight Change Tracker", subtitle="Daily weight tracking started Feb 17, 2020. Exercise days marked as [E].") +
-  theme(plot.subtitle = element_text(size=20, face = "bold"))
+  theme(plot.subtitle = element_text(size=15, face = "bold"))
 
 ```
 
