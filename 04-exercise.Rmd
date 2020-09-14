@@ -113,7 +113,7 @@ dfPlot %>%
                                               direction = "horizontal")) +
   facet_wrap(~month, nrow = 4, ncol = 3, scales = "free") +
   labs(title = "Daily Weight Change Tracker", subtitle="Daily weight tracking started Feb 17, 2020. Exercise days marked as [E].") +
-  theme(plot.subtitle = element_text(face = "bold")) 
+  theme(plot.subtitle = element_text(size=20, face = "bold"))
 
 ```
 
