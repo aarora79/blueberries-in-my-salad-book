@@ -65,7 +65,7 @@ NUDGE_Y <- 5
 CHART_ELEMENT_TEXT_SIZE_MOBILE <- 10
 
 MAIN_PAGE_CHART_TITLE <- "Journey to health"
-HOW_EACH_POUND_WAS_LOST_TITLE <- "How each pound was lost..."
+HOW_EACH_POUND_WAS_LOST_TITLE <- "How many days (median value) at each weight?"
 N_FOR_LAST_N_POUNDS_OF_INTREST <- 10
 
 # gauge

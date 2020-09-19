@@ -37,7 +37,7 @@ Here are some more charts that I could not fit anywhere else.
 
 Sometimes we get anxious about being stuck at a particular weight or oscillating within a few pounds. As enough data got collected, we could see empirically how many days did we spend at each weight level so that before we start getting anxious we know if we really need to or is it still within an observed range.
 
-```{r  echo=FALSE, fig.height=10, fig.width=14}
+```{r  echo=FALSE, warnings=FALSE, message=FALSE, fig.height=10, fig.width=14}
  # number of days spent at each weight, these could be in any order, we are just counting
   # the total number of days at a weight.
   df_days_at_a_weight <- df_tidy %>%
@@ -68,7 +68,7 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
     theme_fivethirtyeight() +
     xlab("Weight (lb)") +
     labs(title=glue(HOW_EACH_POUND_WAS_LOST_TITLE),
-         subtitle=glue("On average, {P1_NAME} spends {number_of_days_at_wt_p1} days at a weight, {P2_NAME} spends {number_of_days_at_wt_p2} days."),
+         subtitle=glue("{P1_NAME} spends {number_of_days_at_wt_p1} days at a weight, {P2_NAME} spends {number_of_days_at_wt_p2} days."),
          caption=CAPTION) + 
     theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.position = "none") + 
     scale_color_tableau() + 
