@@ -1,0 +1,13 @@
+# For cultural enrichment
+
+As one of my professors in graduate school used to say, read this for cultural enrichment, I am providing here a list of links from the Internet that I stumbled upon and found useful. Make what you will of it.
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+  gt(df_references) %>%
+    tab_header(
+      title = md("**References**"),
+      subtitle = md("Videos & Blogs I Liked")
+    )
+```
