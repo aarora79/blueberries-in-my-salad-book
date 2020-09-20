@@ -225,18 +225,15 @@ Over time I understood that while the desire for weight loss was what got me her
 
 Finally, nothing in this book should be interpreted as me recommending anything, a written version of my musings is what this is. An experiment with a sample size of N=2 i.e. statistically irrelevant! In case it still needs to be said, here it is: **Do not take anything that you read in this book as medical advice. Always consult your doctor before starting any diet or exercise program.**.
 
-<br>
-
 ## Acknowledgements
 
 I have been wanting to write a book for a long time and this activity with clean eating and exercise that has helped us improve our quality of life provided me the impetus to finally put my thoughts on (the virtual) paper.
 
-This would not have been possible without my wife Nidhi, who was not only an equal partner in this journey but was also the head chef to prepare all the tasty & nutritious food, the assistant coach who kept an eagle eye on my forms during the exercise and also the one who kept on encouraging me to keep writing. She is also the proof reader for this book, although any mistakes and ommissions are mine alone.
+This would not have been possible without my wife Nidhi, who was not only an equal partner in this journey but was also the head chef to prepare all the tasty & nutritious food, the assistant coach who kept an eagle eye on my forms during the exercise and also the one who kept on encouraging me to keep writing. She is also the proof reader for this book, although any mistakes and omissions are mine alone.
 
-Finally, a huge thank you is due to our wonderful trainer and friend, Dawn Kirk. Thank you Dawn for persisting and persevering with us. I wish everyone has the good fortune to have a trainer like you.
+Finally, a huge thank you is due to our wonderful trainer and friend, Dawn Kirk. Thank you Dawn for persisting and persevering with us. I wish everyone has the good fortune to have a trainer like you.  
 
-```{block2, type='flushright', html.tag='p'}
-Amit Arora
-Clarksburg, Maryland
-```
+Amit Arora  
+Clarksburg, Maryland  
+
 
