@@ -15,14 +15,6 @@ linkcolor: NavyBlue
 links-as-notes: true
 url: 'https\://aarora79.github.io/from-fat-to-fit/'
 twitter-handle: aarora79
-colorlinks: yes
-graphics: yes
-lot: yes
-lof: yes
-fontsize: 11pt
-mainfont: Palatino
-monofont: "Source Code Pro"
-monofontoptions: "Scale=0.8"
 ---
 
 ```{r include = FALSE}
