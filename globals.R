@@ -28,7 +28,7 @@ P2_IDEAL_WEIGHT <- 158
 P2_DEADLIFT_TARGET_WEIGHT <- 300
 
 
-CHART_ELEMENT_TEXT_SIZE <- 30
+CHART_ELEMENT_TEXT_SIZE <- 25
 
 # global constants
 # most of these should be configuration parameters
