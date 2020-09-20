@@ -15,6 +15,14 @@ linkcolor: NavyBlue
 links-as-notes: true
 url: 'https\://aarora79.github.io/from-fat-to-fit/'
 twitter-handle: aarora79
+colorlinks: yes
+graphics: yes
+lot: yes
+lof: yes
+fontsize: 11pt
+mainfont: Palatino
+monofont: "Source Code Pro"
+monofontoptions: "Scale=0.8"
 ---
 
 ```{r include = FALSE}
@@ -216,4 +224,19 @@ We took daily measurements for our weight and other biometrics and they were aut
 Over time I understood that while the desire for weight loss was what got me here, but what I was really gaining was good health and strength. One call lose weight by falling sick, we know that is not healthy. Weight loss should not be the only goal. To reduce the benefits of what we were doing to just burning calories and losing tens of pounds now seems like a terrible underselling of the idea of fitness. The human body is a fascinating machine capable of wonderful things, good health is a state of both mind and body. Exercise and healthy eating habits help both mind and body. If you do not have any serious health issues there isn't really any excuse for not exercising regularly and eating healthy. As it is said "शरीरमाद्यं खलु धर्मसाधनम्" i.e. the body is the instrument of all good deeds.
 
 Finally, nothing in this book should be interpreted as me recommending anything, a written version of my musings is what this is. An experiment with a sample size of N=2 i.e. statistically irrelevant! In case it still needs to be said, here it is: **Do not take anything that you read in this book as medical advice. Always consult your doctor before starting any diet or exercise program.**.
+
+<br>
+
+## Acknowledgements
+
+I have been wanting to write a book for a long time and this activity with clean eating and exercise that has helped us improve our quality of life provided me the impetus to finally put my thoughts on (the virtual) paper.
+
+This would not have been possible without my wife Nidhi, who was not only an equal partner in this journey but was also the head chef to prepare all the tasty & nutritious food, the assistant coach who kept an eagle eye on my forms during the exercise and also the one who kept on encouraging me to keep writing. She is also the proof reader for this book, although any mistakes and ommissions are mine alone.
+
+Finally, a huge thank you is due to our wonderful trainer and friend, Dawn Kirk. Thank you Dawn for persisting and persevering with us. I wish everyone has the good fortune to have a trainer like you.
+
+```{block2, type='flushright', html.tag='p'}
+Amit Arora
+Clarksburg, Maryland
+```
 

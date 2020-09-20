@@ -24,7 +24,8 @@ We decided to enroll for two classes a week. Since we were just starting out and
 
 What endeared me to the workout sessions was that after a few weeks I noticed both in myself and my wife there was an unmistakable feeling of joy/elation/happiness as we completed a hard training session in the gym. We did loose some pounds but nothing very noticeable. What attracted me to the clean eating was that I could identify with it, it did not claim any magic results, did not ask to give up on the basics i.e. vegetables/fruits/meat in fact it embraced these and only said do not eat processed food. This was the same guidance I had grown up with during my childhood, this was what my grandmother used to say as well, surely this could not go wrong. Surely nothing bad could happen by not eating cakes and cookies, not drinking soft drinks or hard drinks and just basically saying good bye to processed sugar. Made total sense.
 
-So here we were, ready to start and reminding ourselves **that the only way to reach the finish line is to start...**. My target was simple i.e. "not to be obese" as per the NIH guidelines, provided https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf. I do not remember the time I was at 158 pounds, I just wanted to be 190 or less so that I would not be adding to the "obese" population of the planet. Nidhi on the other hand was reasonably fit and her goal was pretty close to the NIH guidelines.
+So here we were, ready to start and reminding ourselves **that the only way to reach the finish line is to start...**. My target was simple i.e. "not to be obese" as per the NIH guidelines, provided https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf. I do not remember the time I was at 158 pounds, I just wanted to be 190 or less so that I would not be adding to the "obese" population of the planet. Nidhi on the other hand was reasonably fit and her goal was pretty close to the NIH guidelines. I had the motivation, the means and had made up my mind.
+
 
 ```{r echo=FALSE, fig.height=10, fig.width=14}
 df_starting_and_target_weights %>%
@@ -44,3 +45,4 @@ df_starting_and_target_weights %>%
   scale_color_tableau() +
   theme(legend.title = element_blank(), text=element_text(size=CHART_ELEMENT_TEXT_SIZE))
 ```
+
