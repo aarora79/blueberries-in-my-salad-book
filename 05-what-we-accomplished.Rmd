@@ -1,14 +1,3 @@
-```{r include = FALSE}
-if(!knitr:::is_html_output())
-{
-  options("width"=56)
-  knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
-  knitr::opts_chunk$set(fig.pos = 'H')
-  knitr::opts_chunk$set(fig.width = 14)
-  knitr::opts_chunk$set(fig.height = 10)
-}
-```
-
 # What did we accomplish?
 
 I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
