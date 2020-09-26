@@ -38,7 +38,7 @@ df_starting_and_target_weights %>%
   geom_text(aes(x=name, y=value+10, label = paste0("(", value, ")")),
             position = position_dodge(width = 1),
             #nudge_y = 0.015*df_starting_and_target_weights$value,
-            show.legend = FALSE, size=10) + 
+            show.legend = FALSE, size=8) + 
   labs(title="How things stood the day we started",
        subtitle=glue("All weights in pounds. Starting date: {min(df_P2$Date, na.rm=TRUE)}."),
        caption="Note: Ideal weight as per NIH guidelines.") +
