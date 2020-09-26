@@ -1,7 +1,7 @@
 bookdown::gitbook:
   css: style.css
   config:
-    download: ["epub"]
+    download: ["pdf", "epub"]
     toc:
       before: |
         <li><a href="./">Blueberries in My Salad</a></li>
