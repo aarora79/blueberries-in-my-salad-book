@@ -42,7 +42,7 @@ library(stringr)
 library(ggthemes)
 library(lubridate)
 library(tidyverse)
-library(kableExtra)
+#library(kableExtra)
 library(futile.logger)
 
 source("globals.R")
