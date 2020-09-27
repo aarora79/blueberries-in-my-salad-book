@@ -38,8 +38,8 @@ The following tables show the different exercises we did, over time, as part of 
 
   gt(df_exercises) %>%
     cols_width(
-    starts_with("Exercises") ~ px(200),
-    everything() ~ px(60)
+    starts_with("Exercises") ~ px(400),
+    everything() ~ px(100)
     ) %>%
     tab_header(
       title = md("**Exercise Routine**"),
@@ -49,7 +49,8 @@ The following tables show the different exercises we did, over time, as part of 
       source_note = md("Not a complete list, just the ones I randomly remembered.")
     )
 ```
-
+  
+  
 The conditioning part of the routine usually consisted of either a 12 minute AMRAP (as many rounds as possible) or a 12 minute EMOM (every minute on the minute) or sometimes a HIIT (high intensity interval training) such as Tabata or on some days just a combination of exercises.
 
 ## Our calendar so far
