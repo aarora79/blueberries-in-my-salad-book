@@ -37,6 +37,10 @@ The following tables show the different exercises we did, over time, as part of 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
   gt(df_exercises) %>%
+    cols_width(
+    starts_with("Exercises") ~ px(200),
+    everything() ~ px(60)
+    ) %>%
     tab_header(
       title = md("**Exercise Routine**"),
       subtitle = md("Different exercises for different muscles")
