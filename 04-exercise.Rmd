@@ -129,7 +129,10 @@ Deadlifts are my favorite. They are a full body exercise, our trainer says deadl
 
 The first day I tried it, I recall that the trainer was very cautious, I don't know if she thought I could even do it (I was fat and never been to the gym until last 2 months remember, this was February). To this day, when I have graduated from lifting the hexbar with no weights to lifting the same hexbar with 100 pound weights on either side, she is still extremely cautious and correctly so. I have heard from her that it is possible to deadlift 3 times your body weight, while that is not my target, I do want to get to deadlifting 400 pounds eventually, maybe sometime in 2021.
 
-Here is a chart that puts this all in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
+Here is a picture of my favorite hexbar with total weight 265 pounds (which includes 55 pounds of the bar itself).  
+![Hexbar, total weight 265 pounds](pictures/hexbar-w-255p.jpg)
+
+The following chart puts all this in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
 df_dl <- df_deadlifts %>%
