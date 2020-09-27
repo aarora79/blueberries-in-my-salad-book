@@ -3,11 +3,10 @@
 ## Food checklist for clean eating challenge
 
 Here is a listing of items that we got reviewed from our trainer for the clean eating program.
+<img src="pictures/clean-eating-1.jpg" width="500" height="600">
 
-![](pictures/clean-eating-1.jpg)
+<img src="pictures/clean-eating-2.jpg" width="500" height="600">
 
-![](pictures/clean-eating-2.jpg)
+<img src="pictures/clean-eating-3.jpg" width="500" height="600">
 
-![](pictures/clean-eating-3.jpg)
-
-![](pictures/clean-eating-4.jpg)
+<img src="pictures/clean-eating-4.jpg" width="500" height="600">

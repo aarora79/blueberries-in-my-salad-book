@@ -10,7 +10,7 @@ I look at some old videos now of me doing exercises like planks or air-squats wh
 
 We started with working out twice a week, and then went to thrice, and then four times and now I work out five times a week. Nidhi tried the four times a week routine but is now nicely settled into three times a week. In 8 months I have come from having to push myself to workout twice a week to now seems like my body cannot have enough of it. Of course, it helps that because of Corona, we are all working from home so we have a little more flexibility with our schedules. If there is one silver lining that I can see in this otherwise disaster of an year, it is this.
 
-One day a couple of months into training, I stumbled upon a YouTube video of the training routine of an actress who played the role of a superhero in one of her movies. Her trainer said when she came to the gym and looked at people doing pullups and deadlifts, her reaction was that "Oh yeah this is cool and all but I can't do that", and a few months later she was deadlifting 235 pounds. When I saw the video, I had a similar reaction. I thought sure, a Hollywood actress with a celebrity trainer can of course do this, I cannot. I WAS WRONG. I recently deadlifted 265 pounds, and while I have just started doing assisted pullups, I can at least visualize myself doing some real pullups all by myself, not easy, but definitely possible. I will end this section by saying I am hugely inspired by how much work actors and actresses put in these days to be fit and to look the part that they are playing (the references section has a link to some videos).
+One day a couple of months into training, I stumbled upon a YouTube video of the training routine of an actress who played the role of a superhero in one of her movies. Her trainer said when she came to the gym and looked at people doing pullups and deadlifts, her reaction was that "Oh yeah this is cool and all but I can't do that", and a few months later she was deadlifting 235 pounds. When I saw the video, I had a similar reaction. I thought sure, a Hollywood actress with a celebrity trainer can of course do this, I cannot. I WAS WRONG. I recently deadlifted 265 pounds, and while I have just started doing assisted pullups, I can at least visualize myself doing some real pullups by myself, not easy, but definitely possible. I will end this section by saying I am hugely inspired by how much work actors and actresses put in these days to be fit and to look the part that they are playing (the references section has a link to some videos).
 
 ## Our workout routine
 
@@ -39,7 +39,7 @@ The following tables show the different exercises we did, over time, as part of 
   gt(df_exercises) %>%
     tab_header(
       title = md("**Exercise Routine**"),
-      subtitle = md("So many different exercises for different muscles")
+      subtitle = md("Different exercises for different muscles")
     )  %>%
     tab_source_note(
       source_note = md("Not a complete list, just the ones I randomly remembered.")
@@ -193,7 +193,7 @@ Having said all this, if your goal is to burn calories to lose a few pounds, the
 
 ## Why my workouts suck sometimes
 
-All days are not the same, all workouts are not the same as well. I have had some days where I felt, "Oh, my God, why does this workout feel so difficult?", "I can't do this anymore", "Remind me why am I subjecting myself to all this again?". It happens and if you workout consistently, you will experience this as well. Good news is, as I learnt, this is normal and even expected.
+All days are not the same, all workouts are not the same as well. I have had some days where I felt, "Oh, my God, why does this workout feel so difficult?", "I can't do this anymore", "Remind me again why am I subjecting myself to all this?". It happens and if you workout consistently, you will experience this as well. Good news is, as I learnt, this is normal and even expected.
 
 Here are some reasons I could think of why sometimes workouts are just plain awful.
 
@@ -205,10 +205,11 @@ Here are some reasons I could think of why sometimes workouts are just plain awf
 
 - **How much to train**: While I firmly believe it is mind over matter so one should keep on pushing oneself but then there has to be a method to the madness. Each and every workout does not have to be insanely hard, a light workout on some days is good and even warranted to allow the body some rest. The key is to push yourself very close to the edge but not to try going over the edge every single time. Over time the edge will automatically push itself forward and you will automatically be able to do more. Do not try to go one up on your body in every workout session, the aim is not to fight the body, it is to respect the body and work with it. Working out too much produces more cortisol than needed, and that is bad, just do enough but don't go overboard.
 
+## Sleep, Sweet Sleep!
 
+When was the last time you felt like sleeping because you were physically tired? If someone asked me this question last year, I would certainly have to jog my memory. I have a sedentary job and my work does not provide me any natural opportunities to get up and move. 
 
-
-
+Now however, on days I have a very good workout, by 8pm or so I start feeling like dozing off. By the time I get to bed and lay down, the mind, body and soul everything wants to immerse itself in deep sleep to rest and recuperate. The only words that come to mind to describe that feeling are "sweet sleep". Doesn't happen very often, but on days that it does, the feeling is hard to miss. A good workout begets good sleep.
 
 
 
