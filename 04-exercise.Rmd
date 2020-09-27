@@ -51,8 +51,10 @@ The following tables show the different exercises we did, over time, as part of 
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
+kable(df_exercises, "latex") %>%
+  column_spec(1, width = "10em")
 
-  knitr::kable(df_exercises)
+ # knitr::kable()
 ```
   
   
