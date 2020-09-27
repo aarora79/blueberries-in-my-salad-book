@@ -36,7 +36,7 @@ The following tables show the different exercises we did, over time, as part of 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-  gt(df_exercises) %>%
+  gt(df_exercises %>% dplyr::group_by(Routine)) %>%
     tab_header(
       title = md("**Exercise Routine**"),
       subtitle = md("Different exercises for different muscles")

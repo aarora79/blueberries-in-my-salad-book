@@ -33,16 +33,13 @@ library(gt)
 library(xts)
 library(zoo)
 library(glue)
-#library(kable)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-#library(dygraphs)
 library(stringr)
 library(ggthemes)
 library(lubridate)
 library(tidyverse)
-#library(kableExtra)
 library(futile.logger)
 
 source("globals.R")
@@ -202,6 +199,11 @@ df_deadlifts <- read_csv(P2_DEADLIFT_URL)
 
 # references
 df_references <- read_csv(REFERENCES_URL)
+
+
+# clean eating list
+df_clean_eating_list <- read_csv(CLEAN_EATING_URL) %>%
+  replace_na(list(`(Optional) Notes` = ""))
 
 ```
 

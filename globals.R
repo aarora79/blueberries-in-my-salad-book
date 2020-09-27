@@ -17,6 +17,7 @@ WT_LOSS_PLATEAUS_URL <- "https://raw.githubusercontent.com/aarora79/biomettracke
 EXERCISES_URL <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/exercises.csv"
 P2_DEADLIFT_URL <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/Amit_deadlifts.csv"
 REFERENCES_URL <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/references.csv"
+CLEAN_EATING_URL <- "https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/clean_eating.csv"
 
 # desired and ideal weights, ideal weight as per NIH website
 # https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf
