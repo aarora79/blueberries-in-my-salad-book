@@ -9,7 +9,7 @@ link-citations: yes
 always_allow_html: true
 description: "This book describes a journey of clean eating and regular workouts that I undertook with my wife from being fat to fit. Like a salad, life may not be the most appealing lunch option but if you can keep finding the blueberries every now and again, it is both rewarding and fulfilling."
 classoption: oneside
-cover-image: "introduction/blueberries-in-my-salad.png"
+cover-image: "introduction/blueberries-in-my-salad-2.png"
 github-repo: aarora79/from-fat-to-fit
 linestretch: 1.15
 linkcolor: NavyBlue
@@ -250,6 +250,13 @@ names(p2_days_counts_as_list) <- p2_days_counts$category_label
 ```
 
 # Preface
+
+```{r, echo=FALSE}
+if (knitr:::is_html_output())
+{
+  knitr::include_graphics("introduction/blueberries-in-my-salad-2.png")
+}
+```
 
 This is neither a book on salads, nor a commentary on life. What it is, is a journal of experiences that my wife and me had in our journey towards being fit and strong.  Like a salad, day to day life may not be the most appealing lunch option, but just like a good salad if you can keep finding the blueberries every now and again, it is both rewarding and fullfilling. The small and big milestones we achieved during our journey kept us going, just like the blueberries in our salad.
 
