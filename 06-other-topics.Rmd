@@ -92,9 +92,6 @@ waffle(
 ) + 
 theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
 
-```
-
-```{r echo=FALSE, warnings=FALSE, message=FALSE, fig.height=10, fig.width=14}
 waffle(
   p1_days_counts_as_list, rows = 7, size = 0.5, legend_pos = "bottom",
   colors = c("#c7d4b6", "#a3aabd", "#a0d0de"),

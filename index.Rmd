@@ -252,7 +252,7 @@ names(p2_days_counts_as_list) <- p2_days_counts$category_label
 # Preface
 
 ```{r, echo=FALSE}
-if (knitr:::is_html_output())
+#if (knitr:::is_html_output())
 {
   knitr::include_graphics("introduction/blueberries-in-my-salad-2.png")
 }
@@ -274,7 +274,7 @@ Finally, nothing in this book should be interpreted as me recommending anything,
 
 I have been wanting to write a book for a long time and this activity with clean eating and exercise, that has helped us improve our quality of life, provided me the impetus to finally put my thoughts on (the virtual) paper.
 
-This would not have been possible without my wife Nidhi, who was not only an equal partner in this journey but was also the head chef to prepare all the tasty & nutritious food, the assistant coach who kept an eagle eye on my forms during the exercise and also the one who kept on encouraging me to keep writing. She is also the proof reader for this book, although any mistakes and omissions are mine alone.
+This would not have been possible without my dear wife Nidhi, who was not only an equal partner in this journey but was also the head chef to prepare all the tasty & nutritious food (all the photographs including the book cover are courtesy her), the assistant coach who kept an eagle eye on my forms during the exercise and also the one who kept on encouraging me to write. She is also the proof reader for this book, although any mistakes and omissions are mine alone.
 
 A huge thank you is due to our wonderful trainer and friend, Dawn Kirk. Thank you Dawn for persisting and persevering with us. I wish everyone has the good fortune to have a trainer like you.  
 
