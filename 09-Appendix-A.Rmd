@@ -7,7 +7,11 @@ This table lists the food items we could think of (from what we generally eat) i
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
 df_clean_eating_list %>%
-    gt::gt(groupname_col = 'Food Category')
+    gt::gt(groupname_col = 'Food Category') %>%
+    tab_header(
+      title = md("**Food items we got reviewed for the clean eating challenge**"),
+      subtitle = md("Tried to cover everything we could think of...")
+    ) 
 
 #  gt( %>% dplyr::group_by(``)) %>%
 #    tab_header(

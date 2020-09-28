@@ -36,14 +36,21 @@ The following tables show the different exercises we did, over time, as part of 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-  gt(df_exercises %>% dplyr::group_by(Routine)) %>%
+  df_exercises %>%
+    gt::gt(groupname_col = 'Routine') %>%
     tab_header(
       title = md("**Exercise Routine**"),
       subtitle = md("Different exercises for different muscles")
-    )  %>%
-    tab_source_note(
-      source_note = md("Not a complete list, just the ones I randomly remembered.")
     )
+  
+#gt(df_exercises %>% dplyr::group_by(Routine)) %>%
+#    tab_header(
+#      title = md("**Exercise Routine**"),
+ #     subtitle = md("Different exercises for different muscles")
+#    )  %>%
+#    tab_source_note(
+#      source_note = md("Not a complete list, just the ones I randomly remembered.")
+#    )
 ```
 
   
