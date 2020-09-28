@@ -80,4 +80,23 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
 
 ```
 
+## Breakup of the days
+
+At a macro level it is useful to visualize how many days did we lose weight Vs how many days did we gain and how many days was there no change. Ofcourse we know we would have lost weight on more days than we gained weight (otherwise this book would not exist), but a good visualization is always welcome.
+
+```{r echo=FALSE, warnings=FALSE, message=FALSE, fig.height=10, fig.width=14}
+waffle(
+  p2_days_counts_as_list, rows = 7, size = 0.5, legend_pos = "bottom",
+  colors = c("#c7d4b6", "#a3aabd", "#a0d0de"),
+  title = glue("Break up of {P2_NAME}'s days..."),
+)
+```
+
+```{r echo=FALSE, warnings=FALSE, message=FALSE, fig.height=10, fig.width=14}
+waffle(
+  p1_days_counts_as_list, rows = 7, size = 0.5, legend_pos = "bottom",
+  colors = c("#c7d4b6", "#a3aabd", "#a0d0de"),
+  title = glue("Break up of {P1_NAME}'s days..."),
+)
+```
 

@@ -41,6 +41,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(stringr)
+library(waffle)
 library(ggthemes)
 library(lubridate)
 library(tidyverse)
@@ -209,6 +210,42 @@ df_references <- read_csv(REFERENCES_URL)
 df_clean_eating_list <- read_csv(CLEAN_EATING_URL) %>%
   replace_na(list(`(Optional) Notes` = ""))
 
+# break up of days, how many days did we lose wieght, gain weight, no change
+p1_days_counts <- df_wt_loss %>%
+  filter(name == P1_NAME) %>%
+  ungroup() %>%
+  select(Date, loss_per_day) %>%
+  drop_na() %>%
+  mutate(category = case_when(
+    loss_per_day > 0 ~ "Weight Loss",
+    loss_per_day < 0 ~ "Weight Gain",
+    loss_per_day == 0 ~ "No Change"
+  )) %>%
+  count(category, sort=TRUE) %>%
+  mutate(category_label = glue("{category} ({n} days)")) %>%
+  select(-category)
+
+
+p1_days_counts_as_list <- unlist(p1_days_counts$n)
+names(p1_days_counts_as_list) <- p1_days_counts$category_label
+
+p2_days_counts <- df_wt_loss %>%
+  filter(name == P2_NAME) %>%
+  ungroup() %>%
+  select(Date, loss_per_day) %>%
+  drop_na() %>%
+  mutate(category = case_when(
+    loss_per_day > 0 ~ "Weight Loss",
+    loss_per_day < 0 ~ "Weight Gain",
+    loss_per_day == 0 ~ "No Change"
+  )) %>%
+  count(category, sort=TRUE) %>%
+  mutate(category_label = glue("{category} ({n} days)")) %>%
+  select(-category)
+
+
+p2_days_counts_as_list <- unlist(p2_days_counts$n)
+names(p2_days_counts_as_list) <- p2_days_counts$category_label
 ```
 
 # Preface
