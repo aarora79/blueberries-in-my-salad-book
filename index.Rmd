@@ -221,11 +221,11 @@ p1_days_counts <- df_wt_loss %>%
     loss_per_day < 0 ~ "Weight Gain",
     loss_per_day == 0 ~ "No Change"
   )) %>%
-  count(category, sort=TRUE) %>%
+  count(category, sort=FALSE) %>%
   mutate(category_label = glue("{category} ({n} days)")) %>%
   select(-category)
 
-
+p1_days_total <- sum(p1_days_counts$n)
 p1_days_counts_as_list <- unlist(p1_days_counts$n)
 names(p1_days_counts_as_list) <- p1_days_counts$category_label
 
@@ -239,11 +239,11 @@ p2_days_counts <- df_wt_loss %>%
     loss_per_day < 0 ~ "Weight Gain",
     loss_per_day == 0 ~ "No Change"
   )) %>%
-  count(category, sort=TRUE) %>%
+  count(category, sort=FALSE) %>%
   mutate(category_label = glue("{category} ({n} days)")) %>%
   select(-category)
 
-
+p2_days_total <- sum(p2_days_counts$n)
 p2_days_counts_as_list <- unlist(p2_days_counts$n)
 names(p2_days_counts_as_list) <- p2_days_counts$category_label
 ```

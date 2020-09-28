@@ -88,9 +88,9 @@ At a macro level it is useful to visualize how many days did we lose weight Vs h
 waffle(
   p2_days_counts_as_list, rows = 7, size = 0.5, legend_pos = "bottom",
   colors = c("#c7d4b6", "#a3aabd", "#a0d0de"),
-  title = glue("Break up of {P2_NAME}'s days..."),
+  title = glue("Break up of {P2_NAME}'s {p2_days_total} days"),
 ) + 
-theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-10))
+theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
 
 ```
 
@@ -98,9 +98,9 @@ theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-10))
 waffle(
   p1_days_counts_as_list, rows = 7, size = 0.5, legend_pos = "bottom",
   colors = c("#c7d4b6", "#a3aabd", "#a0d0de"),
-  title = glue("Break up of {P1_NAME}'s days..."),
+  title = glue("Break up of {P1_NAME}'s {p1_days_total} days"),
 ) + 
-theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-10))
+theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
 
 ```
 
