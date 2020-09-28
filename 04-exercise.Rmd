@@ -40,17 +40,8 @@ The following tables show the different exercises we did, over time, as part of 
     gt::gt(groupname_col = 'Routine') %>%
     tab_header(
       title = md("**Exercise Routine**"),
-      subtitle = md("Different exercises for different muscles")
+      subtitle = md("Not a comprehensive list, just a random selection.")
     )
-  
-#gt(df_exercises %>% dplyr::group_by(Routine)) %>%
-#    tab_header(
-#      title = md("**Exercise Routine**"),
- #     subtitle = md("Different exercises for different muscles")
-#    )  %>%
-#    tab_source_note(
-#      source_note = md("Not a complete list, just the ones I randomly remembered.")
-#    )
 ```
 
   
@@ -169,7 +160,7 @@ p <- df_dl %>%
                    nudge_x=2*NUDGE_X,
                    na.rm = TRUE, col=I("black")) +
   geom_hline(yintercept = P2_DEADLIFT_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
-  geom_text(aes(max(df_dl$date) - 15, P2_DEADLIFT_TARGET_WEIGHT, label = "300 lb, target for 2020", vjust = -1), family="NimbusRom", fontface="plain", size=4) +
+  geom_label(aes(max(df_dl$date) - 15, P2_DEADLIFT_TARGET_WEIGHT-2, label = "300 lb, target for 2020", vjust = -1), size=4) +
   scale_y_continuous(breaks = seq(0, P2_DEADLIFT_TARGET_WEIGHT+25, by = 50)) + 
   scale_x_date(date_breaks = "1 month", date_labels = "%b") +
   labs(title="What does'nt kill you makes you stronger...",
