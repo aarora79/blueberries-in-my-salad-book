@@ -9,7 +9,7 @@ link-citations: yes
 always_allow_html: true
 description: "This book describes a journey of clean eating and regular workouts that I undertook with my wife from being fat to fit. Like a salad, life may not be the most appealing lunch option but if you can keep finding the blueberries every now and again, it is both rewarding and fulfilling."
 classoption: oneside
-cover-image: "introduction/blueberries-in-my-salad-2.png"
+cover-image: "introduction/blueberries-in-my-salad.png"
 github-repo: aarora79/from-fat-to-fit
 linestretch: 1.15
 linkcolor: NavyBlue
@@ -17,9 +17,11 @@ links-as-notes: true
 url: 'https\://aarora79.github.io/from-fat-to-fit/'
 twitter-handle: aarora79
 header-includes:
-- \usepackage{setspace}
-- \doublespacing
-- \usepackage{caption} # Insert the package used by gt
+  - \usepackage{setspace}
+  - \doublespacing
+  - \usepackage{caption} # Insert the package used by gt
+  - \usepackage{titlepic}
+  - \titlepic{\includegraphics[width=\textwidth]{introduction/blueberries-in-my-salad.pdf}}
 ---
 
 ```{r include = FALSE}
@@ -252,9 +254,9 @@ names(p2_days_counts_as_list) <- p2_days_counts$category_label
 # Preface
 
 ```{r, echo=FALSE}
-#if (knitr:::is_html_output())
+if (knitr:::is_html_output())
 {
-  knitr::include_graphics("introduction/blueberries-in-my-salad-2.png")
+  knitr::include_graphics("introduction/blueberries-in-my-salad.png")
 }
 ```
 
