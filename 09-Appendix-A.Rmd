@@ -5,21 +5,17 @@
 This table lists the food items we could think of (from what we generally eat) in each of the categories listed for the 30-day clean eating challenge. It also contains certain other categories that we added based on the food items in our pantry. The purpose here was to get a clear Yay or Nay listed alongside each food item so that we knew exactly what is allowed and did not end up with a day 0 crisis at our hands.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-
-df_clean_eating_list %>%
-    # gt::gt() %>%
+if (!knitr:::is_html_output()) {
+  df_clean_eating_list %>%
+  kable(format="latex", booktabs=TRUE) %>% 
+  kable_styling(latex_options="scale_down")
+  
+} else {
+    df_clean_eating_list %>%
     gt::gt(groupname_col = 'Food Category') %>%
     tab_header(
       title = md("**Food items we got reviewed for the clean eating challenge**"),
       subtitle = md("Tried to cover everything we could think of...")
-    ) 
-
-#  gt( %>% dplyr::group_by(``)) %>%
-#    tab_header(
-#      title = md("**Food items we got reviewed for the clean eating challenge**"),
-#      subtitle = md("Tried to cover everything we could think of...")
-#    )  %>%
-#    tab_source_note(
-#      source_note = md("This list held us in good stead over the two rounds of clean eating that we #did.")
-#    )
+    )
+}
 ```

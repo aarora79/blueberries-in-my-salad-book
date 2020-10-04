@@ -32,17 +32,22 @@ With some rest time and setting up equipment for different exercises the above r
 
 For a long time, and even today, I tell myself before the workout, that warmups are easy, the strength portion is just 10 minutes so it will be over quickly before I realize and then the conditioning is the only part that I have to push through and then by the time I am half way through the conditioning it would be almost over and then core is super easy (it is not). This kind of mental setup helps me get through the hour. Of course once I am in the middle of it, unless the workout on the day absolutely pulverizes me, my mind goes almost totally blank, no thoughts at all. I have experienced this many times, going into the workout from a crisis at work is a huge mental shift. Once the workout is over, I realize that maybe the work problems are not that insurmountable as they appeared an hour back. It could be the exercise, or just the fact that I have had the opportunity to (forcibly) extricate myself from the crisis situation and now after an hour I am able to think more clearly. I do not know what is the reason, but I do know that I experience mental clarity after the workout.
 
-The following tables show the different exercises we did, over time, as part of the warmups, strength, conditioning and core. These are over a period of time, with the more difficult ones such as the Turkish getup added much later and for the ones which we did from the start we kept on increasing the weights or the numbers of sets and reps over time.   
+The following tables show the different exercises we did, over time, as part of the warmups, strength, conditioning and core. These are over a period of time, with the more difficult ones such as the Turkish getup added much later and for the ones which we did from the start we kept on increasing the weights or the numbers of sets and reps over time. Not a comprehensive list, just a random selection.    
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-
-  df_exercises %>%
-    #gt::gt() %>%
+if (!knitr:::is_html_output()) {
+  kable(df_exercises, format="latex", booktabs=TRUE) %>% 
+  kable_styling(latex_options="scale_down")
+  
+} else {
+      df_exercises %>%
     gt::gt(groupname_col = 'Routine') %>%
     tab_header(
       title = md("**Exercise Routine**"),
       subtitle = md("Not a comprehensive list, just a random selection.")
     )
+}
+
 ```
 
   
