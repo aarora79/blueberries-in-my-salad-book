@@ -17,6 +17,7 @@ links-as-notes: true
 url: 'https\://aarora79.github.io/from-fat-to-fit/'
 twitter-handle: aarora79
 header-includes:
+  - \pagenumbering{gobble}
   - \usepackage{setspace}
   - \doublespacing
   - \usepackage{caption} # Insert the package used by gt
