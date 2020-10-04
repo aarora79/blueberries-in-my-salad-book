@@ -226,12 +226,12 @@ df_weekly_weight %>%
   labs(title="Boxplot for weekly weight trend",
        subtitle="Shaded regions represent weeks where weight loss plateaued. The line in the center of each box represents the median weight in that week.",
        caption="Data Source: data collected at home") +
-  facet_wrap(~name, scales="free") +
+  facet_wrap(~name, scales="free", ncol=1) +
   theme_fivethirtyeight() + 
   scale_color_tableau() +
   scale_fill_tableau() +
   theme(legend.title = element_blank(), legend.position = "none",
-        text = element_text(size=CHART_ELEMENT_TEXT_SIZE-15)) +
+        text = element_text(size=CHART_ELEMENT_TEXT_SIZE-10)) +
   theme(axis.title = element_text()) + 
   xlab("Weeks since start of training") + 
   ylab("Weight (lb)")
@@ -248,7 +248,7 @@ Once we had collected a reasonable amount of data, I used standard timeseries fo
 Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here that this simple forecast is considering the weight loss as a single variable timeseries, we know it is much more complicated than that. There are a lot of factors that would go into making a much more accurate weight loss forecast (if I could do that then maybe I would be writing a different book :)). This is just a simple attempt.
 
 
-```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=8, fig.width=14}
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
 
 df_forecast_p2 %>%
   rename(Actual=y, Forecast='yhat') %>%
@@ -279,7 +279,7 @@ df_forecast_p2 %>%
   
   
   
-```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=8, fig.width=14}
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
 df_forecast_p1 %>%
   rename(Actual=y, Forecast='yhat') %>%
   gather(category, value, -ds, -yhat_lower, -yhat_upper) %>%
@@ -288,7 +288,7 @@ df_forecast_p1 %>%
   geom_line() + 
   annotate("point", x = df_target_achieved_p1$date, y = df_target_achieved_p1$target, colour = "darkgreen", size = 1.5, alpha=1) +
   annotate(
-    geom = "curve", xend = df_target_achieved_p1$date, yend = df_target_achieved_p1$target, x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, 
+    geom = "curve", xend = df_target_achieved_p1$date, yend = df_target_achieved_p1$target, x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+1, 
     curvature = .3, arrow = arrow(length = unit(2, "mm"))
   ) +
   annotate(geom = "text", x = df_target_achieved_p1$date+2, y = df_target_achieved_p1$target+2, label = glue("(Dt: {df_target_achieved_p1$date}, Wt: {df_target_achieved_p1$target} lb)"), size=7, hjust = "left") +

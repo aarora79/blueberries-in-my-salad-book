@@ -52,11 +52,16 @@ library(futile.logger)
 
 source("globals.R")
 
-
+# read the data, this comes from the biomettracker repo
+# sometimes due to a bug in the weight measurement machine
+# the lean mass and weight come as the same value, this is not 
+# correct so we set the lean mass to NA in that case.
 df_P1 <- read_csv(P1_DATA_URL) %>%
-  mutate(Date=ymd(Date))
+  mutate(Date=ymd(Date)) %>%
+  mutate(`Lean Mass` = ifelse(`Lean Mass` == Weight, NA, Weight))
 df_P2 <- read_csv(P2_DATA_URL) %>%
-  mutate(Date=ymd(Date))
+  mutate(Date=ymd(Date))%>%
+  mutate(`Lean Mass` = ifelse(`Lean Mass` == Weight, NA, Weight))
 
 df_p1_starting_weight <- df_P1 %>% filter(Date == min(Date, na.rm=TRUE)) %>% pull(Weight)
 df_p2_starting_weight <- df_P2 %>% filter(Date == min(Date, na.rm=TRUE)) %>% pull(Weight)
@@ -81,7 +86,8 @@ df_P1 <- read_csv(P1_DATA_URL) %>%
   mutate(name=P1_NAME) %>%
   arrange(Date) %>%
   mutate(Date=ymd(Date)) %>%
-  filter(Date >= START_DATE)
+  filter(Date >= START_DATE) %>%
+  mutate(`Lean Mass` = ifelse(`Lean Mass` == Weight, NA, Weight))
 # read the raw data for person 2, ultimately we want to have this dashboard work the same way
 # even if there was only person 1 so put the following in an if checl
 if(!is.na(P2_NAME)) {
@@ -89,7 +95,8 @@ if(!is.na(P2_NAME)) {
     mutate(name=P2_NAME) %>%
     arrange(Date) %>%
     mutate(Date=ymd(Date)) %>%
-    filter(Date >= START_DATE)
+    filter(Date >= START_DATE) %>%
+    mutate(`Lean Mass` = ifelse(`Lean Mass` == Weight, NA, Weight))
 }
 # read the important dates csv file. This is needed because we would like to annotate this journey
 # so that we can say oh right there was an increase in weight for these days and it followed a birthday party, for example...
@@ -260,9 +267,9 @@ if (knitr:::is_html_output())
 }
 ```
 
-This is neither a book on salads, nor a commentary on life. What it is, is a journal of experiences that my wife and me had in our journey towards being fit and strong.  Like a salad, day to day life may not be the most appealing lunch option, but just like a good salad if you can keep finding the blueberries every now and again, it is both rewarding and fullfilling. The small and big milestones we achieved during our journey kept us going, just like the blueberries in our salad.
+This is neither a book on salads, nor a commentary on life. What it is, is a journal of experiences that my wife and me had in our journey towards being fit and strong.  Like a salad, day to day life may not be the most appealing lunch option, but just like a good salad if you can keep finding the blueberries every now and again, it is both rewarding and fulfilling. The small and big milestones we achieved during our journey kept us going, just like the blueberries in our salad.
 
-I wanted to write a book documenting our (would be more appropriate to say my) fat to fit journey on a day to day or at least a week by week basis. As things progressed, and I looked around, I realized that we were probably the million'th couple in the world doing this and the Internet was filled with blogs and YouTube videos that document in great detail very successful, inspiring and transformational stories. Why was I wanting to reinvent the wheel by writing our story on the same lines? I realized that while a daily or weekly journal was not something I could do but definitely there were "topics" on which I would like to pen down my thoughts. For example, the most often asked question, "What diet are we following?", "Do I really need a trainer?", "Just tell me how long would it take to lose 10 pounds" and so on. Therefore I decided to write this book as a collection of essays on these and other related topics.
+I wanted to write a book documenting our (would be more appropriate to say my) fat to fit journey on a day to day or at least a week by week basis. As things progressed, and I looked around, I realized that we were probably the millionth couple in the world doing this and the Internet was filled with blogs and YouTube videos that document in great detail very successful, inspiring and transformational stories. Why was I wanting to reinvent the wheel by writing our story on the same lines? I realized that while a daily or weekly journal was not something I could do but definitely there were "topics" on which I would like to pen down my thoughts. For example, the most often asked question, "What diet are we following?", "Do I really need a trainer?", "Just tell me how long would it take to lose 10 pounds" and so on. Therefore I decided to write this book as a collection of essays on these and other related topics.
 
 It has been more than 6 months since we started this journey and I feel that we have learnt so much that it is important to document this first and foremost for our own selves and then also for anyone who might be interested (I hope someone is). After all, it is one thing to see someone famous transform and another thing to see someone you know or could relate to (middle aged Punjabi NRI couple anyone?) do the same and then realize "If they could do it, so can I".
 
