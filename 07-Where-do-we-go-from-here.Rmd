@@ -1,10 +1,19 @@
 # From here, where?
 
+```{r echo=FALSE}
+library(jpeg)
+library(grid)
+img <- readJPEG("pictures/before_and_after.jpg")
+grid.raster(img)
+```
+
+Here are the customary before and after pictures. I am not a particularly picture friendly person but I do think a picture here highlights the amount of change much more so than numbers ever can.
+
 What do we do when our target is met? The proverbial last mile is extremely hard as we are finding out and you can see in the charts presented in the previous chapters. Going with the optimistic assumption that we will achieve our weight and strength targets in the next 2 to 3 months, what do we do next?
 
-The natural answer is that sustaining ourselves at that level of health is going to be a challenge in itself and it is tough one. What I feel at this time is that this has been such a hard fought (not to mention expensive) battle that giving it all away, the very thought of it, sends a shiver down the spine. It is also true, I have been up this hill before and slided back.
+The natural answer is that sustaining ourselves at that level of health is going to be a challenge in itself and and a tough one at that. What I feel at this time is that this has been such a hard fought (not to mention expensive) battle that the very thought that this could all go away sends a chill down the spine. It is also true that I have been up this hill before and slided back.
 
-What is going to help, is to set a new target, that will change the problem from just being one of sustainence to one of achieving a new target. Setting your eyes on the next peak gives an aspirational goal to look up to. Aspirations make you wake up in the morning and get moving. When aspirations are standing on the legs of recent achievements, anything is possible.
+What is going to help is to set a new target, that will change the problem from just being one of sustainence to one of achieving a new target. Setting your eyes on the next peak gives an aspirational goal to look up to. Aspirations make you wake up in the morning and get moving. When aspirations are standing on the legs of recent achievements, anything is possible.
 
 My younger one wants to get into wrestling, he is 7 years old. Maybe he and I will train together some day! Let's see where this mid life "obsession" takes me.
 

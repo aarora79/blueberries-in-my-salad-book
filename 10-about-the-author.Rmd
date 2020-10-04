@@ -1,0 +1,10 @@
+# About the author
+
+```{r fig.width=3, fig.height=5,echo=FALSE}
+library(jpeg)
+library(grid)
+img <- readJPEG("pictures/amit.jpg")
+grid.raster(img)
+```
+
+My name is Amit Arora. I live in Clarksburg, Maryland with my wife Nidhi and two sons Nabhit (11) and Aadit (7). I have a bachelors degree in engineering and a masters degree in data science. I love working with data, scrolling through political twitter and writing.
