@@ -125,9 +125,10 @@ dfPlot %>%
 
 You can notice in the charts the number of days marked as [E] (for exercise) has increased over the months. This is something that happened organically. As we exercised more and ate right, the body became stronger and it could take on more work and so we exercised even more, it became a self driving cycle. Exercise also gives you a "high", a feeling of euphoria, you cannot miss it. Stated differently, this increased number of workouts, doing more sets and reps, this was only partially driven by just the motivation to lose weight, the rest of it was because A) the body became strong enough that the current load became easier and so a step up was needed and B) the desire for that "high", it makes you want to get more of the stuff that got you here in the first place. If this book ever gets into the hands of someone who has exercised for any length of time, I would like to add that what I have written here may seem routine and totally on expected lines to you but to me this was unlike anything I had experienced before, it was a joyous discovery.
 
-\pagebreak
 
-## What does'nt kill you makes stronger
+## That which does not kill us makes us stronger*
+
+<i>*Quote from Friedrich Nietzsche</i>
 
 Deadlifts are my favorite. They are a full body exercise, our trainer says deadlifts are a game changer. I have watched a lot of celebrity trainers on YouTube and heard them echo the same sentiments. While we did several different variants of the deadlift such as the single leg stiff leg deadlift, the sumo stance deadlift etc. but my personal favorite and something that I religiously tracked was the deadlift with a hexbar. Maybe it had to do something with the visual imagery I had in my head of this being a strong man's exercise. I remember that when I first saw the hexbar in the gym I asked our trainer when are we doing that and she said, you will get there in a couple of weeks (this was sometime in mid to late February). The hexbar weighed 55 pounds, it was the heaviest they had.
 
@@ -136,7 +137,7 @@ The first day I tried it, I recall that the trainer was very cautious, I don't k
 Here is a picture of my favorite hexbar with total weight 265 pounds (which includes 55 pounds of the bar itself).  
 ![Hexbar, total weight 265 pounds](pictures/hexbar-w-255p.jpg)
 
-The following chart puts all this in perspective. You can see a boxplot of the deadlifts I did over time alongwith a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
+The following chart puts all this in perspective. You can see a boxplot of the deadlifts I did over time along with a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
 df_dl <- df_deadlifts %>%
@@ -175,7 +176,7 @@ p <- df_dl %>%
                  vjust = -0.75), size=4) +
   scale_y_continuous(breaks = seq(0, P2_DEADLIFT_TARGET_WEIGHT+25, by = 50)) + 
   scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-  labs(title="What does'nt kill you makes you stronger...",
+  labs(title="That which does not kill us makes us stronger",
        subtitle=glue("Journey from deadlifting {min(df_dl$weight)} lb to {max(df_dl$weight)} lb in {time_duration_in_weeks} weeks"),
        caption="Note: Line in the middle of the each box is the median weight deadlifted that day.") +
   theme_fivethirtyeight() + 
