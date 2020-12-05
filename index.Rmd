@@ -208,10 +208,11 @@ df_measurements <- df_measurements %>%
   filter(measurement %in% MEASUREMENTS_TO_KEEP)
 
 # table for different types of exercises
-df_exercises <- read_csv(EXERCISES_URL)
+df_exercises <- read_csv(EXERCISES_URL) 
 
 # exercise dates for calendar plot
-df_exercise_dates <- read_csv(EXERCISE_DATES_URL)
+df_exercise_dates <- read_csv(EXERCISE_DATES_URL)  %>%
+  mutate(date=ymd(date)) 
 df_deadlifts <- read_csv(P2_DEADLIFT_URL)
 
 # references
