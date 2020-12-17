@@ -91,6 +91,47 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
 
 ```
 
+```{r  echo=FALSE, warnings=FALSE, message=FALSE, fig.height=10, fig.width=14}
+ # number of days spent at each weight, these could be in any order, we are just counting
+  # the total number of days at a weight.
+  df_days_at_a_weight <- df_tidy %>%
+    filter(metric=='Weight') %>%
+    select(-metric, -Date) %>%
+    mutate(value = as.integer((value))) %>%
+    group_by(name, value) %>%
+    count(value)
+  
+  # median number of days each person stays at a weight
+  df_days_at_a_weight_median <- df_days_at_a_weight %>%
+    ungroup() %>%
+    group_by(name) %>%
+    summarize(median_num_of_days_at_weight = as.integer(median(n)))
+  
+  number_of_days_at_wt_p1 <- df_days_at_a_weight_median %>% filter(name == P1_NAME) %>% pull(median_num_of_days_at_weight)
+  number_of_days_at_wt_p2 <- df_days_at_a_weight_median %>% filter(name == P2_NAME) %>% pull(median_num_of_days_at_weight)
+  df_tidy %>%
+    filter(metric=='Weight' & name == P2_NAME) %>%
+    select(-metric, -Date) %>%
+    mutate(value = as.integer((value))) %>%
+    group_by(name, value) %>%
+    count(value) %>%
+    arrange(value) %>%
+    ggplot(aes(x=reorder(value, -value), y=n, col=name, fill=name)) +
+    geom_bar(stat="identity") +
+    #facet_wrap(~name, ncol=1, scales = "free") +
+    theme_fivethirtyeight() +
+    xlab("Weight (lb)") +
+    labs(title=glue(HOW_EACH_POUND_WAS_LOST_TITLE),
+         subtitle=glue("{P2_NAME} spends {number_of_days_at_wt_p2} days."),
+         caption=CAPTION) + 
+    theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.position = "none") + 
+    scale_color_tableau() + 
+    scale_fill_tableau() + 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    theme(axis.title = element_text()) +  ylab("Number of days at this weight")
+
+```
+
 ## Breakup of the days
 
 We know we lost weight on more days than we gained weight (otherwise this book would not exist), but a good visualization is always welcome.
