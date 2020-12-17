@@ -122,7 +122,7 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
     theme_fivethirtyeight() +
     xlab("Weight (lb)") +
     labs(title=glue(HOW_EACH_POUND_WAS_LOST_TITLE),
-         subtitle=glue("{P2_NAME} spends {number_of_days_at_wt_p2} days."),
+         subtitle=glue("Used to take {number_of_days_at_wt_p2} days to lose a pound, but all that changed after 210 pounds."),
          caption=CAPTION) + 
     theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.position = "none") + 
     scale_color_tableau() + 
