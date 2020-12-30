@@ -116,7 +116,8 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
     group_by(name, value) %>%
     count(value) %>%
     arrange(value) %>%
-    ggplot(aes(x=reorder(value, -value), y=n, col=name, fill=name)) +
+    mutate(bar_color = ifelse(value < 210, "more", "less" )) %>%
+    ggplot(aes(x=reorder(value, -value), y=n, col=bar_color, fill=bar_color)) +
     geom_bar(stat="identity") +
     #facet_wrap(~name, ncol=1, scales = "free") +
     theme_fivethirtyeight() +
