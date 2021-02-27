@@ -178,10 +178,10 @@ p <- df_dl %>%
   
   geom_hline(yintercept = P2_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
   geom_label(aes(min(df_dl$date) + 20, P2_TARGET_WEIGHT-2,
-                 label = glue("{P2_TARGET_WEIGHT} lb, body weight target for 2020"),
+                 label = glue("{P2_TARGET_WEIGHT} lb, body weight target"),
                  vjust = -0.75), size=4) +
   scale_y_continuous(breaks = seq(0, P2_DEADLIFT_TARGET_WEIGHT+25, by = 50)) + 
-  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+  scale_x_date(date_breaks = "1 month", date_labels = "%b %Y") +
   labs(title="That which does not kill us makes us stronger",
        subtitle=glue("Journey from deadlifting {min(df_dl$weight)} lb to {max(df_dl$weight)} lb in {time_duration_in_weeks} weeks"),
        caption="Note: Line in the middle of the each box is the median weight deadlifted that day.") +
