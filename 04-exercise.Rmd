@@ -170,6 +170,12 @@ p <- df_dl %>%
   geom_label(aes(min(df_dl$date) + 15, P2_DEADLIFT_TARGET_WEIGHT-2,
                  label = glue("{P2_DEADLIFT_TARGET_WEIGHT} lb, deadlift target for 2020"),
                  vjust = -0.75), size=4) +
+  
+    geom_hline(yintercept = P2_DEADLIFT_TARGET_WEIGHT+100, colour="#990000", linetype="dashed") +
+  geom_label(aes(min(df_dl$date) + 15, P2_DEADLIFT_TARGET_WEIGHT+100-2,
+                 label = glue("{P2_DEADLIFT_TARGET_WEIGHT+100} lb, deadlift target for 2021"),
+                 vjust = -0.75), size=4) +
+  
   geom_hline(yintercept = P2_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
   geom_label(aes(min(df_dl$date) + 20, P2_TARGET_WEIGHT-2,
                  label = glue("{P2_TARGET_WEIGHT} lb, body weight target for 2020"),

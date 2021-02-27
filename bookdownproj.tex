@@ -7,12 +7,13 @@
   oneside]{book}
 \usepackage{lmodern}
 \usepackage{setspace}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
 \else % if luatex or xetex
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
@@ -48,6 +49,7 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -56,7 +58,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -85,10 +87,13 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{longtable}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 
 \title{Blueberries in My Salad}
 \author{Amit Arora}
-\date{December 2020}
+\date{February 2021}
 
 \begin{document}
 \maketitle
@@ -255,7 +260,7 @@ We saw very good results in both the iterations. The first iteration produced mu
 
 Here is another chart that compares the weight loss during clean eating and non-clean eating days. Note that even when we were not doing clean eating we were still careful about what we were eating (in other words we were not gorging on Pizzas and butter chicken, soft and hard drinks were still completely off limits).
 
-The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb per day on 50\% of the days during clean eating whereas I only lost at least 0.005 lb on 50\% of the days during non-clean eating period. The data for this chart includes both clean eating periods over a timespan from 2020-02-17 to 2020-12-12.
+The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb per day on 50\% of the days during clean eating whereas I only lost at least 0.005 lb on 50\% of the days during non-clean eating period. The data for this chart includes both clean eating periods over a timespan from 2020-02-17 to 2021-02-24.
 
 \includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf}
 
@@ -435,18 +440,18 @@ I have said this earlier in this book, my initial goal for meeting with a traine
 \toprule
 Metric & Amit & Nidhi \\ 
 \midrule
-Days since start & 299 & 299 \\ 
-Days taken to lose last 10 pounds & 139 & 279 \\ 
+Days since start & 373 & 373 \\ 
+Days taken to lose last 10 pounds & 101 & 370 \\ 
 Starting Weight (lb) & 251.33 & 151.9 \\ 
-Current Weight (lb) & 199.96 & 134.48 \\ 
-Total weight loss (lb) & 51.37\textsuperscript{1} & 17.42\textsuperscript{2} \\ 
+Current Weight (lb) & 195.33 & 138.89 \\ 
+Total weight loss (lb) & 56\textsuperscript{1} & 13.01\textsuperscript{2} \\ 
 Best Weight loss month & May, 8.38 lb & Mar, 6.18 lb \\ 
 \bottomrule
 \end{longtable}
 \vspace{-5mm}
 \begin{minipage}{\linewidth}
-\textsuperscript{1}20.44\% of the starting body weight. \\ 
-\textsuperscript{2}11.47\% of the starting body weight. \\ 
+\textsuperscript{1}22.28\% of the starting body weight. \\ 
+\textsuperscript{2}8.56\% of the starting body weight. \\ 
 \end{minipage}
 \begin{minipage}{\linewidth}
 Source: Daily measurements done @home\\ 
@@ -576,17 +581,19 @@ Sometimes we get anxious about being stuck at a particular weight or oscillating
 
 \includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf}
 
+\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf}
+
 \hypertarget{breakup-of-the-days}{%
 \section{Breakup of the days}\label{breakup-of-the-days}}
 
 We know we lost weight on more days than we gained weight (otherwise this book would not exist), but a good visualization is always welcome.
 
-\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf} \includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-18-2.pdf}
+\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf} \includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-19-2.pdf}
 
 \hypertarget{from-here-where}{%
 \chapter{From here, where?}\label{from-here-where}}
 
-\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf}
 
 Here are the customary before and after pictures. I am not a particularly picture friendly person but I do think a picture here highlights the amount of change much more so than numbers ever can.
 
@@ -841,7 +848,7 @@ Others & Vinegar & Y\\*
 \hypertarget{about-the-author}{%
 \chapter{About the author}\label{about-the-author}}
 
-\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf}
+\includegraphics{bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf}
 
 My name is Amit Arora. I live in Clarksburg, Maryland with my wife Nidhi and two sons Nabhit (11) and Aadit (7). I have a bachelors degree in engineering and a masters degree in data science. I love working with data, scrolling through political twitter and writing.
 
