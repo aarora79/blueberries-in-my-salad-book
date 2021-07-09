@@ -23,6 +23,8 @@ header-includes:
   - \usepackage{caption} # Insert the package used by gt
   - \usepackage{titlepic}
   - \titlepic{\includegraphics[width=\textwidth]{introduction/blueberries-in-my-salad.pdf}}
+bibliography: ["PMC2257922.nbib"]
+biblio-style: "apalike"
 ---
 
 ```{r include = FALSE}
