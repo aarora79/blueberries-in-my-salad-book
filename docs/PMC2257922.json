@@ -1,0 +1,57 @@
+{
+    "source": "PubMed",
+    "accessed": {
+        "date-parts": [
+            [
+                2021,
+                7,
+                8
+            ]
+        ]
+    },
+    "id": "pmid:16204431",
+    "title": "Caffeine stimulation of cortisol secretion across the waking hours in relation to caffeine intake levels",
+    "author": [
+        {
+            "family": "Lovallo",
+            "given": "William R"
+        },
+        {
+            "family": "Whitsett",
+            "given": "Thomas L"
+        },
+        {
+            "family": "al'Absi",
+            "given": "Mustafa"
+        },
+        {
+            "family": "Sung",
+            "given": "Bong Hee"
+        },
+        {
+            "family": "Vincent",
+            "given": "Andrea S"
+        },
+        {
+            "family": "Wilson",
+            "given": "Michael F"
+        }
+    ],
+    "container-title-short": "Psychosom Med",
+    "container-title": "Psychosomatic medicine",
+    "ISSN": "0033-3174",
+    "issued": {
+        "date-parts": [
+            [
+                2005
+            ]
+        ]
+    },
+    "page": "734-9",
+    "volume": "67",
+    "issue": "5",
+    "PMID": "16204431",
+    "PMCID": "PMC2257922",
+    "DOI": "10.1097/01.psy.0000181270.20036.06",
+    "type": "article-journal"
+}
