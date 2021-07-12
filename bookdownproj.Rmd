@@ -1396,7 +1396,32 @@ By intermittent fasting, I mean a 12 hour fast and a 12 hour eating window OR a 
 
 All my adult life I had eaten three full meals a day, the idea there is no breakfast was so much out there that even until a few months ago I used to think that if you do not eat breakfast how do you even function! Not any more. I feel fantastic with my 16-8 routine. I realized that often times when due to some work related crisis in the morning I could not eat breakfast until noon, my mind actually worked much better, now it could simply be a result of being very focused on the problem but it was definitely something I considered when trying intermittent fasting.
 
-While I do not eat breakfast, but I do take my morning coffee (no cream or sugar), sometimes with 10 to 15ml of MCT oil added to it to make it the so called **Bulletproof Coffee**. The MCT oil provides the fat which they say gives you energy, clears brain fog and has other benefits. I am not so sold on the benefits, I do take it every now and then. Recently though, instead of the morning coffee I have started taking microgreens, available as powder that you can just mix in cold water and drink and then take my coffee an hour or so later at the start of my work day. This arrangement works much better for me. The microgreens help provide several essential pre and post-biotics, vitamins and minerals. I have seen several nutritionists recommending not to take coffee (or tea) right after walking up. Drinking coffee on an empty stomach could cause gut health issue, increase or changes the Cortisol production cycle, so I am happy that have shifted my coffee intake to about two hours (or sometimes even more) after waking up. While on the topic of caffeine, I don't drink coffee after 3pm and rarely if ever after 4pm. 
+While I do not eat breakfast, but I do take my morning coffee (no cream or sugar), sometimes with 10 to 15ml of MCT oil added to it to make it the so called **Bulletproof Coffee**. The MCT oil provides the fat which they say gives you energy, clears brain fog and has other benefits. I am not so sold on the benefits, I do take it every now and then. Recently though, instead of the morning coffee I have started taking microgreens, available as powder that you can just mix in cold water and drink and then take my coffee an hour or so later at the start of my work day. This arrangement works much better for me. The microgreens help provide several essential pre and post-biotics, vitamins and minerals. I have seen several nutritionists recommending not to take coffee (or tea) right after walking up. Drinking coffee on an empty stomach could cause gut health issue, increase or changes the Cortisol production cycle, so I am happy that have shifted my coffee intake to about two hours (or sometimes even more) after waking up. While on the topic of caffeine, I don't drink coffee after 3pm and rarely if ever after 4pm. Here is a picture of the microgreens drink, first thing in the morning.
+
+![Microgreens](pictures/microgreens.jpg)
+## The lunch
+
+One thing that has relatively stayed the same, and which also explains the unchanged name of this book, is the lunch salad, of course with blueberries. It is still something we greatly enjoy eating. The fact that it is something that is healthy and tastes good means that there isn't any need to change it. I mean why fix something that ain't broken? Our lunch is usually around 1pm.
+
+The salad still consists of a healthy dose of cruciferous vegetables such as a kale, broccoli stalks, cabbage, arugula, brussels sprouts. The benefits cruciferous vegetables are well documented in terms of their anti-oxidant and anti-inflammatory effects. These vegetables are also good source of fiber and vitamins. There is some research to study relationship between cruciferous vegetables and different types of cancers, I am putting the link the paper in the References chapter.
+
+We have had two additions to our salad: Broccoli sprouts and Hemp seeds. I learnt about the benefits of brocolli sprouts in a Podcast that I listen to and when I saw them in a local supermarket I immediately decided to try them out. So now our salads often contain a few grams of Broccoli sprouts (they have a very small (fridge) shelf life). These wonderful sprouts contain glucoraphanin which our bodies convert into a compound called sulforaphane that helps in fighting cancers, ulcers and even supposed to have mental health benefits. Hemp seeds are a great source of plant based protein, essential fatty acids and some vitamins and minerals. We use it off and on in our salads. More discerning readers would know that hemp seeds contain trace amounts of THC (< 0.3%), the active compound in marijuana. I suppose the jury is still out on the inclusion of hemp seeds into functional foods.
+
+There is a growing interest in using plant based chemical compounds for improving cellular defense mechanism and we just feel happy about making the good choices wherever we can.
+
+Eating salads, so consistently has been a very distinct shift from our eating habits growing up. While we always were aware of the idea that eating raw uncooked vegetables is beneficial but then how much of raw vegetables could you consume. Growing up, my lunch used to have cucumber, radish, cabbage and onion as salad but it was an adjunct and that too not everyday and slowly as I went for higher studies, entered professional life, the amount of raw uncooked vegetables I consciously consumed just kept on reducing. Whereas now, a hearty salad, rich in fiber, proteins and good fats, that completely fills us up *is our lunch* at least five days a week. The lunch salad is probably the most fundamental and probably the most beneficial change in our diet.
+
+Well, as it turns out, the salad is not the end of our lunch. To top it off, I usually take a protein bar (we choose one of the bars that has minimal ingredients) or sometimes a spoonful of Moringa powder with water after the salad. It does not taste good, but boy is it beneficial! *Moringa Olifera* is a widely grow in Asia and Africa and is native to North Western India, the exact part of the Indian subcontinent from where my grandparents came. It is interesting that when I was describing Moringa to my mother, she mentioned to me that my grandfather used to get that plant often as a vegetable to be had as part of lunch. Moringa is called *Sehjan* in Hindi. It has several documented health benefits such as being good for digestion, helps with medical conditions such as high blood pressure, diabetes, obesity etc. But the one health benefit that I noticed right from the first day was that it helps keeps my insulin levels constant and energy levels up. Now, I do not have a continuous glucose monitor (CGM), not yet anyway, to be able to prove it with data but I certainly think that is the case.
+
+On days when I don't have Moringa powder after lunch, I take a black coffee along with my protein bar. This is my last cup of coffee for the day.
+
+## The 4pm snack
+
+As you might have guessed, I no longer feel the need for it. The fiber, proteins and good fats from the lunch keep me full. I do take a caffeine free tea anytime between 3.30pm to 5pm. Sipping a hot beverage helps me focus better, although the documented benefits of sipping hot water (I would like to consider the caffeine free tea to just be flavored hot water) are that helps with digestion, triggers the endocrine system, even helps the muscles relax, but I will go with "it helps me focus better post lunch".
+
+## Dinner
+
+I get back home from work around 6.30pm (I started going back to work soon after I got my second Covid vaccine shot) and at that time I am really hungry.
 
 
 
@@ -1434,6 +1459,14 @@ Here is a chapter wise listing of papers I referred to.
 
 - Caffeine stimulation of cortisol secretion across the waking hours in relation to caffeine intake levels
 
+- Cruciferous Vegetables and Human Cancer Risk: Epidemiologic Evidence and Mechanistic Basis
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2737735/
+
+- Broccoli sprouts: An exceptionally rich source of inducers of enzymes that protect against chemical carcinogens https://www.ncbi.nlm.nih.gov/pmc/articles/PMC23369/
+
+- Sulforaphane: Its “Coming of Age” as a Clinically Relevant Nutraceutical in the Prevention and Treatment of Chronic Disease https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6815645/
+
+- The Seed of Industrial Hemp (Cannabis sativa L.): Nutritional Quality and Potential Functionality for Human Health and Nutrition, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7400098/
 
 <!--chapter:end:13-links-to-papers.Rmd-->
 
