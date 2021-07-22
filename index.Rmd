@@ -24,8 +24,8 @@ header-includes:
   - \usepackage{caption} # Insert the package used by gt
   - \usepackage{titlepic}
   - \titlepic{\includegraphics[width=\textwidth]{introduction/blueberries-in-my-salad.pdf}}
-bibliography: references.bib
 ---
+
 
 ```{r include = FALSE}
 if(!knitr:::is_html_output())
