@@ -1,6 +1,6 @@
 # Clean Eating
 
-*Disclaimer: this is my interpretation of what I understood and did as part of clean eating. I am not aware if there is a standard definition for this and if there is one I do not wish to challenge whatever it is.*
+*Disclaimer: this is my interpretation of what I understood and did as part of clean eating. I am not aware if there is a standard definition for this and if there is one I do not wish to challenge it.*
 
 Clean eating is not a diet. This is the number one thing I find myself explaining to people when they say "you have lost so much, what diet are you following". It is simply a decision of saying I am going to keep processed foods and sugars out of my body. Strictly speaking, only if you are eating something you have grown or you have hunted are you eating clean, but then let's be real here, unless you are living on a farm, this is not feasible. The next best thing we could do is to keep processed food and especially processed sugars out of our body. I don't need to say more on this except that there is tonnes of research available proving why processed food and refined sugars are just plain bad, do yourself a favor stay away from these.
 
@@ -86,7 +86,7 @@ df_tidy %>%
                                   ymin=-Inf, ymax=Inf, 
                                   alpha=0.05, fill=name, col=name), show.legend = FALSE) +
   facet_wrap(~name, scales = "free_y") + 
-  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+  scale_x_date(date_breaks = "3 months", date_labels = "%b-%y") +
   theme_fivethirtyeight() +
   theme(axis.title = element_text()) + ylab('Weight (lb)') +
   xlab("") +
@@ -150,10 +150,20 @@ As our 30 day challenge was coming towards an end I was very much looking forwar
 
 ## A post 2020 update
 
-We did not repeat the clean eating challenge again in 2021. Not because it was not useful anymore but because, it is a tool in the toolkit for attaining a healthy body weight, but it is not the only tool. Like all useful tools, it needs to be used judiciously. By the end of 2020 we understood to a good extent what kinds of food suited us, how are bodies reacted to certain food and so did not have the need to do the challenge, which at it's very core, is an exercise in finding out the relationship our body has with various kinds of foods by the process of elimination.
+We did not repeat the clean eating challenge again in 2021. Not because it was not useful anymore but because, it is a tool in the toolkit for attaining a healthy body weight, but it is not the only tool. Like all useful tools, it needs to be used judiciously. By the end of 2020 we understood to a good extent what kind of foods suited us, how are bodies reacted to certain food and so did not have the need or to a great extent the drive to do the challenge. The clean eating challenge at it's core, is an exercise in finding out the relationship the body has with various kinds of foods by the process of elimination.
 
-What we were now figuring out was something that can be described as "infinitely sustainable". Chapter 11 of this book discusses this in detail. Also, as 2020 was ending and the festival season was approaching, clean eating challenge was no longer on our minds and then in 2021 we started experimenting with other things such as water fasting. So while we still eat reasonably clean (no soft drinks, minimal processed foods and sugars) the clean eating challenge did not happen.
+What we were now figuring out was something that can be described as "infinitely sustainable". Chapter 11 of this book discusses this in detail. Also, as 2020 was ending and the festival season was approaching, clean eating challenge was no longer on our minds and then in 2021 we started experimenting with other things such as water fasting. So while we still eat reasonably clean (no soft drinks, no hard drinks either, minimal processed foods and sugars) doing the clean eating challenge again is not high on the list. This popular meme from 2020 probably says it best.
 
-![Water Fasting](pictures/water-fasting-Meme.png)
+![Water Fasting](pictures/water-fasting-Meme.png)  
+
+## Chapter 3: At a glance
+
+***
+
+1. The 30 day clean eating challenge is a way to detox your body by staying away from any and all processed food and especially processed sugar. 
+
+2. We mostly ate a diet high in protein, fiber and good fats. This meant we remained full for a longer time and were able to eliminate snacking and surprisingly (for us) did not experience cravings for any particular food.
+
+3. The two times we did the 30 day clean eating challenge we definitely saw an increased weight loss per day on an average.
 
 
