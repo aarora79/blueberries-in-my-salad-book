@@ -241,3 +241,61 @@ df_drinks %>%
         legend.title = element_blank(), legend.position = "none") +
   ylab("Number of Servings")
   
+
+
+df <- read_csv("https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/workout_tracker_data.csv")
+df
+
+library(janitor)
+df <- df %>%
+  janitor::clean_names() %>%
+  select(strength, strength_conditioning, core)
+exercises <- tibble(exercise_type="Strength", exercise=df$strength) %>%
+  bind_rows(tibble(exercise_type="Strength & Conditioning", exercise=df$strength_conditioning)) %>%
+  bind_rows(tibble(exercise_type="Core",exercise=df$core)) %>%
+  drop_na()
+exercises
+
+View(exercises)
+muscle_group <- c("Biceps", "Lower back", "Calf", "Lats", "Triceps", "Thighs")
+exercises$muscle_group <- sample(muscle_group, nrow(exercises), replace=TRUE)
+
+col_for_list <- list(exercise_type=md("**exercise**"), 'Muscle Group'=md("**Muscle Group**"))
+tab_1 <-
+  exercises %>%
+  filter(exercise_type=='Strength') %>%
+  rename('Muscle Group' = muscle_group) %>%
+  gt(
+    rowname_col = "exercise",
+    groupname_col = "exercise_type"
+  ) %>%
+  cols_label(.list = col_for_list)
+tab_1
+
+# Create a table object using the
+# `exibble` dataset; use the `row`
+# and `group` columns to add a stub
+# and row groups
+tab_1 <-
+  exibble %>%
+  gt(
+    rowname_col = "row",
+    groupname_col = "group"
+  )
+tab_1
+
+
+# The resulting object can be used
+# in transformations (with `tab_*()`,
+# `fmt_*()`, `cols_*()` functions)
+tab_2 <-
+  tab_1 %>%
+  tab_header(
+    title = "Table Title",
+    subtitle = "Subtitle"
+  ) %>%
+  fmt_number(
+    columns = num,
+    decimals = 2
+  ) %>%
+  cols_label(num = "number")

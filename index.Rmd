@@ -45,9 +45,10 @@ library(zoo)
 library(glue)
 library(dplyr)
 library(tidyr)
+library(waffle)
 library(ggplot2)
 library(stringr)
-library(waffle)
+library(janitor)
 library(ggthemes)
 library(kableExtra)
 library(lubridate)
@@ -261,6 +262,65 @@ p2_days_counts <- df_wt_loss %>%
 p2_days_total <- sum(p2_days_counts$n)
 p2_days_counts_as_list <- unlist(p2_days_counts$n)
 names(p2_days_counts_as_list) <- p2_days_counts$category_label
+
+workouts <- read_csv("https://raw.githubusercontent.com/aarora79/biomettracker/master/raw_data/workout_tracker_data.csv")
+
+workouts <- workouts %>%
+  janitor::clean_names() %>%
+  select(strength, strength_conditioning, core, warmup)
+
+workouts <- tibble(exercise_type="Strength",
+                    exercise=workouts$strength) %>%
+  bind_rows(tibble(exercise_type="Strength & Conditioning",
+                   exercise=workouts$strength_conditioning)) %>%
+  bind_rows(tibble(exercise_type="Core",
+                   exercise=workouts$core)) %>%
+    bind_rows(tibble(exercise_type="Warmup",
+                   exercise=workouts$warmup)) %>%
+  drop_na()
+
+muscle_group <- c("Biceps", "Lower back", "Calf", "Lats", "Triceps", "Thighs")
+workouts$muscle_group <- sample(muscle_group, nrow(workouts), replace=TRUE)
+
+col_for_list <- list(exercise_type=md("**exercise**"), 
+                     'Muscle Group'=md("**Muscle Group**"))
+
+strength_workout_table <- workouts %>%
+  filter(exercise_type=='Strength') %>%
+  rename('Muscle Group' = muscle_group) %>%
+  gt(
+    rowname_col = "exercise",
+    groupname_col = "exercise_type"
+  ) %>%
+  cols_label(.list = col_for_list)
+
+strength_and_conditioning_workout_table <- workouts %>%
+  filter(exercise_type=='Strength & Conditioning') %>%
+  rename('Muscle Group' = muscle_group) %>%
+  gt(
+    rowname_col = "exercise",
+    groupname_col = "exercise_type"
+  ) %>%
+  cols_label(.list = col_for_list)
+
+core_workout_table <- workouts %>%
+  filter(exercise_type=='Core') %>%
+  rename('Muscle Group' = muscle_group) %>%
+  gt(
+    rowname_col = "exercise",
+    groupname_col = "exercise_type"
+  ) %>%
+  cols_label(.list = col_for_list)
+
+
+warmup_workout_table <- workouts %>%
+  filter(exercise_type=='Warmup') %>%
+  rename('Muscle Group' = muscle_group) %>%
+  gt(
+    rowname_col = "exercise",
+    groupname_col = "exercise_type"
+  ) %>%
+  cols_label(.list = col_for_list)
 ```
 
 # Preface to the updated 2nd edition

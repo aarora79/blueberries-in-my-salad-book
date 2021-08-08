@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.29)  4 AUG 2021 02:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.29)  8 AUG 2021 05:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,8 +877,11 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )) (/usr/share/texlive/texmf-dist/tex/latex/titlepic/titlepic.sty
 Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
 
+) (./bookdownproj.aux
+
+LaTeX Warning: Label `the-4pm-snack' multiply defined.
+
 )
-No file bookdownproj.aux.
 \openout1 = `bookdownproj.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -1011,7 +1014,27 @@ ination with the same identifier (name{page.}) has been already used, duplicate
 <to be read again> 
                    \relax 
 l.99 \maketitle
-                [2 <./introduction/blueberries-in-my-salad.pdf>]
+                [2 <./introduction/blueberries-in-my-salad.pdf>] (./bookdownpro
+j.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 ...e: Putting in the hard yards}{}{chapter.5}
+                                                   [1
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 ....3}Circadian Rhythm \& TRE}{}{section.9.3}
+                                                   [2])
 \tf@toc=\write3
 \openout3 = `bookdownproj.toc'.
 
@@ -1020,9 +1043,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.108 ...abel{preface-to-the-updated-2nd-edition}}
-                                                   [1
-
-]
+                                                   [3]
 Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -1030,41 +1051,34 @@ een already used, duplicate ignored
                    \relax 
 l.114 I
         am far from being an expert and certainly would not suggest to anyon...
-[2
+[4
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 118.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 118.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 118.
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.119 
-       [3]pdfTeX warning (ext4): destination with the same identifier (name{pag
+       [5]pdfTeX warning (ext4): destination with the same identifier (name{pag
 e.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.126 F
        inally, to the one person who sent me screenshots of underlined passa...
-[4]pdfTeX warning (ext4): destination with the same identifier (name{page.}) ha
+[6]pdfTeX warning (ext4): destination with the same identifier (name{page.}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.134 ...ition}\label{preface-to-the-1st-edition}}
-                                                   [5]
+                                                   [7]
 Chapter 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.143 
-       [6
+       [8
 
-] <pictures/sanskrit1.png, id=96, 96.36pt x 14.0525pt>
+] <pictures/sanskrit1.png, id=231, 96.36pt x 14.0525pt>
 File: pictures/sanskrit1.png Graphic file (type png)
 <use pictures/sanskrit1.png>
 Package pdftex.def Info: pictures/sanskrit1.png used on input line 144.
@@ -1074,32 +1088,32 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.156 
-       [7 <./pictures/sanskrit1.png>]pdfTeX warning (ext4): destination with th
+       [9 <./pictures/sanskrit1.png>]pdfTeX warning (ext4): destination with th
 e same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.163 ...ow it began\ldots{}}\label{how-it-began}}
-                                                   [8]
+                                                   [10]
 Chapter 3.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.175 
-       [9
+       [11
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.184 
-       [10]pdfTeX warning (ext4): destination with the same identifier (name{pa
+       [12]pdfTeX warning (ext4): destination with the same identifier (name{pa
 ge.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.190 
-       [11]
-<bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf, id=125, 1013.7875pt x 7
+       [13]
+<bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf, id=256, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type 
 pdf)
@@ -1112,33 +1126,33 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.198 \section{Looking back}\label{looking-back}}
-                                                  [12]pdfTeX warning (ext4): de
+                                                  [14]pdfTeX warning (ext4): de
 stination with the same identifier (name{page.}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
 l.203 
-       [13 <./bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf>]pdfTeX war
+       [15 <./bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf>]pdfTeX war
 ning (ext4): destination with the same identifier (name{page.}) has been alread
 y used, duplicate ignored
 <to be read again> 
                    \relax 
 l.222 \chapter{Clean Eating}\label{clean-eating}}
-                                                  [14]
+                                                  [16]
 Chapter 4.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.229 
-       [15
+       [17
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.238 
-       [16] <pictures/breakfast.JPG, id=167, 3083.52pt x 3083.52pt>
+       [18] <pictures/breakfast.JPG, id=295, 3083.52pt x 3083.52pt>
 File: pictures/breakfast.JPG Graphic file (type jpg)
 <use pictures/breakfast.JPG>
 Package pdftex.def Info: pictures/breakfast.JPG used on input line 243.
@@ -1148,7 +1162,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.248 
-       [17 <./pictures/breakfast.JPG>] <pictures/lunch-salads.JPG, id=174, 3083
+       [19 <./pictures/breakfast.JPG>] <pictures/lunch-salads.JPG, id=300, 3083
 .52pt x 3083.52pt>
 File: pictures/lunch-salads.JPG Graphic file (type jpg)
 <use pictures/lunch-salads.JPG>
@@ -1159,12 +1173,12 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.268 
-       [18]pdfTeX warning (ext4): destination with the same identifier (name{pa
+       [20]pdfTeX warning (ext4): destination with the same identifier (name{pa
 ge.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.268 
-       [19 <./pictures/lunch-salads.JPG>] <pictures/4pm-snacks.JPG, id=186, 308
+       [21 <./pictures/lunch-salads.JPG>] <pictures/4pm-snacks.JPG, id=310, 308
 3.52pt x 3083.52pt>
 File: pictures/4pm-snacks.JPG Graphic file (type jpg)
 <use pictures/4pm-snacks.JPG>
@@ -1175,13 +1189,13 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.278 
-       [20 <./pictures/4pm-snacks.JPG>] <pictures/dinner1.JPG, id=191, 3083.52p
+       [22 <./pictures/4pm-snacks.JPG>] <pictures/dinner1.JPG, id=315, 3083.52p
 t x 3083.52pt>
 File: pictures/dinner1.JPG Graphic file (type jpg)
 <use pictures/dinner1.JPG>
 Package pdftex.def Info: pictures/dinner1.JPG used on input line 290.
 (pdftex.def)             Requested size: 344.97548pt x 344.97548pt.
-<pictures/dinner2.JPG, id=192, 1059.96pt x 1059.96pt>
+<pictures/dinner2.JPG, id=316, 1059.96pt x 1059.96pt>
 File: pictures/dinner2.JPG Graphic file (type jpg)
 <use pictures/dinner2.JPG>
 Package pdftex.def Info: pictures/dinner2.JPG used on input line 296.
@@ -1191,18 +1205,18 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.301 
-       [21]pdfTeX warning (ext4): destination with the same identifier (name{pa
+       [23]pdfTeX warning (ext4): destination with the same identifier (name{pa
 ge.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.301 
-       [22 <./pictures/dinner1.JPG>]pdfTeX warning (ext4): destination with the
+       [24 <./pictures/dinner1.JPG>]pdfTeX warning (ext4): destination with the
  same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.301 
-       [23 <./pictures/dinner2.JPG>]
-<bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf, id=207, 1013.7875pt x 7
+       [25 <./pictures/dinner2.JPG>]
+<bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf, id=330, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type 
 pdf)
@@ -1215,8 +1229,8 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.314 
-       [24 <./bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf, id=224, 1013.7875pt x 7
+       [26 <./bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf>]
+<bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf, id=347, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type 
 pdf)
@@ -1229,13 +1243,13 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.323 
-       [25 <./bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf>]pdfTeX war
+       [27 <./bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf>]pdfTeX war
 ning (ext4): destination with the same identifier (name{page.}) has been alread
 y used, duplicate ignored
 <to be read again> 
                    \relax 
 l.332 
-       [26] <pictures/water-fasting-Meme.png, id=256, 1075.01625pt x 607.26875p
+       [28] <pictures/water-fasting-Meme.png, id=377, 1075.01625pt x 607.26875p
 t>
 File: pictures/water-fasting-Meme.png Graphic file (type png)
 <use pictures/water-fasting-Meme.png>
@@ -1248,30 +1262,630 @@ een already used, duplicate ignored
                    \relax 
 l.358   T
          he two times we did the 30 day clean eating challenge we definitely...
-[27]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
+[29]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.362 ...abel{exercise-putting-in-the-hard-yards}}
-                                                   [28 <./pictures/water-fastin
+                                                   [30 <./pictures/water-fastin
 g-Meme.png>]
 Chapter 5.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.370 
+       [31
 
-! LaTeX Error: File `https://www.fda.gov/media/112972/download' not found.
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.379 
+       [32] <pictures/goblet_squat_w_kb.png, id=404, 661.47125pt x 653.44125pt>
+File: pictures/goblet_squat_w_kb.png Graphic file (type png)
+<use pictures/goblet_squat_w_kb.png>
+Package pdftex.def Info: pictures/goblet_squat_w_kb.png used on input line 384.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.369 ...ttps://www.fda.gov/media/112972/download}
-                                                  ). The idea being if we ea...
- 
+(pdftex.def)             Requested size: 344.99654pt x 340.80841pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.391 
+       [33]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.391 
+       [34 <./pictures/goblet_squat_w_kb.png>]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 404.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) <pictures/gym2.jpg, id=413, 4047.12pt x 2276.505pt>
+File: pictures/gym2.jpg Graphic file (type jpg)
+<use pictures/gym2.jpg>
+Package pdftex.def Info: pictures/gym2.jpg used on input line 419.
+(pdftex.def)             Requested size: 344.95784pt x 194.03879pt.
+<pictures/gym1.jpg, id=414, 4047.12pt x 2276.505pt>
+File: pictures/gym1.jpg Graphic file (type jpg)
+<use pictures/gym1.jpg>
+Package pdftex.def Info: pictures/gym1.jpg used on input line 425.
+(pdftex.def)             Requested size: 344.95784pt x 194.03879pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.430 
+       [35]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.430 
+       [36 <./pictures/gym2.jpg> <./pictures/gym1.jpg>]
+Underfull \vbox (badness 10000) detected at line 458
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.463 \end{longtable}
+                      [37]
+Underfull \vbox (badness 10000) detected at line 490
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.514 \end{longtable}
+                      [38]
+Overfull \hbox (5.55708pt too wide) in alignment at lines 517--541
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 541
+ []
+
+
+Overfull \hbox (5.55708pt too wide) in alignment at lines 541--561
+ [] [] 
+ []
+
+
+Overfull \hbox (5.55708pt too wide) in alignment at lines 561--581
+ [] [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.581 s
+       quat cleans & Biceps \\ [39]
+Overfull \hbox (5.55708pt too wide) in alignment at lines 581--601
+ [] [] 
+ []
+
+
+Overfull \hbox (5.55708pt too wide) in alignment at lines 601--605
+ [] [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.605 \end{longtable}
+                      [40]
+Underfull \vbox (badness 10000) detected at line 632
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.652 s
+       pidermans & Triceps \\ [41]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.663 
+       [42]
+<bookdownproj_files/figure-latex/unnamed-chunk-11-1.pdf, id=450, 617.30624pt x 
+711.65875pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-11-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-11-1.pdf
+ used on input line 664.
+(pdftex.def)             Requested size: 345.01094pt x 397.74434pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.667 
+       [43 <./bookdownproj_files/figure-latex/unnamed-chunk-11-1.pdf>]
+Underfull \hbox (badness 1264) in paragraph at lines 669--669
+[]\T1/lmr/bx/n/14.4 That which does not kill us makes us
+ []
+
+<pictures/hexbar-w-255p.jpg, id=463, 1284.8pt x 963.6pt>
+File: pictures/hexbar-w-255p.jpg Graphic file (type jpg)
+<use pictures/hexbar-w-255p.jpg>
+Package pdftex.def Info: pictures/hexbar-w-255p.jpg used on input line 678.
+(pdftex.def)             Requested size: 344.99901pt x 258.74925pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.679 
+       [44]
+<bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf, id=468, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf
+ used on input line 682.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.685 ...iner?}\label{do-i-really-need-a-trainer}}
+                                                   [45 <./pictures/hexbar-w-255
+p.jpg>]pdfTeX warning (ext4): destination with the same identifier (name{page.}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.692 
+       [46 <./bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf>]pdfTeX wa
+rning (ext4): destination with the same identifier (name{page.}) has been alrea
+dy used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.698 
+       [47]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.718   \textbf
+               {How much to train}: While I firmly believe it is mind over m...
+[48]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.729 ...complish?}\label{what-did-we-accomplish}}
+                                                   [49]
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 752--754
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--757
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.760 
+       [50
+
+]
+<bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf, id=504, 960.58875pt x 
+429.605pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf
+ used on input line 766.
+(pdftex.def)             Requested size: 345.00552pt x 154.29713pt.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf, id=507, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf
+ used on input line 775.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.778 ...y measurements}\label{body-measurements}}
+                                                   [51 <./bookdownproj_files/fi
+gure-latex/unnamed-chunk-14-1.pdf>]
+<bookdownproj_files/figure-latex/unnamed-chunk-16-1.pdf, id=522, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-16-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-16-1.pdf
+ used on input line 784.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.787 ... plateaus}\label{of-slides-and-plateaus}}
+                                                   [52 <./bookdownproj_files/fi
+gure-latex/unnamed-chunk-15-1.pdf>]
+<bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf, id=535, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf
+ used on input line 795.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.798 ...promise}\label{a-forecast-and-a-promise}}
+                                                   [53 <./bookdownproj_files/fi
+gure-latex/unnamed-chunk-16-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 802--802
+[][][][][]$\T1/lmr/m/n/8 (+19) https : / / facebook . github . io / prophet / #
+ : ~ : text = Prophet % 20is % 20a % 20procedure % 20for ,[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--802
+\T1/lmr/m/n/8 (+20) daily % 20seasonality % 2C % 20plus % 20holiday % 20e^^[ect
+s . &text = Prophet % 20is % 20robust %
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.805 
+       [54 <./bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf>]
+<bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf, id=573, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf
+ used on input line 806.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf, id=574, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf
+ used on input line 808.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.811 \chapter{Other Topics}\label{other-topics}}
+                                                  [55 <./bookdownproj_files/fig
+ure-latex/unnamed-chunk-18-1.pdf>]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.811 \chapter{Other Topics}\label{other-topics}}
+                                                  [56 <./bookdownproj_files/fig
+ure-latex/unnamed-chunk-19-1.pdf>]
+Chapter 7.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.823 
+       [57
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.852   C
+         reatine Monohydrate [58]pdfTeX warning (ext4): destination with the sa
+me identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.880 
+       [59]
+<bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf, id=625, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf
+ used on input line 881.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf, id=626, 1013.7875pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf
+ used on input line 883.
+(pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.886 ... of the days}\label{breakup-of-the-days}}
+                                                   [60 <./bookdownproj_files/fi
+gure-latex/unnamed-chunk-20-1.pdf>]
+<bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf, id=639, 1001.7425pt x 
+155.58125pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf
+ used on input line 890.
+(pdftex.def)             Requested size: 345.0054pt x 53.583pt.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-22-2.pdf, id=640, 1001.7425pt x 
+153.57375pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-22-2.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-22-2.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-22-2.pdf
+ used on input line 890.
+(pdftex.def)             Requested size: 345.0054pt x 52.8916pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.893 ...rom here, where?}\label{from-here-where}}
+                                                   [61 <./bookdownproj_files/fi
+gure-latex/unnamed-chunk-21-1.pdf> <./bookdownproj_files/figure-latex/unnamed-c
+hunk-22-1.pdf> <./bookdownproj_files/figure-latex/unnamed-chunk-22-2.pdf>]
+Chapter 8.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf, id=668, 723.70375pt x 
+722.7pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf
+ used on input line 895.
+(pdftex.def)             Requested size: 344.99965pt x 344.52115pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.897 H
+       ere are the customary before and after pictures. I am not a particula...
+[62
+
+]
+Overfull \vbox (1.60857pt too high) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.897 H
+       ere are the customary before and after pictures. I am not a particula...
+[63 <./bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf>]pdfTeX warning (
+ext4): destination with the same identifier (name{page.}) has been already used
+, duplicate ignored
+<to be read again> 
+                   \relax 
+l.908 ...richment}\label{for-cultural-enrichment}}
+                                                   [64]
+Chapter 9.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.935 ...ps://www.youtube.com/watch?v=erBJuxVR7IE}
+                                                   [65
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.970 \chapter{Appendix A}\label{appendix-a}}
+                                              [66]
+Chapter 10.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1040 \addlinespace
+                     [67
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1091 \addlinespace
+                     [68]pdfTeX warning (ext4): destination with the same ident
+ifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1141 \addlinespace
+                     [69]pdfTeX warning (ext4): destination with the same ident
+ifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1145 \end{longtable}
+                       [70]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1148 ...out the author}\label{about-the-author}}
+                                                   [71]
+Chapter 11.
+
+<bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf, id=725, 216.81pt x 258
+.9675pt>
+File: bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type
+ pdf)
+<use bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf>
+Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf
+ used on input line 1150.
+(pdftex.def)             Requested size: 216.81938pt x 258.97868pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1155 
+        [72
+
+ <./bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf>]pdfTeX warning (ext
+4): destination with the same identifier (name{page.}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.1157 \chapter{Our Diet Now}\label{our-diet-now}}
+                                                   [73]
+Chapter 12.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1164 ...t isn't}\label{the-breakfast-that-isnt}}
+                                                   [74
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1178   I
+           feel bad while writing this, but I cannot deny that not having to...
+[75] <pictures/microgreens.jpg, id=757, 472.76625pt x 972.63374pt>
+File: pictures/microgreens.jpg Graphic file (type jpg)
+<use pictures/microgreens.jpg>
+Package pdftex.def Info: pictures/microgreens.jpg used on input line 1187.
+(pdftex.def)             Requested size: 267.33705pt x 549.99916pt.
+
+LaTeX Warning: Float too large for page by 21.99916pt on input line 1189.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1195 
+        [76]pdfTeX warning (ext4): destination with the same identifier (name{p
+age.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1195 
+        [77 <./pictures/microgreens.jpg>]pdfTeX warning (ext4): destination wit
+h the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1203 
+        [78]pdfTeX warning (ext4): destination with the same identifier (name{t
+he-4pm-snack}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1209 ...ion{The 4pm snack}\label{the-4pm-snack}}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{page.}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.1217 
+        [79]pdfTeX warning (ext4): destination with the same identifier (name{p
+age.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1228 
+        [80]pdfTeX warning (ext4): destination with the same identifier (name{p
+age.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1242 
+        [81]pdfTeX warning (ext4): destination with the same identifier (name{p
+age.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1261   A
+           consistent regimen of the workout and healthy eating helps shave ...
+[82]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1265 ...Further reading}\label{further-reading}}
+                                                   [83]
+Chapter 13.
+<pictures/smoky_morning.png, id=797, 681.54625pt x 355.3275pt>
+File: pictures/smoky_morning.png Graphic file (type png)
+<use pictures/smoky_morning.png>
+Package pdftex.def Info: pictures/smoky_morning.png used on input line 1273.
+(pdftex.def)             Requested size: 345.0049pt x 179.87pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1295 ...Links to Papers}\label{links-to-papers}}
+                                                   [84
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1295 ...Links to Papers}\label{links-to-papers}}
+                                                   [85 <./pictures/smoky_mornin
+g.png>]
+Chapter 14.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1316 \end{itemize}
+                     [86
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1318.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1318 \end{document}
+                      [87]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1318.
+(./bookdownproj.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1318.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1318.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1318.
+ ) 
 Here is how much of TeX's memory you used:
- 14441 strings out of 494944
- 210712 string characters out of 6180677
- 325708 words of memory out of 5000000
- 17310 multiletter control sequences out of 15000+600000
- 79728 words of font info for 116 fonts, out of 8000000 for 9000
+ 14822 strings out of 494944
+ 219581 string characters out of 6180677
+ 336217 words of memory out of 5000000
+ 17544 multiletter control sequences out of 15000+600000
+ 86610 words of font info for 124 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,8n,39p,2403b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 44i,9n,56p,2403b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmro10.pfb>
+Output written on bookdownproj.pdf (89 pages, 12002207 bytes).
+PDF statistics:
+ 1104 PDF objects out of 1200 (max. 8388607)
+ 892 compressed objects within 9 object streams
+ 180 named destinations out of 1000 (max. 500000)
+ 19108 words of extra memory for PDF output out of 20736 (max. 10000000)
+
