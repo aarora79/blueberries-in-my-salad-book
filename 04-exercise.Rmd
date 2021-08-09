@@ -45,7 +45,11 @@ With some rest time and setting up equipment for different exercises the above r
 
 For a long time, and even today, I tell myself before the workout, that warmups are easy, the strength portion is just 10 minutes so it will be over quickly before I realize and then the conditioning is the only part that I have to push through and then by the time I am half way through the conditioning it would be almost over and then core is super easy (it is not). This kind of mental setup helps me get through the hour. Of course once I am in the middle of it, unless the workout on the day absolutely pulverizes me, my mind goes almost totally blank, no thoughts at all. I have experienced this many times, going into the workout from a crisis at work is a huge mental shift. Once the workout is over, I realize that maybe the work problems are not that insurmountable as they appeared an hour back. It could be the exercise, or just the fact that I have had the opportunity to (forcibly) extricate myself from the crisis situation and now after an hour I am able to think more clearly. I do not know what is the reason, but I do know that I experience mental clarity after the workout.
 
-The following tables show the different exercises we did, over time, as part of the warmups, strength, conditioning and core. These were done over a period of time, with the more difficult ones such as the Turkish getup added much later and for the ones which we did from the start we kept on increasing the weights or the numbers of sets and reps over time. This is a rather long list, we kept meticulous notes of what exercise we did and weights we used for those exercises (wherever applicable). The purpose of putting the entire list here is to emphasize two things, firstly a good training routine requires a lot of exercise to train the big muscles, the small muscles and everything in between and secondly this is not DIY, there is a lot of thinking and planning that goes on behind the scenes that is done by a good PT (personal trainer). At the same time, I do not want anyone who works out at home on a treadmill, a spin bike, goes out for a run, or does any other form of exercise to see the following table and feel overwhelmed. We just organically fell into this routine, our lives took a turn, we found this beautiful path through the woods and we just decided to explore it further and have loved every step of the trail.
+The following tables show the different exercises we did, over time, as part of the warmups, strength, conditioning and core. These were done over a period of time, with the more difficult ones such as the Turkish getup added much later and for the ones which we did from the start we kept on increasing the weights or the numbers of sets and reps over time. 
+
+This is a rather long list, we kept meticulous notes of what exercise we did and weights we used for those exercises (wherever applicable). The purpose of putting the entire list here is to emphasize two things, firstly a good training routine requires a lot of different exercises to train the big muscles, the small muscles and everything in between and secondly this is not DIY, there is a lot of thinking and planning that goes on behind the scenes that is done by a good PT (personal trainer). It is similar to a conversation I once had with my dentist about flossing my teeth, I asked her "so which teeth do I need to floss?", and she replied rather nonchalantly "only the ones you would like to keep...". It is the same with muscle groups.
+
+At the same time, I do not want anybody who works out at home on a treadmill or a spin bike or goes out for a run or does any other form of exercise to see the following tables and feel overwhelmed. Any which way you get your 150 minutes per week of moderate intensity physical activity ([CDC guideline](https://www.cdc.gov/physicalactivity/basics/adults/index.htm)) is good. The more I think about it, the more I feel that we just organically fell into this routine. It was as if we found this beautiful path through the woods and decided to explore it further, and have loved every step of the trail.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 if (!knitr:::is_html_output()) {
@@ -97,19 +101,23 @@ The conditioning part of the routine usually consisted of either a 12 minute AMR
 
 ## Our calendar so far
 
-The following chart shows the calendar for the year 2020 with the days we exercised marked with an [E] and the amount of weight lost/gained reflected by the color. Red indicates weight loss and green indicates weight gain. More "red" than "green" in a month means overall we lost weight in that month. I like this chart a lot because it brings out very clearly that weight loss is never a straight line, you gain some (days) and you lose some (days), except in this case, losing is better.
+The following charts shows the calendar for the year 2020 and 2021 with the days we exercised marked with an [E] and the amount of weight lost/gained reflected by the color. Red indicates weight loss and green indicates weight gain. More "red" than "green" in a month means overall we lost weight in that month. I like this chart a lot because it brings out very clearly that weight loss is never a straight line, you gain some (days) and you lose some (days), except in this case, losing is better.
 
-```{r echo=FALSE, fig.height=10, fig.width=14}
-df_exercise_dates <- df_exercise_dates %>%
+```{r echo=FALSE}
+plot_exercise_calendar <- function(df_exercise_dates, y) {
+  df_exercise_dates <- df_exercise_dates %>%
+  filter(year(date) == y) %>%
   gather(name, exercise, -date) %>%
   rename(Date=date)
 
 df <- df %>%
+  filter(year(Date) == y) %>%
   left_join(df_exercise_dates, by=c("Date", "name")) %>%
   mutate(exercise = ifelse(is.na(exercise), 0, exercise))
 
 df <- df %>%
   left_join(df_wt_loss %>%
+              filter(year(Date) == y) %>%
               select(Date, name, loss_per_day) %>%
               group_by(Date, name) %>% 
               filter(loss_per_day==max(loss_per_day)), by=c("Date", "name")) %>%
@@ -122,7 +130,7 @@ dfPlot <- df %>%
   mutate(weekday = wday(DateCol, label = T, week_start = 7), # can put week_start = 1 to start week on Monday
          month = month(DateCol, label = T),
          date = yday(DateCol),
-         week = epiweek(DateCol))
+         week = week(DateCol))
 
 # isoweek makes the last week of the year as week 1, so need to change that to week 53 for the plot
 dfPlot$week[dfPlot$month=="Dec" & dfPlot$week ==1] = 53 
@@ -130,6 +138,11 @@ dfPlot$week[dfPlot$month=="Dec" & dfPlot$week ==1] = 53
 dfPlot <- dfPlot %>% 
   group_by(month) %>% 
   mutate(monthweek = 1 + week - min(week))
+if (y == 2020) {
+  subtitle <- "Daily weight tracking started Feb 17, 2020. Exercise days marked as [E]."
+} else {
+  subtitle <- "Exercise days marked as [E]."
+}
 
 #View(dfPlot %>% filter(name == P2_NAME))
 dfPlot %>%
@@ -160,12 +173,20 @@ dfPlot %>%
                        guide = guide_colorbar(title.position = "top", 
                                               direction = "horizontal")) +
   facet_wrap(~month, nrow = 4, ncol = 3, scales = "free") +
-  labs(title = "Daily Weight Change Tracker", subtitle="Daily weight tracking started Feb 17, 2020. Exercise days marked as [E].") +
+  labs(title = glue("Daily Weight Change Tracker, {y}"), subtitle=subtitle) +
   theme(plot.subtitle = element_text(size=15, face = "bold"))
-
+}
 ```
 
-You can notice in the charts the number of days marked as [E] (for exercise) has increased over the months. This is something that happened organically. As we exercised more and ate right, the body became stronger and it could take on more work and so we exercised even more, it became a self driving cycle. Exercise also gives you a "high", a feeling of euphoria, you cannot miss it. Stated differently, this increased number of workouts, doing more sets and reps, this was only partially driven by just the motivation to lose weight, the rest of it was because A) the body became strong enough that the current load became easier and so a step up was needed and B) the desire for that "high", it makes you want to get more of the stuff that got you here in the first place. If this book ever gets into the hands of someone who has exercised for any length of time, I would like to add that what I have written here may seem routine and totally on expected lines to you but to me this was unlike anything I had experienced before, it was a joyous discovery.
+```{r echo=FALSE, fig.height=10, fig.width=14}
+print(plot_exercise_calendar(df_exercise_dates, 2020))
+```
+
+```{r echo=FALSE, fig.height=10, fig.width=14}
+print(plot_exercise_calendar(df_exercise_dates, 2021))
+```
+
+You can notice in the charts the number of days marked as [E] (for exercise) has increased over the months in 2020 until August and from that point on it was settled at 5 days a week or 20 days a month for me. This is something that happened organically. As we exercised more and ate right, the body became stronger and it could take on more work and so we exercised even more, it became a self driving cycle. Exercise also gives you a "high", a feeling of euphoria, you cannot miss it. Stated differently, this increased number of workouts, doing more sets and reps, this was only partially driven by just the motivation to lose weight, the rest of it was because A) the body became strong enough that the current load became easier and so a step up was needed and B) the desire for that "high", it makes you want to get more of the stuff that got you here in the first place. If this book ever gets into the hands of someone who has exercised for any length of time, I would like to add that what I have written here may seem routine and totally on expected lines to you but to me this was unlike anything I had experienced before, it was a joyous discovery. Lookup #chasingendorphins on Twitter or Instagram and you will see what I mean.
 
 
 ## That which does not kill us makes us stronger*
