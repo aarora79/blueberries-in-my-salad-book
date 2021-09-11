@@ -207,61 +207,135 @@ A completely valid question that someone might ask is "Why do I need to deadlift
 Here is a picture of my favorite hexbar with total weight 325 pounds (which includes 55 pounds of the bar itself).  
 ![Hexbar, total weight 325 pounds](pictures/hexbar-w-255p.jpg)
 
-The following chart puts all this in perspective. You can see a boxplot of the deadlifts I did over time along with a line chart showing my weight. As my body weight is going down, I am lifting more and more. In late August, I reached a point where I was deadlifting more than my body weight. The target for 2020 is to be able to deadlift 300 pounds.
+The following two chart puts all this in perspective.
+
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
-df_dl <- df_deadlifts %>%
-  filter(excercise == "deadlift") %>%
-  select(-set)
-df_dl <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
-  mutate(date=as.Date(date)) %>%
+df_bw <- read_csv(P2_DATA_URL) %>%
+  mutate(Date=ymd(Date), Weight=as.numeric(Weight))
+df_deadlifts <- read_csv(P2_DEADLIFT_URL) %>%
+  mutate(date=ymd(date))
+
+# get the max deadlift on a particular data
+df_deadlifts_only <- df_deadlifts %>%
+  filter(excercise == "deadlift")
+
+df_deadlift_max <- df_deadlifts_only %>%
   group_by(date) %>%
-  mutate(median_deadlift_wt = median(weight))
-df_dl_median <- as.data.frame(lapply(df_dl, rep, df_dl$reps)) %>%
-  mutate(date=as.Date(date)) %>%
-  group_by(date) %>%
-  summarize(median_deadlift_wt = median(weight))
-time_duration_in_weeks <- ceiling(as.numeric(difftime(max(df_dl$date), min(df_dl$date), units="weeks")))
-df2 <- df_wt_loss %>% ungroup() %>% filter(name==P2_NAME) %>% select(Date, value) %>% rename(date=Date) %>% mutate(median_deadlift_wt=200)
-df2 <- df2 %>%
-  mutate(label=ifelse(date==min(date), glue("Body weight. (lb)"), NA)) %>%
-  rename(weight=value)
-# Body weight at start: 
-p <- df_dl %>%
-  ggplot(aes(x=date, group=date, weight, fill=median_deadlift_wt)) +
-  geom_boxplot() +
-  geom_point(data=df2, aes(x=date, y=weight, col=I("purple")), size=0.7, show.legend = TRUE) + 
-  # geom_point(data=df_dl_median, aes(x=date, y=median_deadlift_wt), size=0.7, show.legend = TRUE) + 
-  geom_text(data=df2, aes(label = label, size=2),
-                   nudge_y = 1.25*NUDGE_Y,
-                   nudge_x=2*NUDGE_X,
-                   na.rm = TRUE, col=I("black")) +
-  geom_hline(yintercept = P2_DEADLIFT_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
-  geom_label(aes(min(df_dl$date) + 15, P2_DEADLIFT_TARGET_WEIGHT-2,
-                 label = glue("{P2_DEADLIFT_TARGET_WEIGHT} lb, deadlift target for 2020"),
-                 vjust = -0.75), size=4) +
-  
-    geom_hline(yintercept = P2_DEADLIFT_TARGET_WEIGHT+100, colour="#990000", linetype="dashed") +
-  geom_label(aes(min(df_dl$date) + 15, P2_DEADLIFT_TARGET_WEIGHT+100-2,
-                 label = glue("{P2_DEADLIFT_TARGET_WEIGHT+100} lb, deadlift target for 2021"),
-                 vjust = -0.75), size=4) +
-  
-  geom_hline(yintercept = P2_TARGET_WEIGHT, colour="#990000", linetype="dashed") +
-  geom_label(aes(min(df_dl$date) + 20, P2_TARGET_WEIGHT-2,
-                 label = glue("{P2_TARGET_WEIGHT} lb, body weight target"),
-                 vjust = -0.75), size=4) +
-  scale_y_continuous(breaks = seq(0, P2_DEADLIFT_TARGET_WEIGHT+25, by = 50)) + 
-  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-  labs(title="That which does not kill us makes us stronger",
-       subtitle=glue("Journey from deadlifting {min(df_dl$weight)} lb to {max(df_dl$weight)} lb in {time_duration_in_weeks} weeks"),
-       caption="Note: Line in the middle of the each box is the median weight deadlifted that day.") +
+  summarize(weight = max(weight, na.rm=TRUE)) %>%
+  arrange(desc(date))
+
+# join with the weight data
+df_deadlift_and_bodyweight <- df_deadlift_max %>%
+  left_join(df_bw %>% select(Date, Weight) %>% 
+            rename(bodyweight=Weight), by=c("date" = "Date")) %>%
+  mutate(dl_to_bw_ratio = round(weight/bodyweight, 4))
+
+title <- "Striving towards a deadlift goal of 400 lb..."
+maxbw <- max(df_deadlift_and_bodyweight$bodyweight)
+minbw <- min(df_deadlift_and_bodyweight$bodyweight)
+
+maxdl <- max(df_deadlift_and_bodyweight$weight)
+mindl <- min(df_deadlift_and_bodyweight$weight)
+
+subtitle <- glue("Starting bodyweight={maxbw} lb, deadlift PR={mindl} lb, current bodyweight={minbw} lb, deadlift PR={maxdl} lb!")
+journey_text <- glue("{min(df_deadlift_and_bodyweight$weight)} lb to {max(df_deadlift_and_bodyweight$weight)} lb deadlift in {ceiling(difftime(max(df_deadlift_and_bodyweight$date), min(df_deadlift_and_bodyweight$date), units='days')/30)} months")
+
+options(repr.plot.width=20, repr.plot.height=8)
+RATIO_GOAL <- 2
+RATIO_STRETCH_GOAL <- 400/185
+two_x_text <- glue("Body weight 185 lb, Deadlift weight 370 lb")
+fh_text <- glue("Body weight 185 lb, Deadlift weight 400 lb")
+
+p <- df_deadlift_and_bodyweight %>%
+  ggplot(aes(x=date, y=dl_to_bw_ratio)) +
+  geom_point() + 
+  geom_line() +
+  geom_hline(yintercept=RATIO_GOAL, color=I("red")) +
+  geom_hline(yintercept=RATIO_STRETCH_GOAL, color=I("red"), linetype="dashed") +
+  geom_smooth() +
+  geom_segment(aes(x = min(date), y = min(dl_to_bw_ratio), xend = max(date), yend = min(dl_to_bw_ratio)), arrow = arrow(length = unit(0.5, "cm"))) +
+  geom_label(aes(x = min(date)+250, y = RATIO_GOAL, label = two_x_text), fill = "lightgreen") +
+  geom_label(aes(x = min(date)+250, y = RATIO_STRETCH_GOAL, label = fh_text), fill = "lightgreen") +
+  geom_label(aes(x = min(date)+250, y = min(dl_to_bw_ratio), label = journey_text), fill = "lightgreen") +
+  scale_y_continuous(breaks=seq(0, 2.5, 0.1), sec.axis = sec_axis(~ . * 1, breaks = seq(0, 2.5, 0.1))) +
+  scale_x_date(date_breaks = "3 month", date_labels="%b-%Y") +
   theme_fivethirtyeight() + 
-  scale_fill_gradient_tableau(palette="Blue") + 
-  theme(legend.title = element_blank(), legend.position = "none",
-        text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
-p
+  labs(title=title,
+       subtitle=subtitle) +
+  theme(legend.position="none") +
+  theme(axis.title = element_text(), axis.title.x = element_blank(), text = element_text(size=20)) + 
+  xlab("") +
+  ylab('Deadlift to Body Weight Ratio')
+#p
+
+one_bw_dl <- df_deadlift_and_bodyweight %>%
+  filter(between(dl_to_bw_ratio, 1, 1.05)) %>%
+  filter(date == min(date) & dl_to_bw_ratio == min(dl_to_bw_ratio))
+months_to_one_x_bw_dl <- ceiling(difftime(one_bw_dl$date, min(df_deadlift_and_bodyweight$date), units="days")/30)
+
+one_and_half_bw_dl <- df_deadlift_and_bodyweight %>%
+  filter(between(dl_to_bw_ratio, 1.5, 1.55)) %>%
+  filter(date == min(date))
+months_to_one_and_half_bw_dl <- ceiling(difftime(one_and_half_bw_dl$date, min(df_deadlift_and_bodyweight$date), units="days")/30)
+
+p +  
+annotate(geom = "point", x = min(df_deadlift_and_bodyweight$date), y = min(df_deadlift_and_bodyweight$dl_to_bw_ratio), colour = "cadetblue1", size = 3) +
+annotate(geom = "point", x = one_bw_dl$date, y = one_bw_dl$dl_to_bw_ratio, colour = "red", size = 3) +
+annotate(geom = "text", x = one_bw_dl$date, y = one_bw_dl$dl_to_bw_ratio-0.05, , label = glue("1 x body weight, {months_to_one_x_bw_dl} months"), hjust = "left") +
+annotate(geom = "text", x = one_and_half_bw_dl$date, y = one_and_half_bw_dl$dl_to_bw_ratio+0.06, , label = glue("1.5 x body weight, {months_to_one_and_half_bw_dl} months"), hjust = "left") +
+annotate(geom = "point", x = one_and_half_bw_dl$date, y = one_and_half_bw_dl$dl_to_bw_ratio, colour = "blue", size = 3) +
+annotate(geom = "point", x = max(df_deadlift_and_bodyweight$date)-1, y = max(df_deadlift_and_bodyweight$dl_to_bw_ratio), colour = "green", size = 3) +
+annotate(geom = "text", x = max(df_deadlift_and_bodyweight$date)+1, y = max(df_deadlift_and_bodyweight$dl_to_bw_ratio), label = glue("{max(df_deadlift_and_bodyweight$weight)} lb\ndeadlift"), hjust = "left") +
+annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-5, y = min(df_deadlift_and_bodyweight$dl_to_bw_ratio), label = glue("{min(df_deadlift_and_bodyweight$weight)} lb\ndeadlift"), hjust = "right") 
 ```
 
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
+title <- "Body weight is going down and deadlift PR is going up..."
+maxbw <- max(df_deadlift_and_bodyweight$bodyweight)
+minbw <- min(df_deadlift_and_bodyweight$bodyweight)
+
+maxdl <- max(df_deadlift_and_bodyweight$weight)
+mindl <- min(df_deadlift_and_bodyweight$weight)
+
+options(repr.plot.width=20, repr.plot.height=8)
+
+df_dl_and_bw_tidy <- df_deadlift_and_bodyweight %>%
+  select(-dl_to_bw_ratio) %>%
+  rename(`deadlift weight`=weight, `body weight`=bodyweight) %>%
+  gather(k, v, -date)
+
+p <- df_dl_and_bw_tidy %>%
+  ggplot(aes(x=date, y=v, col=k)) +
+  geom_point(size=2, show.legend=FALSE) + 
+  geom_line(size=1) +
+  scale_y_continuous(breaks=seq(min(df_dl_and_bw_tidy$v), max(df_dl_and_bw_tidy$v), 20)) +
+  scale_x_date(date_breaks = "3 month", date_labels="%b-%Y") +
+  scale_color_tableau() +
+  theme_fivethirtyeight() + 
+  geom_segment(aes(xend = min(date), yend = min(df_deadlift_and_bodyweight$weight), x = min(date), y = max(df_deadlift_and_bodyweight$bodyweight)), arrow = arrow(length = unit(0.3, "cm")), color="red") +
+  geom_segment(aes(x = max(date), y = min(df_deadlift_and_bodyweight$bodyweight), xend = max(date), yend = max(df_deadlift_and_bodyweight$weight)), arrow = arrow(length = unit(0.3, "cm")), color="darkgreen") +
+  labs(title=title,
+       subtitle=subtitle) +
+  theme(legend.position="bottom", legend.title = element_blank()) +
+  theme(axis.title = element_text(), axis.title.x = element_blank(), text = element_text(size=20)) + 
+  xlab("") +
+  ylab('Weight (lb)')
+p +
+annotate(geom = "text", x = max(df_deadlift_and_bodyweight$date)+2, y = max(df_deadlift_and_bodyweight$weight), label = glue("{max(df_deadlift_and_bodyweight$weight)} lb\ndeadlift"), hjust = "left") +
+annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-5, y = min(df_deadlift_and_bodyweight$weight), label = glue("{min(df_deadlift_and_bodyweight$weight)} lb\ndeadlift"), hjust = "right") +
+annotate(geom = "text", x = max(df_deadlift_and_bodyweight$date)+1, y = min(df_deadlift_and_bodyweight$bodyweight), label = glue("{min(df_deadlift_and_bodyweight$bodyweight)} lb\nbodyweight"), hjust = "left") +
+annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-4, y = max(df_deadlift_and_bodyweight$bodyweight), label = glue("{max(df_deadlift_and_bodyweight$bodyweight)} lb\nbodyweight"), hjust = "right") 
+
+```
+
+The key observations from the above charts are:
+
+- As my body became stronger I could lift much more than my body weight.
+
+- Getting to 1 x my body weight took 7 months, getting to 1.5 x body weight took 11 months and then after that it becomes REALLY difficult. Anything over 300lb is very challenging (remember I never lifted anything until I was 41 years old).
+
+In a way it is pleasantly surprising (thought not entirely unexpected) that as my body weight started going down my deadlift PR starting going up. Having said that, I do not want to lose any more weight and stay around the 185lb mark otherwise that 400lb deadlift target is going to be much more difficult to achieve than it already is.
 
 ## Do I really need a trainer?
 
