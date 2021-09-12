@@ -331,11 +331,11 @@ annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-4, y = max(df_d
 
 The key observations from the above charts are:
 
-- As my body became stronger I could lift much more than my body weight.
+- It gets progressively harder. Took 7 months to get to 1 x bodyweight, 11 months to get to 1.5 x bodyweight and then a total of 19 months to get to 1.75 x body weight so lifting 325lb with a bodyweight of 185lb. I expect to be at 2 x bodyweight or 370lb in the next 4 to 6 months, so 2 years to get to lift 2 x bodyweight.
 
-- Getting to 1 x my body weight took 7 months, getting to 1.5 x body weight took 11 months and then after that it becomes REALLY difficult. Anything over 300lb is very challenging (remember I never lifted anything until I was 41 years old).
+- As I started losing weight, I was able to lift more weight. Not unexpected, as you get stronger you are able to lift more, makes sense. But now, I want to stay around 185lb bodyweight, otherwise the 400lb would be a challenge harder than what it already is.
 
-In a way it is pleasantly surprising (thought not entirely unexpected) that as my body weight started going down my deadlift PR starting going up. Having said that, I do not want to lose any more weight and stay around the 185lb mark otherwise that 400lb deadlift target is going to be much more difficult to achieve than it already is.
+Viewing this journey from a completely different lens and using the deadlift as a metaphor, I guess we should all try to find something that takes perseverance and hard work over a long period of time to achieve and then get on with the journey to achieve that. Over a period of time we will realize that the goal was just the first dopamine trigger but then as we keep putting in the hard yards and keep seeing the milestones along the way, we keep getting those dopamine hits, and that helps to keep us going. We live in a world today that is designed to provide instant gratification, so this idea that it will take years of consistent effort to achieve something, especially something that is not directly financially rewarding, takes some time to settle.
 
 ## Do I really need a trainer?
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.29)  11 SEP 2021 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.29)  12 SEP 2021 02:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1361,7 +1361,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.567 l
-       unge iso hold & Lats \\ [39]
+       unge iso hold & Biceps \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 567--587
  [] [] 
  []
@@ -1376,7 +1376,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.607 l
-       ight band star extensions & Lower back \\ [40]
+       ight band star extensions & Lats \\ [40]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 607--611
  [] [] 
  []
@@ -1390,8 +1390,8 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.638 p
-       lank walkups & Triceps \\ [41]pdfTeX warning (ext4): destination with th
-e same identifier (name{page.}) has been already used, duplicate ignored
+       lank walkups & Lats \\ [41]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.661 \end{longtable}
@@ -1475,20 +1475,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.705 \end{itemize}
-                    [48 <./bookdownproj_files/figure-latex/unnamed-chunk-14-1.p
-df> <./bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf>]pdfTeX warning (
-ext4): destination with the same identifier (name{page.}) has been already used
-, duplicate ignored
+l.704   A
+         s I started losing weight, I was able to lift more weight. Not unex...
+[48 <./bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf> <./bookdownproj_
+files/figure-latex/unnamed-chunk-15-1.pdf>]pdfTeX warning (ext4): destination w
+ith the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.718 A
-        good trainer will keep your long term goals in mind and keep on evol...
-[49]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
-as been already used, duplicate ignored
+l.717 
+       [49]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.725 
+l.723 
        [50]pdfTeX warning (ext4): destination with the same identifier (name{pa
 ge.}) has been already used, duplicate ignored
 <to be read again> 
@@ -1922,7 +1921,7 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmro10.pfb>
-Output written on bookdownproj.pdf (92 pages, 11991937 bytes).
+Output written on bookdownproj.pdf (92 pages, 11992492 bytes).
 PDF statistics:
  1143 PDF objects out of 1200 (max. 8388607)
  920 compressed objects within 10 object streams
