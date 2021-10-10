@@ -1,6 +1,6 @@
 # What did we accomplish?
 
-I have said this earlier in this book, my initial goal for meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
+I have said this earlier in this book, my initial goal in meeting with a trainer and going to the gym was to lose weight, but as we started sweating it out I realized that we were getting a lot more out of this exercise and clean eating regimen than just a lighter body. Even so, weight loss and overall getting the body in a better shape are important goals, so how did we fare on these?
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -128,11 +128,14 @@ I have said this earlier in this book, my initial goal for meeting with a traine
     ))
 ```
 
-One thing that we realized along the way is that men and women respond to exercise and diet differently. While it is true that I had a lot of weight to lose as compared to Nidhi, but it is also true that she was losing weight at a much slower pace and had several phases where her weight loss just stalled. Both of us did the same workouts (until the last two months) and ate pretty much the same food, but I could lose weight and she found it very hard. Important to have realistic expectations and continuously work with your trainer to evaluate what could be tweaked.
+
+I would be remiss if I do not mention that men and women respond to exercise and diet differently. While it is true that I had a lot of weight to lose as compared to Nidhi, but it is also true that she was losing weight at a much slower pace and had several phases where her weight loss just stalled. Both of us did the same workouts (for the most part) and ate pretty much the same food, but I could lose weight and she found it very hard. Important to have realistic expectations and continuously work with your trainer to evaluate what could be tweaked.
 
 ## Percentages are revealing
 
-So net-net in about 7 months, I lost about 20% of my body weight and Nidhi lost about 15%. Not too bad. In terms of how far we have progressed compared to the goals we started with, I have some more miles to go while Nidhi is almost there.
+I reached my weight goal of 190lb in in early 2021 and then decided to go even lighter so that I weight between 180lb to 185lb. I am no longer obese, although technically overweight. However, I am much lighter and much stronger at 42 years of age than I felt at 22 years. I bet 22 year old me would not be able to run a mile without gasping for air, more likely not able to run a mile, period. I have a target of being able to deadlift 400lb and so I intend to stay around 185lb and not lose any more weight. Once you understand how your body responds to certain foods and cut out refined sugar from your diet, losing weight becomes straight forward unless you have other issues.
+
+So net-net in about 22 months, I lost about 27% of my body weight and Nidhi lost about 12%. Not too bad. In terms of how far we have progressed compared to the goals we started with, well the goals are just milestones along the way, the journey continues.
 
 ```{r echo=FALSE,fig.height=10, fig.width=14}
 df2 <- data.frame(name = c(P1_NAME, P2_NAME),
@@ -171,7 +174,7 @@ All measurements in the charts below were done automatically as part of the dail
   df_tidy %>%
   ggplot(aes(x=Date, y=value, col=name)) +
   geom_line() +
-  scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+  scale_x_date(date_breaks = "4 month", date_labels = "%b") +
   facet_wrap(~metric, scales = "free_y") + 
   theme_fivethirtyeight() +
   xlab("") +
@@ -304,3 +307,4 @@ df_forecast_p1 %>%
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
   theme(axis.title = element_text()) + ylab('Weight (lb)')
 ```
+
