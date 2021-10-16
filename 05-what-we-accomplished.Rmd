@@ -164,6 +164,7 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
 
 ```
 
+
 ## Changes in other biometrics
 
 Along with the body weight, other metrics also saw significant change. This is seen in the following charts. BMI is widely used (I suppose accepted as well) measurement to determine if someone is healthy, obese or overweight. We saw reduction in BMI as well which as expected is correlated to the reduction in weight. NIH guidelines for BMI are available [here](https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf) for reference.
@@ -246,6 +247,10 @@ df_weekly_weight %>%
 
 As we were going through this journey, I was very eager to apply some forecasting and determine if we could project a reasonable date when we would be able to meet our weight loss target. As much as this book is not just about weight loss, there is no denying the fact that it was one of the most (if not the most) tangible outcome we were tracking towards.
 
+
+**_NOTE:_** I did this forecast in August of 2020 and tracked it till December 2020. Forecasting weight loss is a very complex mathematical problem because it depends upon a multiplicity of (changing) features. I did achieve my target in early 2021 but kept these charts as is as a reminder of where we started and what I was thinking as being possible a few months into the journey.
+
+
 Once we had collected a reasonable amount of data, I used standard timeseries forecasting techniques to determine how our weights would look say 30, 90 or 180 days from the current date. I used the [Prophet](https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.) package from Facebook AI Research ([FAIR](https://github.com/facebookresearch)) to do the timeseries forecast. The results are presented below. This forecast was done on August 16, 2020 and as per this forecast we should be able to achieve our target weight (`r P1_TARGET_WEIGHT` lb) in early October for Nidhi and mid-December for me (`r P2_TARGET_WEIGHT` lb).
 
 Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here that this simple forecast is considering the weight loss as a single variable timeseries, we know it is much more complicated than that. There are a lot of factors that would go into making a much more accurate weight loss forecast (if I could do that then maybe I would be writing a different book :)). This is just a simple attempt.
@@ -306,5 +311,59 @@ df_forecast_p1 %>%
        caption="Light blue lines show the error range for the forecast.") +
   theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5), legend.title = element_blank()) +
   theme(axis.title = element_text()) + ylab('Weight (lb)')
+```
+
+
+## Losing weight is one thing but keeping it off...
+
+Anybody who has ever lost any amount of weight, even if it is 5 pounds (or some would say especially if it is 5 pounds) would tell you that it always comes back. Well, how did we fare in that regards?
+
+The chart below shows my daily body weight since the start of 2020. I was able to reach my target body weight of 190lb and have been able to maintain between 185lb to 190lb since then (7 months as of this writing). No mean feat for someone who had never been fit before and the good part is that I have been able to do it not by taping into some deep hidden reserves of will power but all while leading what I would consider a __normal__ lifestyle that involves vacations, eating out and having a decent social life. In other words, it did not involve living in a cave or carrying my own food with me everywhere.
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
+df_bw <- read_csv("https://raw.githubusercontent.com/aarora79/biomettracker/master/data/Amit.csv") %>%
+  mutate(Date=ymd(Date), Weight=as.numeric(Weight))
+title <- "The big picture: reaching the target weight and maintaining it"
+subtitle <- "A good workout routine and healthy eating habits will set you free from fad diets!"
+
+p <- df_bw %>%
+  mutate(Weight = as.numeric(Weight)) %>%
+  filter(Weight > 100  & Date >= as.Date("2020-1-1")) %>%
+  ggplot(aes(x=Date, y=Weight, col=Weight)) +
+  geom_point() + 
+  geom_line() +
+  geom_smooth(method = "gam") +
+  theme_fivethirtyeight() + 
+  labs(title=title,
+       subtitle=subtitle) +
+  theme(legend.position="none", legend.title = element_blank()) +
+  theme(axis.title = element_text(), axis.title.x = element_blank(), text = element_text(size=20)) + 
+  xlab("") +
+  ylab('Body weight (lb)')
+
+start_date <- min(df_bw$Date, na.rm=TRUE)
+end_date <- max(df_bw$Date, na.rm=TRUE)
+target_wt <- 190
+target_wt_achieve_date <- df_bw %>%
+  mutate(Weight = as.numeric(Weight)) %>%
+  filter(between(Weight, target_wt, target_wt+1)) %>%
+  filter(Date == min(Date)) %>%
+  pull(Date)
+
+target_wt_achieved <- as.numeric(df_bw %>% filter(Date == target_wt_achieve_date) %>% pull(Weight))
+wt_loss_phases <- data.frame(name = c("working towards", "maintaining the gains"),
+                             start_date = c(start_date, target_wt_achieve_date), 
+                             end_date = c(target_wt_achieve_date, end_date),
+                             ymin=c(-Inf,185), ymax=c(+Inf,190)
+                            )
+time_since_target_bw <- as.integer(difftime(Sys.Date(), target_wt_achieve_date, units = "weeks")/4)
+p + geom_rect(data=wt_loss_phases %>% filter(name =="maintaining the gains"),
+              inherit.aes=FALSE,
+              aes(xmin=start_date,
+                  xmax=end_date, ymin=ymin, ymax=ymax),
+                              alpha=0.2, fill="blue") +
+    annotate(geom = "point", x = target_wt_achieve_date, y = target_wt_achieved, colour = "red", size = 3) +
+    annotate(geom = "text", x = target_wt_achieve_date, y = target_wt_achieved-9, , label = glue("Maintained weight mostly between 185 to 190lb for last {time_since_target_bw} months"), hjust = "left")
 ```
 
