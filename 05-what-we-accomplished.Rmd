@@ -318,7 +318,7 @@ df_forecast_p1 %>%
 
 Anybody who has ever lost any amount of weight, even if it is 5 pounds (or some would say especially if it is 5 pounds) would tell you that it always comes back. Well, how did we fare in that regards?
 
-The chart below shows my daily body weight since the start of 2020. I was able to reach my target body weight of 190lb and have been able to maintain between 185lb to 190lb since then (7 months as of this writing). No mean feat for someone who had never been fit before and the good part is that I have been able to do it not by taping into some deep hidden reserves of will power but all while leading what I would consider a __normal__ lifestyle that involves vacations, eating out and having a decent social life. In other words, it did not involve living in a cave or carrying my own food with me everywhere.
+The chart below shows my daily body weight since the start of 2020. I was able to reach my target body weight of 190lb and have been able to maintain between 185lb to 190lb since then (7 months as of this writing). No mean feat for someone who had never been fit before and the good part is that I have been able to do it not by taping into some deep hidden reserves of will power but all while leading what I would consider a __normal__ lifestyle that involves vacations, eating out every now and then and having a decent social life. In other words, it did not involve living in a cave or carrying my own food with me everywhere.
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
@@ -367,3 +367,20 @@ p + geom_rect(data=wt_loss_phases %>% filter(name =="maintaining the gains"),
     annotate(geom = "text", x = target_wt_achieve_date, y = target_wt_achieved-9, , label = glue("Maintained weight mostly between 185 to 190lb for last {time_since_target_bw} months"), hjust = "left")
 ```
 
+So here is the secret recipe that works for me. As you can see there is hardly any noble prize winning research here, just **simple things, __done__ __consistently__**.
+
+| How strict I am about this? | Category | Activity | How well did I really stick to this? |
+|---|---|---|---|
+| Non-negotiable | Food | Absolutely no soft drinks (soda) and barely any hard drinks. | Yes, for the most part. I did have a total of maybe 4 or 5 alcoholic drinks in the entire year. |
+| Non-negotiable | Food | No dairy products (except homemade curd, occasionaly). | Yes, for the most part. Made an exception for some home made Indian sweets during the festival season. |
+| Non-negotiable | Food | No cakes, pastries, canolies, muffins or bread. | Yes, for the most part, obviously I did have cake on  my kids' birthdays and our anniversary. |
+| Non-negotiable | Food | Don't want to name names but you wont find me dead in a fast food restaurant chain. | Yes, no exceptions, even when we were on long road trips. |
+| Non-negotiable | Food | No caffeine after 3pm | Yes, for the most part. |
+| Non-negotiable | Workout | 5 days of strength training with an occasional 6th day of light cardio such as long walks. | Yes, no exceptions, even when we went on vacations, I worked out in the hotel's fitness center. |
+| Best Effort | Eating Habits | A 16-8 or at least 14-10 eating window. | Yes, no exceptions, even when we went on vacations. |
+| Best Effort | Eating Habits | Eat most of my protein and fiber during lunch and most of my carbs during dinner (preferably 7.30pm, no later than 8pm). | I try really hard, but ofcourse, I fall short sometimes. |
+| Best Effort | Eating Habits | 2 to 3 days of water fasting every month. | This is a hard goal (although not as hard as it might seem at first glance) but we were able to do it pretty consistently for most of 2021. |
+| Best Effort | Lifestyle | Short  morning walk, 1 mile after dinner walk | Recent addition to my routine, able to do it at least 4 times a week. |
+| Trying to improve | Sleeping Habits | While the goal is 8 hours, I manage just about 7 hours on most days | Not so good. |
+| Trying to improve | Lifestyle | Breathwork practice, for sleep, relaxation and workouts. | Working on it. |
+| Trying to improve | Lifestyle | Read more book, very selective engagement with social media. | Working on it. |
