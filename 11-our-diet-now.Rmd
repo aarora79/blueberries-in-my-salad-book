@@ -147,13 +147,14 @@ df_wt_and_trips_more %>%
 ## Chapter 12: At a glance
 
 ***
+1. Food composition changes as the extra weight comes off and the demands of the workout increase. I eat less protein than before and regular Indian food (daal, roti, sabzi) for dinner.
 
-1. We choose eating two big meals a day rather than multiple small meals through the day. Skipping the breakfast helps with intermittent fasting. 
+2. We choose eating two big meals a day rather than multiple small meals through the day. Skipping the breakfast helps with intermittent fasting. 
 
-2. The lunch is still a protein, fiber and good fat rich salad. Avoiding carbs at lunch time helps avoid the lethargic feeling during the afternoon.
+3. The lunch is still a protein, fiber and a good fat rich salad. Avoiding carbs at lunch time helps avoid the lethargic feeling during the afternoon.
 
-3. Dinner is now higher carbs (please do not delay dinner beyond 7:30pm) which helps with a good night sleep and fueling the workouts the next morning.
+4. Dinner is now higher carbs (please do not delay dinner beyond 7:30pm) which helps with a good night sleep and fueling the workouts the next morning.
 
-4. A consistent regimen of the workout and healthy eating helps shave off the extra pounds from the social gatherings and vacations.
+5. A consistent regimen of the workout and healthy eating helps shave off the extra pounds from the social gatherings and vacations.
 
 
