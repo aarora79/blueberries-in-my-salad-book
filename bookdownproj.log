@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  14 NOV 2021 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  14 NOV 2021 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -532,23 +532,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<introduction/blueberries-in-my-salad.pdf, id=4, 1061.46562pt x 1693.82813pt>
-File: introduction/blueberries-in-my-salad.pdf Graphic file (type pdf)
-<use introduction/blueberries-in-my-salad.pdf>
-Package pdftex.def Info: introduction/blueberries-in-my-salad.pdf  used on inpu
-t line 99.
-(pdftex.def)             Requested size: 344.6645pt x 549.99655pt.
+
+pdfTeX warning: pdflatex (file ./introduction/cover2021.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+<introduction/cover2021.pdf, id=4, 794.97pt x 614.295pt>
+File: introduction/cover2021.pdf Graphic file (type pdf)
+<use introduction/cover2021.pdf>
+Package pdftex.def Info: introduction/cover2021.pdf  used on input line 99.
+(pdftex.def)             Requested size: 345.00856pt x 266.59752pt.
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
-ination with the same identifier (name{page.}) has been already used, duplicate
- ignored
-<to be read again> 
-                   \relax 
-l.99 \maketitle
-                [2 <./introduction/blueberries-in-my-salad.pdf>] (./bookdownpro
-j.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./introduction/cover2021.p
+df>] (./bookdownproj.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -617,7 +613,7 @@ l.143
        [9
 
 ]
-<pictures/sanskrit1.png, id=263, 96.36pt x 14.0525pt>
+<pictures/sanskrit1.png, id=222, 96.36pt x 14.0525pt>
 File: pictures/sanskrit1.png Graphic file (type png)
 <use pictures/sanskrit1.png>
 Package pdftex.def Info: pictures/sanskrit1.png  used on input line 144.
@@ -652,7 +648,7 @@ ge.}) has been already used, duplicate ignored
                    \relax 
 l.190 
        [14]
-<bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf, id=288, 1013.7875pt x 7
+<bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf, id=247, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type 
 pdf)
@@ -692,7 +688,7 @@ been already used, duplicate ignored
                    \relax 
 l.238 
        [19]
-<pictures/breakfast.JPG, id=326, 3083.52pt x 3083.52pt>
+<pictures/breakfast.JPG, id=285, 3083.52pt x 3083.52pt>
 File: pictures/breakfast.JPG Graphic file (type jpg)
 <use pictures/breakfast.JPG>
 Package pdftex.def Info: pictures/breakfast.JPG  used on input line 243.
@@ -703,7 +699,7 @@ een already used, duplicate ignored
                    \relax 
 l.248 
        [20 <./pictures/breakfast.JPG>]
-<pictures/lunch-salads.JPG, id=331, 3083.52pt x 3083.52pt>
+<pictures/lunch-salads.JPG, id=290, 3083.52pt x 3083.52pt>
 File: pictures/lunch-salads.JPG Graphic file (type jpg)
 <use pictures/lunch-salads.JPG>
 Package pdftex.def Info: pictures/lunch-salads.JPG  used on input line 258.
@@ -719,7 +715,7 @@ ge.}) has been already used, duplicate ignored
                    \relax 
 l.270 
        [22 <./pictures/lunch-salads.JPG>]
-<pictures/4pm-snacks.JPG, id=341, 3083.52pt x 3083.52pt>
+<pictures/4pm-snacks.JPG, id=300, 3083.52pt x 3083.52pt>
 File: pictures/4pm-snacks.JPG Graphic file (type jpg)
 <use pictures/4pm-snacks.JPG>
 Package pdftex.def Info: pictures/4pm-snacks.JPG  used on input line 273.
@@ -730,12 +726,12 @@ een already used, duplicate ignored
                    \relax 
 l.278 
        [23 <./pictures/4pm-snacks.JPG>]
-<pictures/dinner1.JPG, id=348, 3083.52pt x 3083.52pt>
+<pictures/dinner1.JPG, id=305, 3083.52pt x 3083.52pt>
 File: pictures/dinner1.JPG Graphic file (type jpg)
 <use pictures/dinner1.JPG>
 Package pdftex.def Info: pictures/dinner1.JPG  used on input line 290.
 (pdftex.def)             Requested size: 344.97548pt x 344.97548pt.
-<pictures/dinner2.JPG, id=349, 1059.96pt x 1059.96pt>
+<pictures/dinner2.JPG, id=306, 1059.96pt x 1059.96pt>
 File: pictures/dinner2.JPG Graphic file (type jpg)
 <use pictures/dinner2.JPG>
 Package pdftex.def Info: pictures/dinner2.JPG  used on input line 296.
@@ -756,7 +752,7 @@ l.301
                    \relax 
 l.301 
        [26 <./pictures/dinner2.JPG>]
-<bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf, id=362, 1013.7875pt x 7
+<bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf, id=320, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type 
 pdf)
@@ -770,7 +766,7 @@ een already used, duplicate ignored
                    \relax 
 l.314 
        [27 <./bookdownproj_files/figure-latex/unnamed-chunk-5-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf, id=378, 1013.7875pt x 7
+<bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf, id=337, 1013.7875pt x 7
 22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type 
 pdf)
@@ -790,7 +786,7 @@ y used, duplicate ignored
                    \relax 
 l.332 
        [29]
-<pictures/water-fasting-Meme.png, id=409, 1075.01625pt x 607.26875pt>
+<pictures/water-fasting-Meme.png, id=367, 1075.01625pt x 607.26875pt>
 File: pictures/water-fasting-Meme.png Graphic file (type png)
 <use pictures/water-fasting-Meme.png>
 Package pdftex.def Info: pictures/water-fasting-Meme.png  used on input line 34
@@ -823,7 +819,7 @@ been already used, duplicate ignored
                    \relax 
 l.379 
        [33]
-<pictures/goblet_squat_w_kb.png, id=435, 661.47125pt x 653.44125pt>
+<pictures/goblet_squat_w_kb.png, id=394, 661.47125pt x 653.44125pt>
 File: pictures/goblet_squat_w_kb.png Graphic file (type png)
 <use pictures/goblet_squat_w_kb.png>
 Package pdftex.def Info: pictures/goblet_squat_w_kb.png  used on input line 384
@@ -845,12 +841,12 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<pictures/gym2.jpg, id=445, 4047.12pt x 2276.505pt>
+<pictures/gym2.jpg, id=403, 4047.12pt x 2276.505pt>
 File: pictures/gym2.jpg Graphic file (type jpg)
 <use pictures/gym2.jpg>
 Package pdftex.def Info: pictures/gym2.jpg  used on input line 419.
 (pdftex.def)             Requested size: 344.95784pt x 194.03879pt.
-<pictures/gym1.jpg, id=446, 4047.12pt x 2276.505pt>
+<pictures/gym1.jpg, id=404, 4047.12pt x 2276.505pt>
 File: pictures/gym1.jpg Graphic file (type jpg)
 <use pictures/gym1.jpg>
 Package pdftex.def Info: pictures/gym1.jpg  used on input line 425.
@@ -883,7 +879,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.516 m
-       ilitary press & Lower back \\ [39]
+       ilitary press & Lats \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 523--547
  [] [] 
  []
@@ -902,7 +898,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.567 l
-       unge iso hold & Lats \\ [40]
+       unge iso hold & Biceps \\ [40]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 567--587
  [] [] 
  []
@@ -917,7 +913,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.607 l
-       ight band star extensions & Triceps \\ [41]
+       ight band star extensions & Lower back \\ [41]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 607--611
  [] [] 
  []
@@ -931,13 +927,13 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.638 p
-       lank walkups & Lats \\ [42]pdfTeX warning (ext4): destination with the s
-ame identifier (name{page.}) has been already used, duplicate ignored
+       lank walkups & Lower back \\ [42]pdfTeX warning (ext4): destination with
+ the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.661 \end{longtable}
                       [43]
-<bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf, id=484, 617.30624pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf, id=442, 617.30624pt x 
 711.65875pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type
  pdf)
@@ -952,7 +948,7 @@ een already used, duplicate ignored
 l.672 \includegraphics
                       {bookdownproj_files/figure-latex/unnamed-chunk-13-1.pdf} 
 [44]
-<bookdownproj_files/figure-latex/unnamed-chunk-13-1.pdf, id=489, 617.30624pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-13-1.pdf, id=448, 617.30624pt x 
 711.65875pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type
  pdf)
@@ -983,7 +979,7 @@ een already used, duplicate ignored
                    \relax 
 l.686 
        [47]
-<pictures/hexbar-w-255p.jpg, id=519, 1284.8pt x 963.6pt>
+<pictures/hexbar-w-255p.jpg, id=477, 1284.8pt x 963.6pt>
 File: pictures/hexbar-w-255p.jpg Graphic file (type jpg)
 <use pictures/hexbar-w-255p.jpg>
 Package pdftex.def Info: pictures/hexbar-w-255p.jpg  used on input line 690.
@@ -995,7 +991,7 @@ een already used, duplicate ignored
 l.694 \includegraphics
                       {bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf} 
 [48 <./pictures/hexbar-w-255p.jpg>]
-<bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf, id=523, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf, id=482, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type
  pdf)
@@ -1003,7 +999,7 @@ File: bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-14-1.pdf
   used on input line 694.
 (pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
-<bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf, id=524, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf, id=483, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type
  pdf)
@@ -1041,7 +1037,7 @@ ge.}) has been already used, duplicate ignored
 l.747   \textbf
                {How much to train}: While I firmly believe it is mind over m...
 [53]
-<pictures/routine.drawio.png, id=564, 1252.68pt x 372.39125pt>
+<pictures/routine.drawio.png, id=522, 1252.68pt x 372.39125pt>
 File: pictures/routine.drawio.png Graphic file (type png)
 <use pictures/routine.drawio.png>
 Package pdftex.def Info: pictures/routine.drawio.png  used on input line 755.
@@ -1102,7 +1098,7 @@ l.863
        [60
 
 ]
-<bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf, id=606, 960.58875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf, id=564, 960.58875pt x 
 429.605pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type
  pdf)
@@ -1117,7 +1113,7 @@ een already used, duplicate ignored
 l.878 A
        ll measurements in the charts below were done automatically as part o...
 [61 <./bookdownproj_files/figure-latex/unnamed-chunk-17-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf, id=621, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf, id=580, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type
  pdf)
@@ -1125,7 +1121,7 @@ File: bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-18-1.pdf
   used on input line 880.
 (pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
-<bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf, id=622, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf, id=581, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type
  pdf)
@@ -1140,7 +1136,7 @@ een already used, duplicate ignored
 l.892 ... plateaus}\label{of-slides-and-plateaus}}
                                                    [62 <./bookdownproj_files/fi
 gure-latex/unnamed-chunk-18-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf, id=637, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf, id=596, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type
  pdf)
@@ -1160,7 +1156,7 @@ same identifier (name{page.}) has been already used, duplicate ignored
                    \relax 
 l.910 
        [64 <./bookdownproj_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf, id=676, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf, id=635, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type
  pdf)
@@ -1168,7 +1164,7 @@ File: bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-21-1.pdf
   used on input line 913.
 (pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
-<bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf, id=677, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf, id=636, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type
  pdf)
@@ -1183,7 +1179,7 @@ een already used, duplicate ignored
 l.918 ...-weight-is-one-thing-but-keeping-it-off}}
                                                    [65 <./bookdownproj_files/fi
 gure-latex/unnamed-chunk-21-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf, id=694, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf, id=652, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type
  pdf)
@@ -1241,7 +1237,7 @@ been already used, duplicate ignored
 l.993   I
           feel bad while writing this, but I cannot deny that not having to ...
 [73]
-<pictures/microgreens.jpg, id=760, 472.76625pt x 972.63374pt>
+<pictures/microgreens.jpg, id=719, 472.76625pt x 972.63374pt>
 File: pictures/microgreens.jpg Graphic file (type jpg)
 <use pictures/microgreens.jpg>
 Package pdftex.def Info: pictures/microgreens.jpg  used on input line 1002.
@@ -1286,7 +1282,7 @@ age.}) has been already used, duplicate ignored
                    \relax 
 l.1057 
         [79]
-<bookdownproj_files/figure-latex/unnamed-chunk-24-1.pdf, id=787, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-24-1.pdf, id=746, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type
  pdf)
@@ -1308,7 +1304,7 @@ l.1086 ...ad, read\ldots{}}\label{read-read-read}}
                                                    [81 <./bookdownproj_files/fi
 gure-latex/unnamed-chunk-24-1.pdf>]
 Chapter 8.
-<pictures/smoky_morning.png, id=809, 681.54625pt x 355.3275pt>
+<pictures/smoky_morning.png, id=768, 681.54625pt x 355.3275pt>
 File: pictures/smoky_morning.png Graphic file (type png)
 <use pictures/smoky_morning.png>
 Package pdftex.def Info: pictures/smoky_morning.png  used on input line 1094.
@@ -1347,7 +1343,7 @@ ifier (name{page.}) has been already used, duplicate ignored
 l.1195 \includegraphics
                        {bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf}
 [86]
-<bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf, id=846, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf, id=804, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type
  pdf)
@@ -1355,7 +1351,7 @@ File: bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf
   used on input line 1195.
 (pdftex.def)             Requested size: 344.99258pt x 245.93529pt.
-<bookdownproj_files/figure-latex/unnamed-chunk-26-1.pdf, id=847, 1013.7875pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-26-1.pdf, id=805, 1013.7875pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type
  pdf)
@@ -1371,7 +1367,7 @@ l.1204 \includegraphics
                        {bookdownproj_files/figure-latex/unnamed-chunk-27-1.p...
 [87 <./bookdownproj_files/figure-latex/unnamed-chunk-25-1.pdf> <./bookdownproj_
 files/figure-latex/unnamed-chunk-26-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-27-1.pdf, id=868, 1001.7425pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-27-1.pdf, id=827, 1001.7425pt x 
 137.51375pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type
  pdf)
@@ -1379,7 +1375,7 @@ File: bookdownproj_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-27-1.pdf
   used on input line 1204.
 (pdftex.def)             Requested size: 345.0054pt x 47.36046pt.
-<bookdownproj_files/figure-latex/unnamed-chunk-27-2.pdf, id=869, 1001.7425pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-27-2.pdf, id=828, 1001.7425pt x 
 138.5175pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-27-2.pdf Graphic file (type
  pdf)
@@ -1416,7 +1412,7 @@ as been already used, duplicate ignored
 l.1293 ...om here, where?}\label{from-here-where}}
                                                    [91]
 Chapter 11.
-<bookdownproj_files/figure-latex/unnamed-chunk-28-1.pdf, id=922, 723.70375pt x 
+<bookdownproj_files/figure-latex/unnamed-chunk-28-1.pdf, id=881, 723.70375pt x 
 722.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type
  pdf)
@@ -1442,7 +1438,7 @@ een already used, duplicate ignored
 l.1297 \includegraphics
                        {bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf}
 [93 <./bookdownproj_files/figure-latex/unnamed-chunk-28-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf, id=935, 469.755pt x 72
+<bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf, id=894, 469.755pt x 72
 2.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type
  pdf)
@@ -1468,7 +1464,7 @@ age.}) has been already used, duplicate ignored
 l.1331 ...out the author}\label{about-the-author}}
                                                    [96]
 Chapter 12.
-<bookdownproj_files/figure-latex/unnamed-chunk-30-1.pdf, id=960, 216.81pt x 258
+<bookdownproj_files/figure-latex/unnamed-chunk-30-1.pdf, id=918, 216.81pt x 258
 .9675pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type
  pdf)
@@ -1531,8 +1527,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  14793 strings out of 481239
- 226380 string characters out of 5920376
- 531003 words of memory out of 5000000
+ 226296 string characters out of 5920376
+ 530989 words of memory out of 5000000
  29417 multiletter control sequences out of 15000+600000
  621927 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1548,10 +1544,10 @@ usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mro10.pfb>
-Output written on bookdownproj.pdf (105 pages, 13326683 bytes).
+Output written on bookdownproj.pdf (104 pages, 13347421 bytes).
 PDF statistics:
- 1326 PDF objects out of 1440 (max. 8388607)
- 1075 compressed objects within 11 object streams
+ 1285 PDF objects out of 1440 (max. 8388607)
+ 1064 compressed objects within 11 object streams
  220 named destinations out of 1000 (max. 500000)
  19226 words of extra memory for PDF output out of 20736 (max. 10000000)
 
