@@ -218,16 +218,18 @@ The chart below shows the week by week distribution of the weight and as you can
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
 df_weekly_weight <- df_daily_wt_loss %>%
-  mutate(week=week(Date)-week(min(df_daily_wt_loss$Date))+1)
+  mutate(week=1+as.numeric(round(difftime(Date, min(df_daily_wt_loss$Date), unit="week"))))
+  # mutate(week=week(Date)-week(min(df_daily_wt_loss$Date))+1)
 df_plateau2 <- read_csv(WT_LOSS_PLATEAUS_URL)
 
 df_weekly_weight %>%
-  ggplot(aes(x=as.factor(week), value, col=name)) +
+  filter(week <= 52) %>%
+  ggplot(aes(x=as.factor(week), y=value, col=name)) +
   geom_boxplot() +
   geom_rect(data=df_plateau2, aes(x = NULL,y = NULL,xmin=week_start, xmax=week_end, 
                                   ymin=-Inf, ymax=Inf, 
                                   alpha=0.05,fill=name, col=name)) +
-  labs(title="Boxplot for weekly weight trend",
+  labs(title="Boxplot for weekly weight trend (first 52 weeks)",
        subtitle="Shaded regions represent weeks where weight loss plateaued. The line in the center of each box represents the median weight in that week.",
        caption="Data Source: data collected at home") +
   facet_wrap(~name, scales="free", ncol=1) +
@@ -248,7 +250,7 @@ df_weekly_weight %>%
 As we were going through this journey, I was very eager to apply some forecasting and determine if we could project a reasonable date when we would be able to meet our weight loss target. As much as this book is not just about weight loss, there is no denying the fact that it was one of the most (if not the most) tangible outcome we were tracking towards.
 
 
-**_NOTE:_** I did this forecast in August of 2020 and tracked it till December 2020. Forecasting weight loss is a very complex mathematical problem because it depends upon a multiplicity of (changing) features. I did achieve my target in early 2021 but kept these charts as is as a reminder of where we started and what I was thinking as being possible a few months into the journey.
+**_NOTE:_** I did this forecast in August of 2020 and tracked it till December 2020. Forecasting weight loss is a complex mathematical problem because it depends upon a multiplicity of (changing) features. I did achieve my target in early 2021 but kept these charts as is as a reminder of where we started and what I was thinking as being possible a few months into the journey.
 
 
 Once we had collected a reasonable amount of data, I used standard timeseries forecasting techniques to determine how our weights would look say 30, 90 or 180 days from the current date. I used the [Prophet](https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.) package from Facebook AI Research ([FAIR](https://github.com/facebookresearch)) to do the timeseries forecast. The results are presented below. This forecast was done on August 16, 2020 and as per this forecast we should be able to achieve our target weight (`r P1_TARGET_WEIGHT` lb) in early October for Nidhi and mid-December for me (`r P2_TARGET_WEIGHT` lb).
