@@ -9,7 +9,7 @@ link-citations: yes
 always_allow_html: true
 description: "This book describes a journey of clean eating and regular workouts that I undertook with my wife from being fat to fit. Like a salad, life may not be the most appealing lunch option but if you can keep finding the blueberries every now and again, it is both rewarding and fulfilling."
 classoption: oneside
-cover-image: "introduction/blueberries-in-my-salad.png"
+cover-image: "introduction/cover2021.jpg"
 github-repo: aarora79/from-fat-to-fit
 linestretch: 1.15
 linkcolor: NavyBlue
