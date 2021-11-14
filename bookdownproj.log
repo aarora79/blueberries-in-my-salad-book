@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  14 NOV 2021 17:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  14 NOV 2021 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,7 +872,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.464 9
-       0/90 hip stretch & Biceps \\ [38]
+       0/90 hip stretch & Lats \\ [38]
 Underfull \vbox (badness 10000) detected at line 496
  []
 
@@ -881,7 +881,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.516 m
-       ilitary press & Biceps \\ [39]
+       ilitary press & Thighs \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 523--547
  [] [] 
  []
@@ -900,7 +900,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.567 l
-       unge iso hold & Thighs \\ [40]
+       unge iso hold & Lower back \\ [40]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 567--587
  [] [] 
  []
@@ -915,7 +915,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.607 l
-       ight band star extensions & Thighs \\ [41]
+       ight band star extensions & Biceps \\ [41]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 607--611
  [] [] 
  []
@@ -929,8 +929,8 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.638 p
-       lank walkups & Calf \\ [42]pdfTeX warning (ext4): destination with the s
-ame identifier (name{page.}) has been already used, duplicate ignored
+       lank walkups & Lower back \\ [42]pdfTeX warning (ext4): destination with
+ the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.661 \end{longtable}
@@ -1530,7 +1530,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14793 strings out of 481239
  226296 string characters out of 5920376
- 530989 words of memory out of 5000000
+ 531989 words of memory out of 5000000
  29417 multiletter control sequences out of 15000+600000
  621927 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1546,7 +1546,7 @@ usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mro10.pfb>
-Output written on bookdownproj.pdf (105 pages, 13827217 bytes).
+Output written on bookdownproj.pdf (105 pages, 13827210 bytes).
 PDF statistics:
  1289 PDF objects out of 1440 (max. 8388607)
  1067 compressed objects within 11 object streams
