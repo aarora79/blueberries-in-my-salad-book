@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  17 NOV 2021 01:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  17 NOV 2021 01:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,7 +880,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.516 m
-       ilitary press & Lats \\ [39]
+       ilitary press & Lower back \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 523--547
  [] [] 
  []
@@ -899,7 +899,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.567 l
-       unge iso hold & Biceps \\ [40]
+       unge iso hold & Triceps \\ [40]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 567--587
  [] [] 
  []
@@ -928,8 +928,8 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.638 p
-       lank walkups & Thighs \\ [42]pdfTeX warning (ext4): destination with the
- same identifier (name{page.}) has been already used, duplicate ignored
+       lank walkups & Lower back \\ [42]pdfTeX warning (ext4): destination with
+ the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.661 \end{longtable}
@@ -1447,22 +1447,23 @@ een already used, duplicate ignored
 l.1316 \includegraphics
                        {bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf}
 [94 <./bookdownproj_files/figure-latex/unnamed-chunk-28-1.pdf>]
-<bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf, id=904, 469.755pt x 72
-2.7pt>
+<bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf, id=904, 407.5225pt x 7
+22.7pt>
 File: bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type
  pdf)
 <use bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf>
 Package pdftex.def Info: bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf
   used on input line 1316.
-(pdftex.def)             Requested size: 344.997pt x 530.76459pt.
+(pdftex.def)             Requested size: 310.14316pt x 550.00757pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1319 
-        [95 <./bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf>]pdfTeX w
-arning (ext4): destination with the same identifier (name{page.}) has been alre
-ady used, duplicate ignored
+l.1318 H
+        ere are the customary before, after and the not so customary the yea...
+[95 <./bookdownproj_files/figure-latex/unnamed-chunk-29-1.pdf>]pdfTeX warning (
+ext4): destination with the same identifier (name{page.}) has been already used
+, duplicate ignored
 <to be read again> 
                    \relax 
 l.1335 
@@ -1553,7 +1554,7 @@ usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mro10.pfb>
-Output written on bookdownproj.pdf (106 pages, 13830768 bytes).
+Output written on bookdownproj.pdf (106 pages, 13890009 bytes).
 PDF statistics:
  1298 PDF objects out of 1440 (max. 8388607)
  1075 compressed objects within 11 object streams

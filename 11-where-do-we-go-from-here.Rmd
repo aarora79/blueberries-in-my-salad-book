@@ -8,9 +8,9 @@ grid.raster(img)
 ```
 
 ```{r echo=FALSE}
-library(png)
+library(jpeg)
 library(grid)
-img <- readPNG("pictures/sep6_2021.png")
+img <- readJPEG("pictures/sep6_2021.jpg")
 grid.raster(img)
 ```
 
