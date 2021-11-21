@@ -1,4 +1,4 @@
-# Fasting: not for weight loss but for overall health and longevity
+# Fasting for overall health and longevity
 
 Growing up, fasting for religious reasons on special days was very normal. We did it several times a year as a family. The focus was not so much on the health benefits but more on the spiritual side of it (abstinence from food helps brings the focus inwards, maybe). As I grew older, I started looking at these fasts more and more as an opportunity to test self-control, with work, travel and other day to day life situations it was always some what of a challenge. Even though the fasts themselves did not involve going without food for long hours (certainly not days), you could always eat something from the allowed set of food items. It was still a challenge nonetheless.
 
@@ -21,7 +21,7 @@ I also tried the 22-2 a few times, it was fine but not something I enjoyed. Havi
 
 I cannot end this section without saying please read this excellent book called "The Circadian Code" by Dr Satchin Panda, it will provide you evidence based reasoning you need to try out TRF.
 
-# Multiple day fasting
+## Multiple day fasting
 
 It was probably through some YouTube recommendations that I stumbled upon the topic of longer multi-day fasts, more specifically, "multi-day water fasts". These fasts could be anywhere between 1 day to several days where you eat no food and only water (+ electrolytes) was allowed. Both me and Nidhi were very keen on trying this. I had fasted for multiple days before (not water fast though and certainly not for multiple days) but she had not. So we met with a naturopathic doctor and asked her about it, she said she wanted to get some bloodwork done to make sure she did not see anything which would make her so no. Long story short, everything turned out ok in the bloodwork and she really encouraged us to do a multi-day water fast. We could drink tea, coffee and electrolytes but no milk (no dairy, but a little bit of almond milk was OK) and of course no sugar. Basically anything that had calories was out.
 
@@ -35,7 +35,7 @@ To be clear, when I mention a 2-day fast I mean a 48 hour period without food, s
 
 Here is a quick primer on how to go about a multi-day and what to expect during the fast.
 
-## How to prepare for the fast?
+### How to prepare for the fast?
 
 The most important thing to do is somewhat counter intuitive and that is not to eat too much during the last meal before the fast. One would think that I am going to be without food for the next 48 to 72 hours so let me stock up, while the thought might be correct, but in reality the body is already stocked up which is what all the stored body fat is. The body is going to use that body fat for energy when it is does not get food, that is what we want. Also, we try to be very diligent about reducing our carbohydrate intake a day before the fast starts, helps us feel less hungry on the first day of the fast (hunger is only a first day problem, no really).
 
@@ -43,7 +43,7 @@ In terms of what liquids other than just plain water that you can consume during
 
 Finally, remember, hunger comes and goes and your body has enough stored fat to survive a few days without food.
 
-##  Day 1 of a 72-hour fast
+###  Day 1 of a 72-hour fast
 
 Day 1 is the hardest! By the afternoon, you start feeling hungry, late afternoon could be really difficult, if this is your first time might experience with some mild headaches. Then the hunger subsides and goes away. Drinking electrolytes really helps (again, make sure no sugar because otherwise it could make you feel even worse), it would reduce hunger and help with the headache becaue of all the salts content (sodium, magnesium, potassium).
 
@@ -54,7 +54,7 @@ I do my regular workouts on day 1 and day 2 of the fasts, maybe at somewhat redu
 By evening, I am feeling really sleepy and want to go to bed early. This is a good idea because when you are sleeping, you are not thinking about food. More than hunger, it is the act of preparing food for the family, the aroma of food that makes you think "tell me again why am I not eating this?". To be honest, the first day is tough.
 
 
-## Day 2 of a 72-hour fast
+### Day 2 of a 72-hour fast
 
 When you wake up the second morning, you would be feel refreshed after the sleep and surprisingly not hungry. You can then go about your day as normal, as long as there is no strenuous physical activity involved and not a lot of talking, you would feel fine, certainly much better than day 1 and maybe even before than when you were not fasting.
 
@@ -65,7 +65,7 @@ A different feeling we had on day 2 was a strange feeling of emptiness in the st
 An interesting thing that happens (and for some this might happen earlier on day 1 itself) is that you start feeling cold. This is because there is no metabolic activity going to digest food, so there is less heat produced and therefore you would feel the palms of your hand to be cold.
 
 
-## Day 3 of a 72-hour fast
+### Day 3 of a 72-hour fast
 
 If this is your final day of fasting then Day 3 is easy because your destination is in sight. If this is not your final day then day 3 is very much like day 2 i.e. you have to contend with "boredom of not being able to eat" and random thoughts of "Ok enough, I just want to pick up this banana and eat".
 
@@ -73,26 +73,45 @@ By day 3, you get used to not feeling hungry, no headaches, probably a little bi
 
 Day 3 often comes with questions such as "remind me again why am I doing this?" and at that time it is just a question of seeing through the hours.
 
-## How to open a fast?
+### How to open a fast?
 
 The first food item, rather the first meal, after a multi-day fast feels like heaven. You realize what does food mean to the soul, not just to the body because you now know the body can do just fine for a few days without food. The fast brings about such a big reset to the idea of "good food" that it is difficult to describe, whatever you eat as part of your first meal <i>is</i> good food.
 
 We usually open our fast with a soup, something light such as a vegetable soup made from beets, spinach and tomato served with a little bit of butter. Followed by some nuts and dried fruits and then a light dinner. It is difficult to eat too much after a fast. You do not want to give another shock to your digestive system which is just getting used to not having to digest any external food by suddenly eating a whole lot of carbs.
 
-## The morning after
+### The morning after
 
 The weighing scale does show us lighter by several pounds (anything between 4 to 7 pounds) but this weight loss is not permanent and water fasts are not meant to be a weight loss protocol. Said a different way, water fasting is not meant to be a detox after a vacation that added a few extra pounds.
 
 We generally feel great with no residual impact from the fasting..
 
 
-## Our 72-hour fasting experience
+### Our 72-hour fasting experience
 
-During one of our fasts I decided to record all the data on a per hour basis so that we had actual data recorded in real time to reflect what we were experiencing: were we hungry, sleepy, had headaches and also what did we drink.
+During one of our fasts I decided to meticulously record all the data on a per hour basis so that we had actual data recorded in real time to reflect what we were experiencing: were we hungry, sleepy, had headaches and also what did we drink. Here is a link to the Google sheet I created to track this, you can download it [from here](https://docs.google.com/spreadsheets/d/1qGM7gJ8zdBPTngD0HHkutP83-kCZx_erLRIak5hs5Lk/edit?usp=sharing) and use it to track your own fasting experience.
+
+We mostly had normal energy levels, sometimes mild headache and almost no extreme hunger pangs. About a third of those hours were spent sleeping! I should note that this data was probably from our 3rd attempt at multi-day fasting, I believe we have gotten better at it and do not experience any headaches (not even mild ones) at all now. 
+
+![fasting experience](pictures/fasting1.jpeg) 
+
+A multivariate analysis examining a combination of energy level, hunger and sleepiness is more interesting. Did we feel low energy, very hungry and very sleepy at the same time? Surprisingly, no! The high energy levels correspond to the hour just after a workout. 
+
+![multivariate analysis of fasting experience for Amit](pictures/fasting2.jpeg) 
+
+Same for Nidhi as well, no case of hunger pangs combined with low energy and feeling very sleepy. While a 72 hour water fast is no walk in the park, it was definitely not the case that we felt we would collapse going without food for a few hours. 
+
+![multivariate analysis of fasting experience for Nidhi](pictures/fasting3.jpeg) 
+
+Our fast was not a water only fast. While I drank a variety of beverages other than just water, Nidhi mostly stuck to water and tea. 
+
+![What did we drink during fasting](pictures/fasting4.jpeg) 
 
 
+## Closing thoughts on fasting
 
+We would like to do a longer fast, something like a 5 to 10 day fast but we also have work to do and kids to attend to and friends to meet (and eat with) all of which make it difficult to sustain a fast for a longer duration (4 days is the maximum that Nidhi tried, I did not try more than 3 days). We get our bloodwork done every few months and several biomarkers show marked improvements but then it is hard for us to say how much of it is due to fasting and how much is due to overall lifestyle changes. Tests for autophagy are not yet common and we certainly have not got one done, an objective quantitative measure would certainly help provide an impetus for an extended multi-day fast.
 
+Some of our friends also tried out a 48 hour fast (I hope at least in part based on our experience) and they also had similar experience as us, once the first day was over, it was not that hard.
 
-
+I will close this chapter by citing an anecdote of my own. I believe that the multi-day fasting helped to completely clean up a painful skin condition that had developed in the sole of my foot. While I have no scientific proof that it was indeed the fasting that cured it but I can say for sure that it got better after every fast and was healed after a few fasting iterations. All this while the podiatrist was not having much success in treating my condition and the next step in that line of treatment was to get an MRI done (I had already got an ultrasound done which revealed nothing), which I did not get done and thankfully did not need ultimately. The body knows how to heal itself, we just need to give it some help. Just so that I do not come across as promoting quackery, please always consult your doctor for all medical conditions and before starting on any fasting or dietary regimen.
 
