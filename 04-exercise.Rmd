@@ -292,8 +292,8 @@ annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-5, y = min(df_d
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
 title <- "Body weight is going down and deadlift PR is going up..."
-maxbw <- max(df_deadlift_and_bodyweight$bodyweight)
-minbw <- min(df_deadlift_and_bodyweight$bodyweight)
+maxbw <- max(df_deadlift_and_bodyweight$bodyweight, na.rm=TRUE)
+minbw <- min(df_deadlift_and_bodyweight$bodyweight, na.rm=TRUE)
 
 maxdl <- max(df_deadlift_and_bodyweight$weight)
 mindl <- min(df_deadlift_and_bodyweight$weight)
@@ -309,7 +309,7 @@ p <- df_dl_and_bw_tidy %>%
   ggplot(aes(x=date, y=v, col=k)) +
   geom_point(size=2, show.legend=FALSE) + 
   geom_line(size=1) +
-  scale_y_continuous(breaks=seq(min(df_dl_and_bw_tidy$v), max(df_dl_and_bw_tidy$v), 20)) +
+  scale_y_continuous(breaks=seq(min(df_dl_and_bw_tidy$v, na.rm=TRUE), max(df_dl_and_bw_tidy$v, na.rm=TRUE), 20)) +
   scale_x_date(date_breaks = "3 month", date_labels="%b-%Y") +
   scale_color_tableau() +
   theme_fivethirtyeight() + 
