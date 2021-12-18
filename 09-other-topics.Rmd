@@ -1,4 +1,4 @@
-# Other Topics
+# Stream of Consciousness
 
 Here is a collection of some "stream of consciousness" topics that I wanted to convey but did not fit into any of the other chapters so here they are all in a chapter of their own.
 
@@ -235,4 +235,11 @@ waffle(
 theme(text = element_text(size=CHART_ELEMENT_TEXT_SIZE-5))
 
 ```
+
+## Chapter 10: At a glance
+
+***
+1. The benefits of consistent workouts go far beyond benefits to the body, they transcend into better habits all around, better cognition and a better life.
+
+2. There are no short term fixes, no silver bullet, no one diet to fix it all. Consistency with a eating clean (avoid processed foods), regular workouts and good sleep is the answer.
 
