@@ -204,9 +204,6 @@ Is the 400lb or 2x body weight just an arbitrary tough ask for an "alpha" exerci
 
 A completely valid question that someone might ask is "Why do I need to deadlift? I am not a power lifter and this seems like it is a super specialized exercise.". A rather unexpected answer would  be that deadlift is not just a strength building exercise but also a rehab exercise for lower back precisely because it is a strength building exercise! Getting stronger is the best insurance against not getting injured, amd this is true not just in the gym but also in life. All of us use and will continue to use our lower backs so strengthening it should not be considered as an optional nice to have. If you lift something from the floor you are using the same musculature that you would use when you deadlift, better strengthen that back.
 
-Here is a picture of my favorite hexbar with total weight 325 pounds (which includes 55 pounds of the bar itself).  
-![Hexbar, total weight 325 pounds](pictures/hexbar-w-255p.jpg)
-
 The following two chart puts all this in perspective.
 
 
@@ -331,11 +328,15 @@ annotate(geom = "text", x = min(df_deadlift_and_bodyweight$date)-4, y = max(df_d
 
 The key observations from the above charts are:
 
-- It gets progressively harder. Took 7 months to get to 1 x bodyweight, 11 months to get to 1.5 x bodyweight and then a total of 19 months to get to 1.75 x body weight so lifting 325lb with a bodyweight of 185lb. I expect to be at 2 x bodyweight or 370lb in the next 4 to 6 months, so 2 years to get to lift 2 x bodyweight.
+- It gets progressively harder. Took 7 months to get to 1 x bodyweight, 11 months to get to 1.5 x bodyweight and then a total of 19 months to get to 1.75 x body weight so lifting 325lb with a bodyweight of 185lb. I expect to be at 2 x body-weight or 370lb in the next 4 to 6 months, so 2 years to get to lift 2 x body-weight.
 
 - As I started losing weight, I was able to lift more weight. Not unexpected, as you get stronger you are able to lift more, makes sense. But now, I want to stay around 185lb bodyweight, otherwise the 400lb would be a challenge harder than what it already is.
 
 Viewing this journey from a completely different lens and using the deadlift as a metaphor, I guess we should all try to find something that takes perseverance and hard work over a long period of time to achieve and then start on the road to achieve that. Over a period of time we will realize that the goal itself was simply an impetus to get started but as we keep putting in the hard yards and keep seeing the milestones along the way, those small hits of dopamine keep driving us forward. We live in a world today that is designed to provide instant gratification but rather provides years of compounded benefits, does indeed take some time to sink in.
+
+PS: On December 22, 2021 I was able to lift 2x of my body-weight, although not all the way off the ground but a plate elevated version where the hexbar is kept two inches above the ground making the lift a tad bit easier. Here is a picture of me lifting 385lb, my body-weight that morning was 191.3lb.
+
+![Hexbar, total weight 385 pounds](pictures/385lb.png)
 
 ## Do I really need a trainer?
 
