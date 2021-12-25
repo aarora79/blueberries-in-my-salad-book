@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  25 DEC 2021 01:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  25 DEC 2021 01:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,10 +597,9 @@ l.119
 e.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 A
-       s all good books should, this book too has a website now. Please see ...
-[7]pdfTeX warning (ext4): destination with the same identifier (name{page.}) ha
-s been already used, duplicate ignored
+l.125 
+       [7]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.134 ...ition}\label{preface-to-the-1st-edition}}
@@ -857,7 +856,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.458 9
-       0/90 hip stretch & Triceps \\ [37]
+       0/90 hip stretch & Calf \\ [37]
 Underfull \vbox (badness 10000) detected at line 490
  []
 
@@ -885,7 +884,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.561 l
-       unge iso hold & Thighs \\ [39]
+       unge iso hold & Lower back \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 561--581
  [] [] 
  []
@@ -900,7 +899,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.601 l
-       ight band star extensions & Calf \\ [40]
+       ight band star extensions & Thighs \\ [40]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 601--605
  [] [] 
  []
@@ -914,8 +913,8 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.632 p
-       lank walkups & Lower back \\ [41]pdfTeX warning (ext4): destination with
- the same identifier (name{page.}) has been already used, duplicate ignored
+       lank walkups & Calf \\ [41]pdfTeX warning (ext4): destination with the s
+ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.655 \end{longtable}
@@ -1813,12 +1812,12 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  15584 strings out of 481239
- 239109 string characters out of 5920376
+ 239111 string characters out of 5920376
  545971 words of memory out of 5000000
  29969 multiletter control sequences out of 15000+600000
  621927 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,9n,53p,2569b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,9n,53p,2551b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/shar
 e/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/l
@@ -1830,7 +1829,7 @@ usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mro10.pfb>
-Output written on bookdownproj.pdf (142 pages, 17926471 bytes).
+Output written on bookdownproj.pdf (142 pages, 17926325 bytes).
 PDF statistics:
  1775 PDF objects out of 2073 (max. 8388607)
  1489 compressed objects within 15 object streams
