@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  27 DEC 2021 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.26)  27 DEC 2021 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -862,7 +862,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.458 9
-       0/90 hip stretch & Biceps \\ [38]
+       0/90 hip stretch & Lower back \\ [38]
 Underfull \vbox (badness 10000) detected at line 490
  []
 
@@ -871,7 +871,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.510 m
-       ilitary press & Biceps \\ [39]
+       ilitary press & Lower back \\ [39]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 517--541
  [] [] 
  []
@@ -905,7 +905,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.601 l
-       ight band star extensions & Triceps \\ [41]
+       ight band star extensions & Biceps \\ [41]
 Overfull \hbox (5.55708pt too wide) in alignment at lines 601--605
  [] [] 
  []
@@ -919,7 +919,7 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.632 p
-       lank walkups & Calf \\ [42]pdfTeX warning (ext4): destination with the s
+       lank walkups & Lats \\ [42]pdfTeX warning (ext4): destination with the s
 ame identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1828,7 +1828,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  15589 strings out of 481239
  239165 string characters out of 5920376
- 547007 words of memory out of 5000000
+ 546007 words of memory out of 5000000
  29971 multiletter control sequences out of 15000+600000
  621927 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1844,7 +1844,7 @@ usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mro10.pfb>
-Output written on bookdownproj.pdf (144 pages, 17929314 bytes).
+Output written on bookdownproj.pdf (144 pages, 17929296 bytes).
 PDF statistics:
  1792 PDF objects out of 2073 (max. 8388607)
  1503 compressed objects within 16 object streams
