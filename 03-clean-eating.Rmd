@@ -104,9 +104,13 @@ Here is another chart that compares the weight loss during clean eating and non-
 The chart shows a boxplot representing the spread of the weight loss per day during clean eating periods and non-clean eating periods. The horizontal line inside the box represents the median value of the distribution. For example, I lost at least 0.435 lb per day on 50% of the days during clean eating whereas I only lost at least 0.005 lb on 50% of the days during non-clean eating period. The data for this chart includes both clean eating periods over a timespan from `r {min(df_tidy$Date)}` to `r {max(df_tidy$Date)}`.
 
 ```{r  echo=FALSE, fig.height=10, fig.width=14}
+ce_start1 <- df_iter1$Start[1]
+ce_end1 <- df_iter1$End[1]
+ce_start2 <- df_iter2$Start[1]
+ce_end2 <- df_iter2$End[1]
 df_wt_loss2 <- df_wt_loss %>%
-  mutate(clean_eating = ifelse(between(Date, df_iter1$Start, df_iter1$End) | 
-                                 between(Date, df_iter2$Start, df_iter2$End),
+  mutate(clean_eating = ifelse(between(Date, ce_start1, ce_end1) | 
+                                 between(Date, ce_start2, ce_end2),
                                "clean",
                                "careful-but-not-clean")) 
 df_wt_loss_medians <- df_wt_loss2 %>%
