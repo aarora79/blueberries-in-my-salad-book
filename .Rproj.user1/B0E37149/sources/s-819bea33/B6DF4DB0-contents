@@ -1,0 +1,25 @@
+# Appendix A 
+
+## Food checklist for clean eating challenge
+
+This table lists the food items we could think of (from what we generally eat) in each of the categories listed for the 30-day clean eating challenge. It also contains certain other categories that we added based on the food items in our pantry. The purpose here was to get a clear Yay or Nay listed alongside each food item so that we knew exactly what is allowed and did not end up with a day 0 crisis at our hands.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+if (!knitr:::is_html_output()) {
+  df_clean_eating_list %>%
+    mutate(`Allowed?` = ifelse(is.na(`(Optional) Notes`), `Allowed?`, paste0(`Allowed?`, '\n', `(Optional) Notes`))) %>%
+    select(-`(Optional) Notes`) %>%
+    kbl("latex", booktabs = TRUE,
+          longtable = TRUE,
+        table.attr = "style='width:30%;'") %>%
+    kable_styling(latex_options = c("repeat_header", "scale_down"), full_width = FALSE)
+  
+} else {
+    df_clean_eating_list %>%
+    gt::gt(groupname_col = 'Food Category') %>%
+    tab_header(
+      title = md("**Food items we got reviewed for the clean eating challenge**"),
+      subtitle = md("Tried to cover everything we could think of...")
+    )
+}
+```

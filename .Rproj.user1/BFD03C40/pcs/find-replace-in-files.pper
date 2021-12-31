@@ -1,0 +1,13 @@
+{
+    "dialog-state": {
+        "query": "Date",
+        "path": "/cloud/project",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 93,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}
