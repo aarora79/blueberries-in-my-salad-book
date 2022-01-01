@@ -133,11 +133,11 @@ I would be remiss if I do not mention that men and women respond to exercise and
 
 ## Percentages are revealing
 
-I reached my weight goal of 190lb in in early 2021 and then decided to go even lighter so that I weight between 180lb to 185lb. I am no longer obese, although technically overweight. However, I am much lighter and much stronger at 42 years of age than I felt at 22 years. I bet 22 year old me would not be able to run a mile without gasping for air, more like not able to run a mile at all, period. I have a target of being able to deadlift 400lb and so I intend to stay around 185lb and not lose any more weight. Once you understand how your body responds to certain foods and cut out refined sugar from your diet, losing weight becomes straight forward unless you have other issues.
+I reached my weight goal of 190lb in in early 2021 and then decided to go even lighter so that I weight between 180lb to 185lb. I am no longer obese, although technically overweight. However, I am much lighter and much stronger at 42 years of age than I felt at 22 years. I bet 22-year-old me would not be able to run a mile without gasping for air, more like not able to run a mile at all, period. I have a target of being able to deadlift 400lb and so I intend to stay around 185lb and not lose any more weight. Once you understand how your body responds to certain foods and cut out refined sugar from your diet, losing weight becomes straight forward unless you have other issues.
 
-So net-net in about 22 months, I lost about 27% of my body weight and Nidhi lost about 12%. Not too bad. In terms of how far we have progressed compared to the goals we started with, well the goals are just milestones along the way, the journey continues.
+So, net-net in about 22 months, I lost about 27% of my body weight and Nidhi lost about 12%. Not too bad. In terms of how far we have progressed compared to the goals we started with, well the goals are just milestones along the way, the journey continues.
 
-```{r echo=FALSE,fig.height=10, fig.width=14}
+```{r warning=FALSE, echo=FALSE,fig.height=10, fig.width=14}
 df2 <- data.frame(name = c(P1_NAME, P2_NAME),
                   title = c(P1_NAME, P2_NAME),
                   group = c(ifelse(p1_target_achieved_pct >= 75, "green", "orange"),
@@ -169,7 +169,7 @@ ggplot(df2, aes(fill = group, ymax = percentage, ymin = 0, xmax = 2, xmin = 1)) 
 
 Along with the body weight, other metrics also saw significant change. This is seen in the following charts. BMI is widely used (I suppose accepted as well) measurement to determine if someone is healthy, obese or overweight. We saw reduction in BMI as well which as expected is correlated to the reduction in weight. NIH guidelines for BMI are available [here](https://www.nhlbi.nih.gov/health/educational/healthdisp/pdf/tipsheets/Are-You-at-a-Healthy-Weight.pdf) for reference.
 
-All measurements in the charts below were done automatically as part of the daily metrics measured by the scale and synched with our phone. This made it really easy to collect and analyze this data.
+All measurements in the charts below were done automatically as part of the daily metrics measured by the scale and synched with our phone. This made it easy to collect and analyze this data.
 
 ```{r echo=FALSE,fig.height=10, fig.width=14}
   df_tidy %>%
@@ -188,7 +188,7 @@ All measurements in the charts below were done automatically as part of the dail
 
 ## Body measurements
 
-Weight and BMI is not the only metric we tracked, these metrics are often times all we think in terms of measuring but there is more. Just as the proof of the pudding is in the eating, the proof of the weight loss is in the wearing (of clothes). As we kept on making progress in our journey, the clothes started fitting well at first, then getting loose and the finally it reached a point where most of our old clothes were just too big and this necessitated a wardrobe refresh. A happy problem to have.
+Weight and BMI is not the only metric we tracked; these metrics are often times all we think in terms of measuring but there is more. Just as the proof of the pudding is in the eating, the proof of the weight loss is in the wearing (of clothes). As we kept on making progress in our journey, the clothes started fitting well at first, then getting loose and the finally it reached a point where most of our old clothes were just too big and this necessitated a wardrobe refresh. A happy problem to have.
 
 We tracked this by doing body measurements once every few months. The charts below have a story to tell.
 
@@ -210,7 +210,7 @@ df_measurements %>%
 
 ## Of slides and plateaus
 
-Anyone who has embarked on a journey to lose more than say 10 pounds would identify with the fact that the weight loss trajectory is never a linear slide downwards, no matter how determined you are in your desire and dogged in your persuasion. It was the same for us, there were days and weeks which were very good, especially at the start and then their were periods where the weight loss yo-yoed. These periods were disappointing, disheartening even.
+Anyone who has embarked on a journey to lose more than say 10 pounds would identify with the fact that the weight loss trajectory is never a linear slide downwards, no matter how determined you are in your desire and dogged in your persuasion. It was the same for us, there were days and weeks which were very good, especially at the start and then there were periods where the weight loss yo-yoed. These periods were disappointing, disheartening even.
 
 It is important to understand, as we discovered, that as we are subjecting the body to a different sort of eating regimen and making more and more demands of it by way of workouts in the gym, the body is also trying to recalibrate its response. It is figuring out how much fat to store as energy reserves, how much to burn to provide the fuel for the exercise. This means that sometimes the weight loss may completely stall or even go in the reverse. The key is to be patient and keep eating clean (relatively speaking) and putting in the hours in the gym without completely burning out.
 
@@ -255,7 +255,7 @@ As we were going through this journey, I was very eager to apply some forecastin
 
 Once we had collected a reasonable amount of data, I used standard timeseries forecasting techniques to determine how our weights would look say 30, 90 or 180 days from the current date. I used the [Prophet](https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.) package from Facebook AI Research ([FAIR](https://github.com/facebookresearch)) to do the timeseries forecast. The results are presented below. This forecast was done on August 16, 2020 and as per this forecast we should be able to achieve our target weight (`r P1_TARGET_WEIGHT` lb) in early October for Nidhi and mid-December for me (`r P2_TARGET_WEIGHT` lb).
 
-Once we had these forecasted date and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here that this simple forecast is considering the weight loss as a single variable timeseries, we know it is much more complicated than that. There are a lot of factors that would go into making a much more accurate weight loss forecast (if I could do that then maybe I would be writing a different book :)). This is just a simple attempt.
+Once we had these forecasted dates and the plots created, we started monitoring very closely if our daily weight measurements were within the range of errors as shown in these plots. Some days the weight did creep out of the error limits but then it served as a nice tool to keep us honest, so in a manner of speaking we knew how much we could deviate. So, if an Indian takeout dinner one evening did set us back, we knew we had to make up for it in the next few days to come back within acceptable range. So far it seems the projects are holding up reasonably well. If nothing else, it provides certain guard rails to not let one go completely off track. The promise still is, if we keep doing what we have been diligently doing, we should be able to achieve our goals around, if not exactly on, the forecasted date. It is important to mention here that this simple forecast is considering the weight loss as a single variable timeseries, we know it is much more complicated than that. There are a lot of factors that would go into making a much more accurate weight loss forecast (if I could do that then maybe I would be writing a different book :)). This is just a simple attempt.
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE,fig.height=10, fig.width=14}
@@ -320,7 +320,7 @@ df_forecast_p1 %>%
 
 Anybody who has ever lost any amount of weight, even if it is 5 pounds (or some would say especially if it is 5 pounds) would tell you that it always comes back. Well, how did we fare in that regards?
 
-The chart below shows my daily body weight since the start of 2020. I was able to reach my target body weight of 190lb and have been able to maintain between 185lb to 190lb since then (7 months as of this writing). No mean feat for someone who had never been fit before and the good part is that I have been able to do it not by taping into some deep hidden reserves of will power but all while leading what I would consider a __normal__ lifestyle that involves vacations, eating out every now and then and having a decent social life. In other words, it did not involve living in a cave or carrying my own food with me everywhere.
+The chart below shows my daily body weight since the start of 2020. I was able to reach my target body weight of 190lb and have been able to maintain between 185lb to 190lb since then (7 months as of this writing). No mean feat for someone who had never been fit before and the good part is that I have been able to do it not by tapping into some deep hidden reserves of will power but all while leading what I would consider a __normal__ lifestyle that involves vacations, eating out every now and then and having a decent social life. In other words, it did not involve living in a cave or carrying my own food with me everywhere.
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.height=10, fig.width=14}
@@ -369,20 +369,20 @@ p + geom_rect(data=wt_loss_phases %>% filter(name =="maintaining the gains"),
     annotate(geom = "text", x = target_wt_achieve_date, y = target_wt_achieved-9, , label = glue("Maintained weight mostly between 185 to 190lb for last {time_since_target_bw} months"), hjust = "left")
 ```
 
-So here is the secret recipe that works for me. As you can see there is hardly any noble prize winning research here, just **simple things, __done__ __consistently__**.
+So, here is the secret recipe that works for me. As you can see there is hardly any noble prize-winning research here, just **simple things, __done__ __consistently__**.
 
 | How strict I am about this? | Category | Activity | How well did I really stick to this? |
 |---|---|---|---|
 | Non-negotiable | Food | Absolutely no soft drinks (soda) and barely any hard drinks. | Yes, for the most part. My alcohol consumption is practically zero now, had a few drinks during the holidays though, have not had a soda for about 2 years now. |
-| Non-negotiable | Food | No dairy products (except homemade curd and cottage cheese, occasionaly). | Yes, for the most part. Made an exception for some home made Indian sweets during the festival season. |
+| Non-negotiable | Food | No dairy products (except homemade curd and cottage cheese, occasionally). | Yes, for the most part. Made an exception for some homemade Indian sweets during the festival season. |
 | Non-negotiable | Food | No cakes, pastries, canolies, muffins or bread. | Yes, for the most part. Goes without saying that I did have cake on my kids' birthdays and our wedding anniversary. |
-| Non-negotiable | Food | Don't want to name names but you wont find me dead in a fast food restaurant chain. | Yes, no exceptions, even when we were on long road trips. |
+| Non-negotiable | Food | Don't want to name names but you won't find me dead in a fast food restaurant chain. | Yes, no exceptions, even when we were on long road trips. |
 | Non-negotiable | Food | No caffeine after 3pm | Yes, for the most part. |
 | Non-negotiable | Food | Warm water or no-caffeine/herbal tea 30 minutes after dinner.| Yes, for the most part. |
 | Non-negotiable | Workout | 5 days of strength training with an occasional 6th day of light cardio such as long walks. | Yes, no exceptions, even when we went on vacations, I worked out in the hotel's fitness center. |
 | Best Effort | Eating Habits | A 16-8 or at least 14-10 eating window. | Yes, no exceptions, even when we went on vacations. |
-| Best Effort | Eating Habits | Eat most of my protein and fiber in the first half of the day and most of my carbs during dinner (preferably 7.30pm, no later than 8pm). | I try really hard, but ofcourse, I fall short sometimes. |
-| Best Effort | Eating Habits | 2 to 3 days of water fasting every month. | This is a hard goal (although not as hard as it might seem at first glance) but we were able to do it pretty consistently for most of 2021. |
+| Best Effort | Eating Habits | Eat most of my protein and fiber in the first half of the day and most of my carbs during dinner (preferably 7.30pm, no later than 8pm). | I try hard, but of course, I fall short sometimes. |
+| Best Effort | Eating Habits | 2 to 3 days of water fasting every month. | This is a hard goal (although not as hard as it might seem at first glance) but we were able to do it consistently for most of 2021. |
 | Best Effort | Lifestyle | Short  morning walk, 1 mile after dinner walk | Recent addition to my routine, able to do it at least 4 times a week. |
 | Trying to improve | Sleeping Habits | While the goal is 8 hours, I manage just about 7 hours on most days. This is a stretch goal and something I need to work on. | Not so good. |
 | Trying to improve | Lifestyle | Breathwork practice, for sleep, relaxation and workouts. | Working on it. |
@@ -396,6 +396,6 @@ So, I cannot end this chapter without mentioning about Nidhi's journey, did she 
 
 1. Regular body weight measurements and other biometrics along with body measurements were very helpful in keeping us on track during our weight loss journey and beyond.
 
-2. Life happens and that will provide an occasional pause in the weight loss journey, and that is OK as long as we get back on track right away. Social dinners, going on trips, making exceptions for a late evening ice-cream after dinner is all par for the course. 
+2. Life happens and that will provide an occasional pause in the weight loss journey, and that is OK if we get back on track right away. Social dinners, going on trips, making exceptions for a late evening ice-cream after dinner is all par for the course. 
 
-3. Losing weight and keeping it off are two different problems and should be approached as such. Weight loss can be accomplished by intensity (generally people can stick to a diet, any diet, for a few months maybe, especially when they start seeing results), but keeping the weight off requires consistency. It ultimately comes down to a binary choice <u>"healthy and therefore happy in the long term OR consciously unhealthy right now for the happiness right now but miserable tomorrow and beyond".</u> I know this is a harsh statement but it really is a question we need to ask of ourselves and it's answer will inform us of why we are the way we are.
+3. Losing weight and keeping it off are two different problems and should be approached as such. Weight loss can be accomplished by intensity (generally people can stick to a diet, any diet, for a few months maybe, especially when they start seeing results), but keeping the weight off requires consistency. It ultimately comes down to a binary choice <u>"healthy and therefore happy in the long term OR consciously unhealthy right now for sort term pleasure but miserable tomorrow and beyond".</u> I know its a harsh statement but it really is a question we need to ask of ourselves and it's answer will inform us of why we are the way we are.

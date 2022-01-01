@@ -2,9 +2,9 @@
 
 One of the most frequent feedback that we got on the first edition was: "how can we try some of the delicious foods that we see in the book?". While a lot of our friends have since been to our home to try some of the salads but for those whom we have not yet had the pleasure of hosting, here a few recipes that you can try out. Goes without saying, I am just the scribe here, this is all (like a lot of good things) credit to Nidhi.
 
-## Seasme Garlic Tofu
+## Seasame Garlic Tofu
 
-![Seasme Garlic Tofu](pictures/seasme-garlic-tofu.png)  
+![Seasame Garlic Tofu](pictures/Seasame-garlic-tofu.png)  
 <i>Ready in 20 minutes. Serves 4 people</i>
 
 ###  Ingredients
@@ -20,12 +20,12 @@ One of the most frequent feedback that we got on the first edition was: "how can
 
 Pre-preps for tofu:
 
-1. This recipe tastes best with the crispy texture of tofu. To get the crispy effect tofu has to be dried from outside.
+1. This recipe tastes best with the crispy texture of tofu. To get the crispy effect tofu must be dried from outside.
 
-2. Tofu comes submerged in water, drain the water in the sink and wash and pat dry the tofu. Then place it on a flat base with a slight angle (I did it in my kitchen sink only), sandwiched between kitchen towels and put some weight on the top of the tofu. Make sure the weight is not so much that the tofu gets crushed, however just sufficient to squeeze the extra water from tofu. I used an iron skillet as the weight.
-If possible leave it like this before you go to the office and let it stay for a few hours. Or speed up the process by changing the kitchen towels frequently. This will take at-least 30 minutes.
+2. Tofu comes submerged in water, drain the water in the sink and wash and pat dry the tofu. Then place it on a flat base with a slight angle (I did it in my kitchen sink only), sandwiched between kitchen towels and put some weight on the top of the tofu. Make sure the weight is not so much that the tofu gets crushed, however, just enough to squeeze the extra water from tofu. I used an iron skillet as the weight.
+If possible, leave it like this before you go to the office and let it stay for a few hours. Or speed up the process by changing the kitchen towels frequently. This will take at-least 30 minutes.
 
-3. Cut the tofu in about 1 inch cubes. Add the cut tofu in a platter and sprinkle cornflour. Toss the cubes to evenly coat with cornflour.
+3. Cut the tofu in about 1-inch cubes. Add the cut tofu in a platter and sprinkle cornflour. Toss the cubes to evenly coat with cornflour.
 
 Cooking instructions:
 
@@ -41,7 +41,7 @@ Cooking instructions:
 6. Transfer them in a serving dish garnish with spring onion greens and sesame seeds.
 
 #### Preparing Gravy:
-1. In the same skillet add some water and some chili garlic sauce. Mix it well and take out all the sauce left behind in the skillet. This will make a thin gravy which I used to drizzle on my plated sesame tofu and stir fried broccoli.
+1. In the same skillet add some water and some chili garlic sauce. Mix it well and take out all the sauce left behind in the skillet. This will make a thin gravy which I used to drizzle on my plated sesame tofu and stir-fried broccoli.
 
 Tip: 
 Arrowroot Starch can be replaced with cornstarch. To make it a complete meal for my kids, I added some rice with a gravy drizzle we ate with Cauliflower rice.
@@ -106,16 +106,16 @@ Arrowroot Starch can be replaced with cornstarch. To make it a complete meal for
 
 ### Preparation
 
-1. Add all the vegetables with salt and 2 cups of water in a pressure cooker and cook upto two whistles. 
+1. Add all the vegetables with salt and 2 cups of water in a pressure cooker and cook up to two whistles. 
 
 2. Leave it for 10-15 minutes for the pressure to subside by itself.
 
-3. Blend them in a blender and pour it in a pot. At this time use 1 cup of water to rinse the blender and add to the pot, boil for 2 minutes. Add pepper powder, mix and taste to adjust salt.
+3. Blend them in a blender and pour it in a pot. Now use 1 cup of water to rinse the blender and add to the pot, boil for 2 minutes. Add pepper powder, mix and taste to adjust salt.
 
 4. Serve it hot.
 
 Tip:
-Add butter before eating, Butter will make the soup’s texture more creamy.
+Add butter before eating, Butter will make the soup’s texture creamier.
 
 
 ## Egg Drop Soup
@@ -180,7 +180,7 @@ If you want to thicken the soup you can add 1 tbsp of cornflour mixed in water (
 
 1. Zucchini 4
 
-2. Kidney beans 14 oz can drained and rinsed
+2. Kidney beans 14 oz can, drained and rinsed
 
 3. Tomato 1 diced
 
@@ -190,7 +190,7 @@ If you want to thicken the soup you can add 1 tbsp of cornflour mixed in water (
 
 6. Boiled sweet corns 1/2 cup
 
-7. Grated cheese mexican blend 1/2 cup
+7. Grated cheese Mexican blend 1/2 cup
 
 8. Mixed colored peppers 1 cup
 
@@ -206,7 +206,7 @@ If you want to thicken the soup you can add 1 tbsp of cornflour mixed in water (
 
 14. Cumin powder 2 tsp
 
-15. Paprica 1 tsp
+15. Paprika 1 tsp
 
 16. Taco seasoning 2 tsp
 
@@ -214,11 +214,11 @@ If you want to thicken the soup you can add 1 tbsp of cornflour mixed in water (
 
 ### Preparation
 
-1. Preheat the oven at 400 °C . Cut zucchini in half lengthwise and scrape out the center part, leaving a shell of almost 1/4 inch thick.
+1. Preheat the oven at 400 °C. Cut zucchini in half lengthwise and scrape out the center part, leaving a shell of almost 1/4 inch thick.
 
 2. Sprinkle the taco seasoning generously on them, drizzle olive oil and bake them for 15 minutes.
 
-3. In the meantime in a big bowl add drained and washed kidney beans, tomato, coriander, onions, sweet corn, colored peppers, jalapenos, cumin powder, salt, paprika, half of the cheese and lemon juice. Toss all the ingredients to mix well and get evenly seasoned.
+3. In the meantime, in a big bowl add drained and washed kidney beans, tomato, coriander, onions, sweet corn, colored peppers, jalapenos, cumin powder, salt, paprika, half of the cheese and lemon juice. Toss all the ingredients to mix well and get evenly seasoned.
 
 4. Take the zucchini shells out of the oven. With a help of a spoon fill the zucchini shells with the above mixture. Sprinkle some cheese on the top.
 
@@ -236,6 +236,7 @@ Looking for some low carb sides? You can also serve them as appetizers at your h
 <i>Ready in 15 minutes. Serves 5 people. Rest time 3 hours.</i>
 
 ### Ingredients
+
 1. 2 of Premier Protein Chocolate Shake or any other ready to drink Chocolate shake.
 
 2. 1 Sugar free Jell-O Chocolate (4 1/2 cups of servings pack)
@@ -244,7 +245,7 @@ Looking for some low carb sides? You can also serve them as appetizers at your h
 
 ### Preparation
 
-1. In a big bowl empty both the chocolate drinks, add Jello and whisk it well for 2 mins. Let it rest for 5 mins and then whisk again.
+1. In a big bowl empty both the chocolate drinks, add Jell-O and whisk it well for 2 mins. Let it rest for 5 mins and then whisk again.
 
 2. Let it stay in the freezer for 1 hour and then take it out and whisk again. Repeat this again after one hour, this time blend it in a blender for creamier texture. You can repeat this one more time for extra creamy texture.
 
@@ -252,13 +253,13 @@ Looking for some low carb sides? You can also serve them as appetizers at your h
 
 ## Baked Brussel Sprouts
 
-![Baked brussel sprouts](pictures/baked-brussel-sprouts.png)
+![Baked Brussel sprouts](pictures/baked-brussel-sprouts.png)
 
 <i>Ready in 25 minutes. Serves 2 people.</i>
 
 ### Ingredients
 
-1. Brussels Sprouts 4 cups cut in half (Stem side)
+1. Brussel Sprouts 4 cups cut in half (Stem side)
 
 2. Kosher Salt 1/3 tsp
 
@@ -269,7 +270,7 @@ Looking for some low carb sides? You can also serve them as appetizers at your h
 
 ### Preparation
 
-1. Heat the oven at 400 ° F.  In a bowl add the cut brussel sprouts and sprinkle salt and pepper. Drizzle the oil and toss them well so it gets well coated with the seasoning.
+1. Heat the oven at 400 ° F.  In a bowl add the cut Brussel sprouts and sprinkle salt and pepper. Drizzle the oil and toss them well so it gets well coated with the seasoning.
 
 2. Place them on a baking tray with all face down (with cut side down) and bake them for 10 minutes.
 
@@ -289,7 +290,7 @@ Looking for some low carb sides? You can also serve them as appetizers at your h
 
 2. Spinach 1/4 cup
 
-3. Peppers (multi color) 1/4 cup
+3. Peppers (multi-color) 1/4 cup
 
 4. Coriander finely chopped 1 tbsp
 

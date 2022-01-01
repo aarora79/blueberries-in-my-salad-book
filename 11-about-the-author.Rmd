@@ -7,6 +7,6 @@ img <- readJPEG("pictures/amit_new.jpg")
 grid.raster(img)
 ```
 
-My name is Amit Arora. I live in Clarksburg, Maryland with my wife Nidhi and two sons Nabhit (12) and Aadit (8). I have a bachelors degree in engineering and a masters degree in data science. I love reading, writing, working with data, and yes, strength training.
+My name is Amit Arora. I live in Clarksburg, Maryland with my wife Nidhi and two sons Nabhit (12) and Aadit (8). I have a bachelor's degree in engineering and a master's degree in data science. I love reading, writing, working with data, and yes, strength training.
 
-If you would like to reach out to me for comments or questions, please feel free to write to me at [amiarora@gmail.com](amiarora@gmail.com). You can find me on Twitter at [aarora79](https://twitter.com/aarora79), Instagram [ilivethedata](https://www.instagram.com/ilivethedata/) and at LinkedIn at [https://www.linkedin.com/in/amit-arora-539120a/](https://www.linkedin.com/in/amit-arora-539120a/). Send your tweets and instagram posts about this book with the hashtag **#blueberriesinmysalad**.
+If you would like to reach out to me for comments or questions, please feel free to write to me at [amiarora@gmail.com](amiarora@gmail.com). You can find me on Twitter at [aarora79](https://twitter.com/aarora79), Instagram [ilivethedata](https://www.instagram.com/ilivethedata/) and at LinkedIn at [https://www.linkedin.com/in/amit-arora-539120a/](https://www.linkedin.com/in/amit-arora-539120a/). Send your tweets and Instagram posts about this book with the hashtag **#blueberriesinmysalad**.
