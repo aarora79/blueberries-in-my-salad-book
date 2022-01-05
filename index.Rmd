@@ -319,6 +319,7 @@ A word about data, we kept up with the practice of collecting weight and other b
 
 As all good books should, this book too has a website now. Please see [https://blueberriesinmysalad.com](https://blueberriesinmysalad.com). The website tracks our journey as it continues, has updates on what are the latest topics in health and fitness that I am currently learning about and maybe a monthly newsletter as well in the future. 
 
+**NOTE: The information provided in this book is not medical advice, nor should it be taken or applied as a replacement for medical advice. The authors assume no liability for the application of the information discussed. Always consult your doctor before starting any diet or exercise program.**
 
 Amit Arora  
 Clarksburg, Maryland  
@@ -338,7 +339,8 @@ We took daily measurements for our weight and other biometrics and they were aut
 
 Over time I understood that while the desire for weight loss was what got me here, but what I was really gaining was good health and strength. One can lose weight by falling sick, we know that is not healthy. Weight loss should not be the only goal. To reduce the benefits of what we were doing to just burning calories and losing tens of pounds now seems like a terrible underselling of the idea of fitness. The human body is a fascinating machine capable of wonderful things, good health is a state of both mind and body. Exercise and healthy eating habits help both mind and body. If you do not have any serious health issues, there isn't really any excuse for not exercising regularly and eating healthy. As it is said ![Sanskrit](pictures/sanskrit1.png) loosely translated it means that the body is the source of all good deeds.
 
-Finally, nothing in this book should be interpreted as me recommending anything, this is simply a written version of my musings. An experiment with a sample size of N=2, in other words statistically irrelevant! **Do not take anything that you read in this book as medical advice. Always consult your doctor before starting any diet or exercise program.**
+Finally, nothing in this book should be interpreted as me recommending anything, this is simply a written version of my musings. An experiment with a sample size of N=2, in other words statistically irrelevant!
+
 
 ## Acknowledgements
 
